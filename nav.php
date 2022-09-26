@@ -2,7 +2,7 @@
         <div class="d-flex align-items-center justify-content-between">
             <div class="logo d-flex align-items-center">
                 <img src="./images/logo.png" alt="">
-                <h1>Little Paws</h1>
+                <h1 class="fs-3">Little Paws</h1>
             </div>
             <div class="login-btn">
                 <i class="fa-solid fa-heart" title="Favourites"></i>

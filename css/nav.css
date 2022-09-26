@@ -3,7 +3,8 @@
 
 :root{
     --black:#4d4751;
-    --secondary:#8868cf;
+    --secondary:#6504b5;
+    --footer:#ecd7fd;
 }
 *{
     font-family: 'Roboto';
@@ -14,7 +15,6 @@
     transform: rotate(45deg);
 }
 .logo h1{
-    font-size: 1.8rem;
     font-weight: bold;
     margin: 0;
     color: #fdbf00;
