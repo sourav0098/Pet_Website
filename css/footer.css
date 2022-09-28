@@ -17,5 +17,8 @@ footer{
 }
 
 .footer-list li a{
+    color: white !important;
+}
+.footer-list li a:hover{
     color: var(--footer) !important;
 }

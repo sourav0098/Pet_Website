@@ -4,7 +4,7 @@
 :root{
     --black:#4d4751;
     --secondary:#6504b5;
-    --footer:#ecd7fd;
+    --footer:#a376ff;
 }
 *{
     font-family: 'Roboto';
@@ -39,6 +39,9 @@ header{
 }
 nav{
     background: var(--secondary);
+}
+.nav-link:hover{
+    color: var(--footer) !important;
 }
 .navbar .navbar-nav .nav-link{
     color: white !important;
