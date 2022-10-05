@@ -5,9 +5,11 @@
     --black:#4d4751;
     --secondary:#6504b5;
     --footer:#a376ff;
+    --border:#d2d2d2;
 }
 *{
     font-family: 'Roboto';
+    scroll-behavior: smooth;
 }
 .logo img{
     width: 58px;
@@ -41,7 +43,7 @@ nav{
     background: var(--secondary);
 }
 .nav-link:hover{
-    color: var(--footer) !important;
+    color: var(--secondary) !important;
 }
 .navbar .navbar-nav .nav-link{
     color: white !important;
@@ -54,7 +56,6 @@ nav{
     cursor: pointer;
     border: 3px solid white ;
 }
-
 
 .navbar .navbar-nav .nav-link {
     color: #000000;

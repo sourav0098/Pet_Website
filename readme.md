@@ -2,6 +2,7 @@
 black:#4d4751;  
 secondary:#6504b5;  
 footer_links(hover):#a376ff;    
+border:#d2d2d2
 
 ### Font
 Font Family: Roboto  

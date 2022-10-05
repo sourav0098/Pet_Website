@@ -29,7 +29,7 @@
                     <img src="./images/slider_2.jpg">
                 </div>
                 <div class="swiper-slide">
-                    <img src="./images/6.jpg">
+                    <img src="./images/slider_3.jpg">
                 </div>
             </div>
 
@@ -37,6 +37,155 @@
             <div class="swiper-pagination"></div>
         </div>
     </main>
+
+    <section class="container d-flex align-items-center justify-content-center pet-options">
+        <div>
+            <h1 class="fw-bold">Find your new best friend</h1>
+        </div>
+        <div class="d-flex">
+            <div class="card">
+                <a class="nav-link" href=""><img src="./images/dog.png" alt="dog">
+                    <p class="text-center">Dogs</p>
+                </a>
+            </div>
+            <div class="card">
+                <a class="nav-link" href=""><img src="./images/cat.png" alt="cat">
+                    <p class="text-center">Cats</p>
+                </a>
+            </div>
+            <div class="card">
+                <a class="nav-link" href=""><img src="./images/paw.png" alt="other animals">
+                    <p class="text-center">Other Animals</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Featured Pets -->
+    <section class="container-fluid bg-white">
+        <div class="container d-flex flex-column align-items-center">
+            <div>
+                <h1 class="heading fw-bold m-0 p-4">Featured Pets</h1>
+            </div>
+            <div class="d-flex featured-pet container justify-content-between p-0 pb-4">
+                <div class="featured-pet-card">
+                    <a href="" class="nav-link">
+                        <div class="featured-pet-image">
+                            <img src="./images/featured_1.jpg" width="230px" alt="">
+                        </div>
+                        <div class="featured-pet-content">
+                            <h3 class="text-center fw-bold">Duke</h3>
+                            <p class="text-center m-0">Male</p>
+                            <p class="text-center m-0">Toronto</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="featured-pet-card">
+                    <a href="" class="nav-link">
+                        <div class="featured-pet-image">
+                            <img src="./images/featured_2.jpg" width="230px" alt="">
+                        </div>
+                        <div class="featured-pet-content">
+                            <h3 class="text-center fw-bold">Milo</h3>
+                            <p class="text-center m-0">Female</p>
+                            <p class="text-center m-0">Etobicoke</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="featured-pet-card">
+                    <a href="" class="nav-link">
+                        <div class="featured-pet-image">
+                            <img src="./images/featured_3.jpg" width="230px" alt="">
+                        </div>
+                        <div class="featured-pet-content">
+                            <h3 class="text-center fw-bold">Rex</h3>
+                            <p class="text-center m-0">Male</p>
+                            <p class="text-center m-0">North York</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="featured-pet-card">
+                    <a href="" class="nav-link">
+                        <div class="featured-pet-image">
+                            <img src="./images/featured_4.jpg" alt="">
+                        </div>
+                        <div class="featured-pet-content">
+                            <h3 class="text-center fw-bold">Dollar</h3>
+                            <p class="text-center m-0">Male</p>
+                            <p class="text-center m-0">Mississauga</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="featured-pet-card">
+                    <a href="" class="nav-link">
+                        <div class="featured-pet-image">
+                            <img src="./images/featured_5.jpg" alt="">
+                        </div>
+                        <div class="featured-pet-content">
+                            <h3 class="text-center fw-bold">Leo</h3>
+                            <p class="text-center m-0">Male</p>
+                            <p class="text-center m-0">Toronto</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Adoption Process -->
+    <section class="container-fluid d-flex align-items-center justify-content-center flex-column adoption-process">
+        <div>
+            <h1 class="heading fw-bold m-0 p-4">Pet Adoption Process</h1>
+        </div>
+        <div class="d-flex justify-content-between w-100 pb-4">
+            <div class="adopt-pet-card d-flex align-items-center flex-column bg-white">
+                <img src="./images/adopt_process_1.jpg" alt="">
+                <h3 class="fw-bold">Find your pet</h3>
+            </div>
+            <div class="adopt-pet-card d-flex align-items-center flex-column bg-white">
+                <img src="./images/adopt_process_2.jpg" alt="">
+                <h3 class="fw-bold">Know your pet</h3>
+            </div>
+            <div class="adopt-pet-card d-flex align-items-center flex-column bg-white">
+                <img src="./images/adopt_process_3.jpg" alt="">
+                <h3 class="fw-bold">Take your pet home</h3>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Achievement Section -->
+    <section class="achievements bg-white">
+        <div class="achievement-container container">
+            <div>
+                <h1 class="text-center fw-bold m-0 p-4 heading">Our Achievements</h1>
+            </div>
+            <div class="d-flex container justify-content-evenly pb-4">
+                <div class="achievement-card p-4">
+                    <img class="me-3 p-2" src="./images/achieve_1.png" alt="">
+                    <div>
+                        <h1 class="fw-bold fs-2 m-0" style="color: #fabe2c;">1,245</h1>
+                        <h1 class="fs-5 m-0">Members</h1>
+                    </div>
+                </div>
+                <div class="achievement-card p-4">
+                    <img class="me-3 p-2" src="./images/achieve_2.png" alt="">
+                    <div>
+                        <h1 class="fw-bold fs-2 m-0" style="color:#458377;">349</h1>
+                        <h1 class="fs-5 m-0">Happy Pets</h1>
+                    </div>
+                </div>
+                <div class="achievement-card p-4">
+                    <img class="me-3 p-2" src="./images/achieve_3.png" alt="">
+                    <div>
+                        <h1 class="fw-bold fs-2 m-0" style="color:#e86581;">930</h1>
+                        <h1 class="fs-5 m-0">Customers</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- Footer -->
     <?php include "./footer.php" ?>

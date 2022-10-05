@@ -12,7 +12,7 @@
                     <h5 class="mb-4 text-white">Help & Support</h5>
                     <ul class="list-unstyled footer-list">
                         <li class="mb-2">
-                            <a href="#!" class="nav-link"><i class="fas fa-paw pe-3"></i>FAQ</a>
+                            <a href="" class="nav-link"><i class="fas fa-paw pe-3"></i>FAQ</a>
                         </li>
                         <li class="mb-2">
                             <a href="#!" class="nav-link"><i class="fas fa-paw pe-3"></i>About Us</a>
@@ -52,27 +52,27 @@
                         <button class="footer-btn mb-3">SIGN UP</button>
                         <ul class="list-unstyled d-flex flex-row justify-content-center">
                             <li>
-                                <a class="text-white px-2" href="#!">
+                                <a class="text-white px-2" target="_blank" href="https://www.facebook.com/">
                                     <i class="fa-brands fs-4 fa-square-facebook"></i>
                                 </a>
                             </li>
                             <li>
-                                <a class="text-white px-2" href="#!">
+                                <a class="text-white px-2" target="_blank" href="https://www.instagram.com/accounts/login/">
                                     <i class="fa-brands fs-4 fa-instagram"></i>
                                 </a>
                             </li>
                             <li>
-                                <a class="text-white px-2" href="#!">
+                                <a class="text-white px-2" target="_blank" href="https://twitter.com/i/flow/login">
                                     <i class="fa-brands fs-4 fa-twitter"></i>
                                 </a>
                             </li>
                             <li>
-                                <a class="text-white px-2" href="#!">
+                                <a class="text-white px-2" target="_blank" href="https://www.youtube.com/">
                                     <i class="fa-brands fs-4 fa-youtube"></i>
                                 </a>
                             </li>
                             <li>
-                                <a class="text-white px-2" href="#!">
+                                <a class="text-white px-2" target="_blank" href="https://www.linkedin.com/login">
                                     <i class="fa-brands fs-4 fa-linkedin"></i>
                                 </a>
                             </li>
