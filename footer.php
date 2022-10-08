@@ -1,7 +1,7 @@
 <footer class="text-center text-lg-start">
         <div class="container-fluid p-4">
             <div class="row">
-                <div class="col-lg-3 col-md-6 mb-4 mb-md-0 d-flex align-items-center" style="width:300px;">
+                <div class="col-lg-3 col-md-6 mb-4 mb-md-0 d-flex align-items-center">
                     <div class="rounded-circle bg-white shadow-1-strong d-flex align-items-center justify-content-center mb-4 mx-auto" style="width: 150px; height: 150px;">
                         <img src="./images/dog-footer.png" height="130" alt="" loading="lazy" />
                     </div>

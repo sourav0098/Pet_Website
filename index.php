@@ -40,9 +40,9 @@
 
     <section class="container d-flex align-items-center justify-content-center pet-options">
         <div>
-            <h1 class="fw-bold">Find your new best friend</h1>
+            <h1 class="fw-bold text-center">Find your new best friend</h1>
         </div>
-        <div class="d-flex">
+        <div class="d-flex card-container flex-wrap">
             <div class="card">
                 <a class="nav-link" href=""><img src="./images/dog.png" alt="dog">
                     <p class="text-center">Dogs</p>
@@ -66,9 +66,9 @@
     <section class="container-fluid bg-white">
         <div class="container d-flex flex-column align-items-center">
             <div>
-                <h1 class="heading fw-bold m-0 p-4">Featured Pets</h1>
+                <h1 class="heading fw-bold m-0 p-3">Featured Pets</h1>
             </div>
-            <div class="d-flex featured-pet container justify-content-between p-0 pb-4">
+            <div class="d-flex flex-wrap featured-pet container justify-content-evenly p-0 pb-3">
                 <div class="featured-pet-card">
                     <a href="" class="nav-link">
                         <div class="featured-pet-image">
@@ -136,9 +136,9 @@
     <!-- Adoption Process -->
     <section class="container-fluid d-flex align-items-center justify-content-center flex-column adoption-process">
         <div>
-            <h1 class="heading fw-bold m-0 p-4">Pet Adoption Process</h1>
+            <h1 class="heading fw-bold m-0 p-3 text-center">Pet Adoption Process</h1>
         </div>
-        <div class="d-flex justify-content-between w-100 pb-4">
+        <div class="d-flex flex-wrap justify-content-evenly w-100 pb-3">
             <div class="adopt-pet-card d-flex align-items-center flex-column bg-white">
                 <img src="./images/adopt_process_1.jpg" alt="">
                 <h3 class="fw-bold">Find your pet</h3>
@@ -159,9 +159,9 @@
     <section class="achievements bg-white">
         <div class="achievement-container container">
             <div>
-                <h1 class="text-center fw-bold m-0 p-4 heading">Our Achievements</h1>
+                <h1 class="text-center fw-bold m-0 p-3 heading">Our Achievements</h1>
             </div>
-            <div class="d-flex container justify-content-evenly pb-4">
+            <div class="d-flex flex-wrap container justify-content-evenly pb-3">
                 <div class="achievement-card p-4">
                     <img class="me-3 p-2" src="./images/achieve_1.png" alt="">
                     <div>
@@ -190,9 +190,9 @@
     <!-- Footer -->
     <?php include "./footer.php" ?>
 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
 </body>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
 <script>
     const swiper = new Swiper('.swiper', {
         spaceBetween: 30,
