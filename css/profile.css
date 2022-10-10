@@ -1,0 +1,34 @@
+#wrapper{
+    min-height: 100vh !important;
+}
+#sidebar{
+    width: 190px;
+    transition: width 1s ease;
+}
+#sidebar.active{
+    width: 80px;
+    text-align: center;
+    transition: width 1s ease-out;
+}
+.sidebar-item{
+    width: 150px;
+}
+#sidebar.active .sidebar-item{
+    display:none;
+    width: 80px;
+}
+
+#sidebar.active ul li{
+    border-top:1px solid var(--black);
+}
+
+#sidebar.active .fa-solid{
+    font-size: 1.2rem;
+}
+#sidebar ul li:hover{
+    border-top: 1px solid white;
+    border-bottom: 1px solid white;
+}
+#sidebar ul li a:hover{
+    color: white  !important;
+}
