@@ -42,7 +42,7 @@
         <!-- SideBar -->
         <?php include "./sidebar.php" ?>
         <!-- PageContent -->
-        <div id="content" class="container">
+        <div id="content" class="container-fluid">
             <div class="container-fluid d-flex align-items-center">
                 <button type="button" id="sideBarCollapse" class="btn btn-secondary me-3"><i class="fa-solid fa-bars"></i></button>
                 <h1 class="fw-bold">Profile</h1>
@@ -142,9 +142,9 @@
     }
 
 
-    let editBtn = document.getElementById("editBtn");
-    let cancelBtn = document.getElementById("cancelBtn");
-    let saveBtn = document.getElementById("saveBtn");
+    const editBtn = document.getElementById("editBtn");
+    const cancelBtn = document.getElementById("cancelBtn");
+    const saveBtn = document.getElementById("saveBtn");
 
     addEventListener('load', (e) => {
         cancelBtn.style.display = "none";

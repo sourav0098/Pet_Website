@@ -1,20 +1,23 @@
 ### Color
-black:#4d4751;  
-secondary:#6504b5;  
-footer_links(hover):#a376ff;    
-border:#d2d2d2
+black: hsl(276, 7%, 30%)  
+secondary: hsla(273, 70%, 58%)  
+hoverColor: hsl(273, 70%, 45%)  
+footer: hsl(260, 100%, 73%)  
+border: hsl(0, 0%, 82%)  
 
 ### Font
-Font Family: Roboto  
+
+Font Family: Roboto
 
 ### Folder Structure
+
 ```
     │   .gitignore
     │   readme.md
     │   ... php files
     ├───css
     │       ... css files
-    │ 
+    │
     ├───images
     │       ... images
     │
