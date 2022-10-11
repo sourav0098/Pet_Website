@@ -2,10 +2,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
 
 :root {
-  --black: #4d4751;
-  --secondary: #6504b5;
-  --footer: #a376ff;
-  --border: #d2d2d2;
+  --black: hsl(276, 7%, 30%);
+  --secondary: hsla(273, 70%, 58%);
+  --hoverColor: hsl(273, 70%, 45%);
+  --footer: hsl(260, 100%, 73%);
+  --border: hsl(0, 0%, 82%);
 }
 * {
   font-family: "Roboto";
