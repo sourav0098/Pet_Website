@@ -10,7 +10,7 @@
             <div class="login-btn">
                 <i class="fa-solid fa-heart" title="Favourites"></i>
                 <a href="./signup">SignUp</a>
-                <a href="./login">Login</a>
+                <a href="./login.php">Login</a>
             </div>
             <div class="profile">
                 <a class="navbar-brand" href="./profile.php">
