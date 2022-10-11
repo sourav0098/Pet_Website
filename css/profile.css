@@ -2,7 +2,7 @@
     min-height: 100vh !important;
 }
 #sidebar{
-    width: 190px;
+    width: 220px;
     transition: width 1s ease;
 }
 #sidebar.active{
@@ -18,10 +18,6 @@
     width: 80px;
 }
 
-#sidebar.active ul li{
-    border-top:1px solid var(--black);
-}
-
 #sidebar.active .fa-solid{
     font-size: 1.2rem;
 }
@@ -31,4 +27,14 @@
 }
 #sidebar ul li a:hover{
     color: white  !important;
+}
+#profile-img img{
+    width: 90px;
+}
+#image-input{
+    position: absolute;
+  font-size: 50px;
+  opacity: 0;
+  right: 0;
+  top: 0;
 }

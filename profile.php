@@ -40,20 +40,71 @@
 
     <div id="wrapper" class="d-flex">
         <!-- SideBar -->
-        <nav id="sidebar">
-            <ul class="navbar-nav">
-                <li class="nav-item ps-2"><a href="" class="nav-link active text-white" aria-current="page"><i class="fa-solid fa-user pe-3"></i><span class="sidebar-item pe-3">Profile<span></a></li>
-                <li class="nav-item ps-2"><a href="" class="nav-link active text-white pe-3" aria-current="page"><i class="fa-solid fa-gear pe-2"></i><span class="sidebar-item pe-3">Account Settings</span></a></li>
-                <li class="nav-item ps-2"><a href="" class="nav-link active text-white pe-3" aria-current="page"><i class="fa-solid fa-heart pe-2"></i><span class="sidebar-item pe-3">Favourites</span></a></li>
-                <li class="nav-item ps-2"><a href="" class="nav-link active text-white pe-3" aria-current="page"><i class="fa-solid fa-paw pe-2"></i><span class="sidebar-item pe-3">Add a Pet</span></a></li>
-                <li class="nav-item ps-2"><a href="" class="nav-link active text-white pe-3" aria-current="page"><i class="fa-solid fa-right-from-bracket pe-2"></i><span class="sidebar-item pe-3">Logout</span></a></li>
-            </ul>
-        </nav>
+        <?php include "./sidebar.php" ?>
         <!-- PageContent -->
-        <div id="content">
+        <div id="content" class="container">
             <div class="container-fluid d-flex align-items-center">
                 <button type="button" id="sideBarCollapse" class="btn btn-secondary me-3"><i class="fa-solid fa-bars"></i></button>
                 <h1 class="fw-bold">Profile</h1>
+            </div>
+            <div>
+                <div class="text-center d-flex flex-column align-items-center" id="profile-img">
+                    <img src="./images/user.png" alt="" class="mb-2">
+                    <div class="file btn btn-primary position-relative overflow-hidden" id="upload-img">
+                        Upload
+                        <input type="file" name="file" id="image-input" />
+                    </div>
+                    <h1 class="fw-bold">Sourav Choudhary</h1>
+                </div>
+                <div class="container">
+                    <form class="row g-3" action="" method="POST">
+                        <!-- Add ID here -->
+                        <input type="hidden" name="id" value="" />
+                        <div class="col-md-6">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" readonly class="form-control" id="email" name="email" value="sourav@gmail.com">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="phone" class="form-label">Phone</label>
+                            <input type="text" readonly class="form-control" id="phone" name="phone" value="6478989899">
+                        </div>
+                        <div class="col-12">
+                            <label for="streetAddress" class="form-label">Street Address</label>
+                            <input type="text" readonly class="form-control" id="streetAddress" name="streetAddress" value="32 Halsey Avenue">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="city" class="form-label">City</label>
+                            <input type="text" readonly class="form-control" id="city" name="city" value="Toronto">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="province" class="form-label">Province</label>
+                            <select id="province" disabled class="form-select" name="province">
+                                <option>Alberta</option>
+                                <option>British Columbia</option>
+                                <option>Manitoba</option>
+                                <option>New Brunswick</option>
+                                <option>New Foundland and Labrador</option>
+                                <option>Northwest Territories</option>
+                                <option>Nova Scotia</option>
+                                <option>Nunavut</option>
+                                <option selected>Ontario</option>
+                                <option>Prince Edward Island</option>
+                                <option>Quebec</option>
+                                <option>Saskatchewan</option>
+                                <option>Yukon Territory</option>
+                            </select>
+                        </div>
+                        <div class="col-md-4">
+                            <label for="postal-code" class="form-label">Postal Code</label>
+                            <input type="text" class="form-control" id="postal-code" name="postal-code" readonly value="M3B2W6">
+                        </div>
+                        <div class="col-12">
+                            <button class="btn btn-primary" id="editBtn">Edit</button>
+                            <button type="submit" class="btn btn-primary" id="cancelBtn" name="cancelButton">Cancel</button>
+                            <button type="submit" class="btn btn-success" id="saveBtn" name="saveButton">Save</button>
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
     </div>
@@ -69,6 +120,71 @@
             $('#sidebar').toggleClass('active');
         });
     });
+
+    function enableEdit(inputElements) {
+        for (let i = 0; i < inputElements.length; i++) {
+            inputElements[i].setAttribute("readonly", true)
+        }
+        // Disable Dropdown
+        document.getElementById("province").setAttribute("disabled", true);
+        //Disable Image Upload
+        document.getElementById("upload-img").style.display = "none";
+    }
+
+    function disableEdit(inputElements) {
+        for (let i = 0; i < inputElements.length; i++) {
+            inputElements[i].removeAttribute("readonly")
+        }
+        // Enable Dropdown
+        document.getElementById("province").removeAttribute("disabled");
+        // Enable Upload Image
+        document.getElementById("upload-img").style.display = "block";
+    }
+
+
+    let editBtn = document.getElementById("editBtn");
+    let cancelBtn = document.getElementById("cancelBtn");
+    let saveBtn = document.getElementById("saveBtn");
+
+    addEventListener('load', (e) => {
+        cancelBtn.style.display = "none";
+        saveBtn.style.display = "none";
+        document.getElementById("upload-img").style.display = "none";
+    });
+
+    editBtn.addEventListener("click", (e) => {
+        e.preventDefault();
+        cancelBtn.style.display = "inline-block";
+        saveBtn.style.display = "inline-block";
+        editBtn.style.display = "none";
+
+        // Removing readonly property from input fields
+        let inputElements = document.getElementsByTagName("input");
+        disableEdit(inputElements);
+
+        // Focus on email input element
+        inputElements[2].focus();
+    })
+    cancelBtn.addEventListener("click", (e) => {
+        e.preventDefault();
+        editBtn.style.display = "inline-block";
+        cancelBtn.style.display = "none";
+        saveBtn.style.display = "none";
+
+        // Removing readonly property from input fields
+        let inputElements = document.getElementsByTagName("input");
+        enableEdit(inputElements);
+    })
+    saveBtn.addEventListener("click", (e) => {
+        e.preventDefault();
+        editBtn.style.display = "inline-block";
+        cancelBtn.style.display = "none";
+        saveBtn.style.display = "none";
+
+        // Removing readonly property from input fields
+        let inputElements = document.getElementsByTagName("input");
+        enableEdit(inputElements);
+    })
 </script>
 
 </html>
