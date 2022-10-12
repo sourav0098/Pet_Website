@@ -4,8 +4,11 @@ body {
   font-size: 15px;
 }
 
-.login-container div.login-image {
+.login-container div.login-image.login {
   background-image: url(../images/login-image.jpg);
+}
+.login-container div.login-image.register {
+  background-image: url(../images/register-image.jpg);
 }
 
 a {

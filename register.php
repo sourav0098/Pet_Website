@@ -7,7 +7,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <title>Login</title>
+     <title>Register</title>
 
   <link rel="shortcut icon" href="favicon.png">
 
@@ -19,37 +19,50 @@
 <body>
 
     <div class="login-container d-md-flex">
-        <div class="login-image login"></div>
+        <div class="login-image register"></div>
         <div class="authentication-container">
-                <h1 class="title">Sign In</h1>
+                <h1 class="title">Register</h1>
                 <p class="mb-4">Please enter your credentials.</p>
 
                 <form action="#" class="pt-4">
+                    <div class="form-floating">
+                        <input type="text" class="form-control" id="floatingFirstName" placeholder="Please enter your first name">
+                        <label for="floatingFirstName">First Name</label>
+                    </div>
+                    <div class="form-floating">
+                        <input type="text" class="form-control" id="floatingLastName" placeholder="Please enter your last name">
+                        <label for="floatingLastName">Last Name</label>
+                    </div>
                     <div class="form-floating">
                         <input type="email" class="form-control" id="floatingEmail" placeholder="Please enter your email">
                         <label for="floatingEmail">Email Address</label>
                     </div>
 
                     <div class="form-floating">
-                        <span class="password-show-toggle toggle-btn"><span class="uil"></span></span>
+                        <!-- <span class="password-show-toggle toggle-btn"><span class="uil"></span></span> -->
                         <input type="password" class="form-control floatingPassword" id="floatingPassword" placeholder="Please enter your password">
                         <label for="floatingPassword">Password</label>
+                    </div>
+
+                    <div class="form-floating">
+                        <span class="password-show-toggle toggle-btn"><span class="uil"></span></span>
+                        <input type="password" class="form-control floatingPassword" id="floatingConfirmPassword" placeholder="Please repeat your password">
+                        <label for="floatingConfirmPassword">Repeat Password</label>
                     </div>
 
                     <div class="d-flex justify-content-between">
                         <div class="form-check">
                             <input type="checkbox" class="form-check-input" id="remember">
-                            <label for="remember" class="form-check-label">Keep me logged in</label>
+                            <label for="remember" class="form-check-label">I accept the <a href="#">Terms and Conditions</a></label>
                         </div>
-                        <div><a href="#">Forgot password?</a></div>
                     </div>
                     
                     <div class="d-grid mb-4">
                         <button type="submit" class="btn btn-primary">Log in</button>
                     </div>
 
-                    <div class="mb-2">Don’t have an account? <a href="./register.php">Register</a></div>
-                    <div class="mb-2">Return without login <a href="index.php">Home</a></div>
+                    <div class="mb-2">Already have an account? <a href="login.php">Sign in</a></div>
+                    <div class="mb-2">Return without register <a href="index.php">Home</a></div>
 
                 </form>
         </div>
