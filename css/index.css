@@ -6,6 +6,6 @@
   --border: hsl(0, 0%, 82%);
 }
 * {
-  font-family: "Roboto";
+  font-family: "Roboto", sans-serif;
   scroll-behavior: smooth;
 }
