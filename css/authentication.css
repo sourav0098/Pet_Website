@@ -70,6 +70,7 @@ a:hover {
   position: relative;
   z-index: 1;
   padding: 5%;
+  /* padding: 6px 32px; */
   width: 100%;
   background: #fff;
   height: 100%;
@@ -164,8 +165,6 @@ a:hover {
 }
 
 .authentication-container .btn-primary {
-  --secondary: hsla(273, 70%, 58%);
-  --hoverColor: hsl(273, 70%, 45%);
   border-radius: 10px;
   background-color: var(--secondary);
   border-color: var(--secondary);

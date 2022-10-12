@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="./css/nav.css">
     <link rel="stylesheet" href="./css/footer.css">
     <link rel="stylesheet" href="./css/profile.css">
+    <link rel="stylesheet" href="./css/index.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
@@ -26,8 +27,8 @@
             <div class="d-flex align-items-center">
                 <div class="login-btn">
                     <i class="fa-solid fa-heart" title="Favourites"></i>
-                    <a href="./signup">SignUp</a>
-                    <a href="./login">Login</a>
+                    <a href="./register.php">SignUp</a>
+                    <a href="./login.php">Login</a>
                 </div>
                 <div class="profile">
                     <a class="navbar-brand" href="./profile.php">
@@ -54,12 +55,19 @@
                         Upload
                         <input type="file" name="file" id="image-input" />
                     </div>
-                    <h1 class="fw-bold">Sourav Choudhary</h1>
                 </div>
                 <div class="container">
                     <form class="row g-3" action="" method="POST">
                         <!-- Add ID here -->
                         <input type="hidden" name="id" value="" />
+                        <div class="col-md-6">
+                            <label for="fname" class="form-label">First Name</label>
+                            <input type="text" readonly class="form-control" id="fname" name="fname" value="Sourav">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="lname" class="form-label">Last Name</label>
+                            <input type="text" readonly class="form-control" id="lname" name="lname" value="Choudhary">
+                        </div>
                         <div class="col-md-6">
                             <label for="email" class="form-label">Email</label>
                             <input type="email" readonly class="form-control" id="email" name="email" value="sourav@gmail.com">
@@ -114,77 +122,5 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
-<script>
-    $(document).ready(function() {
-        $('#sideBarCollapse').on('click', function() {
-            $('#sidebar').toggleClass('active');
-        });
-    });
-
-    function enableEdit(inputElements) {
-        for (let i = 0; i < inputElements.length; i++) {
-            inputElements[i].setAttribute("readonly", true)
-        }
-        // Disable Dropdown
-        document.getElementById("province").setAttribute("disabled", true);
-        //Disable Image Upload
-        document.getElementById("upload-img").style.display = "none";
-    }
-
-    function disableEdit(inputElements) {
-        for (let i = 0; i < inputElements.length; i++) {
-            inputElements[i].removeAttribute("readonly")
-        }
-        // Enable Dropdown
-        document.getElementById("province").removeAttribute("disabled");
-        // Enable Upload Image
-        document.getElementById("upload-img").style.display = "block";
-    }
-
-
-    const editBtn = document.getElementById("editBtn");
-    const cancelBtn = document.getElementById("cancelBtn");
-    const saveBtn = document.getElementById("saveBtn");
-
-    addEventListener('load', (e) => {
-        cancelBtn.style.display = "none";
-        saveBtn.style.display = "none";
-        document.getElementById("upload-img").style.display = "none";
-    });
-
-    editBtn.addEventListener("click", (e) => {
-        e.preventDefault();
-        cancelBtn.style.display = "inline-block";
-        saveBtn.style.display = "inline-block";
-        editBtn.style.display = "none";
-
-        // Removing readonly property from input fields
-        let inputElements = document.getElementsByTagName("input");
-        disableEdit(inputElements);
-
-        // Focus on email input element
-        inputElements[2].focus();
-    })
-    cancelBtn.addEventListener("click", (e) => {
-        e.preventDefault();
-        editBtn.style.display = "inline-block";
-        cancelBtn.style.display = "none";
-        saveBtn.style.display = "none";
-
-        // Removing readonly property from input fields
-        let inputElements = document.getElementsByTagName("input");
-        enableEdit(inputElements);
-    })
-    saveBtn.addEventListener("click", (e) => {
-        e.preventDefault();
-        editBtn.style.display = "inline-block";
-        cancelBtn.style.display = "none";
-        saveBtn.style.display = "none";
-
-        // Removing readonly property from input fields
-        let inputElements = document.getElementsByTagName("input");
-        enableEdit(inputElements);
-    })
-</script>
-
+<script src="./js/profile.js"></script>
 </html>
