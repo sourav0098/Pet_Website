@@ -16,7 +16,7 @@
 </head>
 
 <body>
-<?php include "./Header_top.php" ?>
+<?php include "./header_top.php" ?>
 
     <div id="wrapper" class="d-flex">
         <!-- SideBar -->
