@@ -1,3 +1,4 @@
+// Toggling the sidebar menu
 $(document).ready(function () {
   $("#sideBarCollapse").on("click", function () {
     $("#sidebar").toggleClass("active");
@@ -75,6 +76,7 @@ passEditBtn.addEventListener("click", (e) => {
   document.getElementById("new-password").removeAttribute("readonly");
   document.getElementById("confirm-password").removeAttribute("readonly");
   document.getElementById("old-password").focus();
+  document.getElementById("old-password").value=""
 
   // Display New Password and Confirm Password
   displayBlock(newPasswordContainer);
@@ -86,6 +88,9 @@ passCancelBtn.addEventListener("click", (e) => {
   displayInlineBlock(passEditBtn);
   displayNone(passCancelBtn);
   displayNone(passUpdateBtn);
+
+  document.getElementById("old-password").value="xxxxxxxxxxxxxxxx"
+
   document.getElementById("old-password").setAttribute("readonly", true);
   document.getElementById("new-password").setAttribute("readonly", true);
   document.getElementById("confirm-password").setAttribute("readonly", true);
@@ -100,6 +105,8 @@ passUpdateBtn.addEventListener("click", (e) => {
   displayInlineBlock(passEditBtn);
   displayNone(passCancelBtn);
   displayNone(passUpdateBtn);
+
+  document.getElementById("old-password").value="xxxxxxxxxxxxxxxx"
 
   document.getElementById("old-password").setAttribute("readonly", true);
   document.getElementById("new-password").setAttribute("readonly", true);
@@ -124,7 +131,7 @@ toggleConfirmEye.addEventListener("click", (e) => {
   togglePassword(toggleConfirmEye, confirmPass);
 });
 
-// Show/Hide Password
+// Show/Hide Password Value
 function togglePassword(eyeIcon, passwordInput) {
   // toggle the type attribute
   const type =

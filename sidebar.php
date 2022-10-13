@@ -1,6 +1,7 @@
 <nav id="sidebar">
     <ul class="navbar-nav">
         <li class="nav-item ps-2"><a href="./profile.php" class="nav-link active text-white" aria-current="page"><i class="fa-solid fa-user pe-3"></i><span class="sidebar-item pe-3">Profile<span></a></li>
+        <li class="nav-item ps-2"><a href="./users.php" class="nav-link active text-white" aria-current="page"><i class="fa-solid fa-users pe-3"></i><span class="sidebar-item pe-3">Users<span></a></li>
         <li class="nav-item ps-2"><a href="./account.php" class="nav-link active text-white pe-3" aria-current="page"><i class="fa-solid fa-gear pe-2"></i><span class="sidebar-item pe-3">Account Settings</span></a></li>
         <li class="nav-item ps-2"><a href="" class="nav-link active text-white pe-3" aria-current="page"><i class="fa-solid fa-heart pe-2"></i><span class="sidebar-item pe-3">Favourites</span></a></li>
         <li class="nav-item ps-2"><a href="" class="nav-link active text-white pe-3" aria-current="page"><i class="fa-solid fa-paw pe-2"></i><span class="sidebar-item pe-3">Add a Pet</span></a></li>
