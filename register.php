@@ -22,7 +22,7 @@
         <div class="login-image register"></div>
         <div class="authentication-container pt-2 pb-2">
             <h1 class="title">Register</h1>
-            <p class="mb-4">Please enter your credentials.</p>
+            <p class="mb-4">Please enter your basic information.</p>
 
             <form action="#" class="pt-4">
                 <div class="form-floating">

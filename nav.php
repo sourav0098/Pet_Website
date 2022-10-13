@@ -1,25 +1,4 @@
-<header class="bg-white">
-    <div class="d-flex align-items-center justify-content-between">
-        <div class="logo d-flex align-items-center">
-            <a href="./index.php" class="nav-link d-flex align-items-center">
-                <img src="./images/logo.png" class="img-fluid" alt="">
-                <h1 class="fs-3">Little Paws</h1>
-            </a>
-        </div>
-        <div class="d-flex align-items-center">
-            <div class="login-btn">
-                <i class="fa-solid fa-heart" title="Favourites"></i>
-                <a href="./register.php">SignUp</a>
-                <a href="./login.php">Login</a>
-            </div>
-            <div class="profile">
-                <a class="navbar-brand" href="./profile.php">
-                    <img src="./images/user.png" alt="">
-                </a>
-            </div>
-        </div>
-    </div>
-</header>
+<?php include "./Header_top.php" ?>
 
 <nav class="navbar navbar-expand-lg">
     <div class="container-fluid justify-content-end">
@@ -36,9 +15,9 @@
                         Find a Pet
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">Dog</a></li>
-                        <li><a class="dropdown-item" href="#">Cat</a></li>
-                        <li><a class="dropdown-item" href="#">Other Animals</a></li>
+                        <li><a class="dropdown-item" href="Filter_pet.php">Dog</a></li>
+                        <li><a class="dropdown-item" href="Filter_pet.php">Cat</a></li>
+                        <li><a class="dropdown-item" href="Filter_pet.php">Other Animals</a></li>
                     </ul>
                 </li>
                 <li class="nav-item">
