@@ -197,7 +197,6 @@
     Array.from(edits).forEach((element) => {
         element.addEventListener('click', (e) => {
             tr = e.target.parentNode.parentNode;
-            console.log(tr)
             fname = tr.getElementsByTagName('td')[0].innerText;
             lname = tr.getElementsByTagName('td')[1].innerText;
             email = tr.getElementsByTagName('td')[2].innerText;
