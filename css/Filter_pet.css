@@ -6,3 +6,7 @@
 .card {
   max-width: 840px;
 }
+
+.card-img {
+  height: 100%;
+}
