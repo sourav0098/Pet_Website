@@ -1,8 +1,8 @@
 .cards-container {
-  background-color: white;
+  /* background-color: red; */
   max-height: 100vh;
 }
 
 .card {
-  max-width: 100vh;
+  max-width: 840px;
 }
