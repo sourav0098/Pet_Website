@@ -11,35 +11,14 @@
     <link rel="stylesheet" href="./css/nav.css">
     <link rel="stylesheet" href="./css/footer.css">
     <link rel="stylesheet" href="./css/index.css">
-    <link rel="stylesheet" href="./css/profile.css">
+    <link rel="stylesheet" href="./css/sidebar.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
 </head>
 
 <body>
-    <header class="bg-white">
-        <div class="d-flex align-items-center justify-content-between">
-            <div class="logo d-flex align-items-center">
-                <a href="./index.php" class="nav-link d-flex align-items-center">
-                    <img src="./images/logo.png" class="img-fluid" alt="">
-                    <h1 class="fs-3">Little Paws</h1>
-                </a>
-            </div>
-            <div class="d-flex align-items-center">
-                <div class="login-btn">
-                    <i class="fa-solid fa-heart" title="Favourites"></i>
-                    <a href="./register.php">SignUp</a>
-                    <a href="./login.php">Login</a>
-                </div>
-                <div class="profile">
-                    <a class="navbar-brand" href="./profile.php">
-                        <img src="./images/user.png" alt="">
-                    </a>
-                </div>
-            </div>
-        </div>
-    </header>
+    <?php include "./header_top.php"?>
 
     <div id="wrapper" style="height:100vh" class="d-flex">
         <!-- SideBar -->

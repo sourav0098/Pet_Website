@@ -25,9 +25,9 @@
             </a>
         </li>
         <li class="nav-item ps-2">
-            <a href="./account.php" class="nav-link active text-white pe-3" aria-current="page">
+            <a href="./settings.php" class="nav-link active text-white pe-3" aria-current="page">
                 <i title="Account Settings" class="fa-solid fa-gear pe-2"></i>
-                <span class="sidebar-item pe-3">Account Settings</span>
+                <span class="sidebar-item pe-3">Settings</span>
             </a>
         </li>
         <li title="Favourites" class="nav-item ps-2">
