@@ -27,7 +27,7 @@
 
 
 <div class="filter-container sticky-top row g-0 p-3 ">
-<div class="col-md">
+  <div class="col-md">
     <div class="form-floating">
     <select class="form-select" id="floatingSelectGrid" aria-label="Floating label select example">
         <option value="dog" selected>Dog</option>
@@ -100,197 +100,177 @@
 
 
 
-<div class="container cards-container mt-3 ">
-<section class="container d-flex flex-column align-items-center justify-content-center ">
+<div class="container mt-3 d-flex flex-column align-items-center justify-content-center ">
+    <div class="card mb-3 mt-3">
+      <div class="row no-gutters">
+        <div class="col-md-3">
+          <img src="./images/featured_1.jpg" class="card-img" alt="...">
+        </div>
+        <div class="col-md-6">
+          <div class="card-body">
+            <h5 class="card-title">Garu</h5>
+            <p class="card-text">Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. </p>
+            <div class="d-flex justify-content-between">
+              <small class=" text-muted">Female</small>
+              <small class=" text-muted">Golden</small>
+            </div>
+
+            <div class="d-flex justify-content-between">
+              <small class="text-muted">3 years</small>
+              <small class="text-muted">Medium hair</small>
+            </div>
+
+            <div lass="card-text">
+              <small class="text-muted">Toronto</small>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 d-flex flex-column align-items-center justify-content-center ">
+          <button type="button" class="btn btn-primary mb-4 col-sm-9 ">Profile</button>
+          <button type="button" class="btn btn-primary col-sm-9 mb-2">Contact</button>
+        </div>
+      </div>
+    </div>
+
+
+
+    <div class="card mb-3 mt-3">
+      <div class="row no-gutters">
+        <div class="col-md-3">
+          <img src="./images/featured_1.jpg" class="card-img" alt="...">
+        </div>
+        <div class="col-md-6">
+          <div class="card-body">
+            <h5 class="card-title">Garu</h5>
+            <p class="card-text">Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. </p>
+            <div class="d-flex justify-content-between">
+              <small class=" text-muted">Female</small>
+              <small class=" text-muted">Golden</small>
+            </div>
+
+            <div class="d-flex justify-content-between">
+              <small class="text-muted">3 years</small>
+              <small class="text-muted">Medium hair</small>
+            </div>
+
+            <div lass="card-text">
+              <small class="text-muted">Toronto</small>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 d-flex flex-column align-items-center justify-content-center ">
+          <button type="button" class="btn btn-primary mb-4 col-sm-9 ">Profile</button>
+          <button type="button" class="btn btn-primary col-sm-9 mb-2">Contact</button>
+        </div>
+      </div>
+    </div>
+
+
+
+    <div class="card mb-3 mt-3">
+      <div class="row no-gutters">
+        <div class="col-md-3">
+          <img src="./images/featured_1.jpg" class="card-img" alt="...">
+        </div>
+        <div class="col-md-6">
+          <div class="card-body">
+            <h5 class="card-title">Garu</h5>
+            <p class="card-text">Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. </p>
+            <div class="d-flex justify-content-between">
+              <small class=" text-muted">Female</small>
+              <small class=" text-muted">Golden</small>
+            </div>
+
+            <div class="d-flex justify-content-between">
+              <small class="text-muted">3 years</small>
+              <small class="text-muted">Medium hair</small>
+            </div>
+
+            <div lass="card-text">
+              <small class="text-muted">Toronto</small>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 d-flex flex-column align-items-center justify-content-center ">
+          <button type="button" class="btn btn-primary mb-4 col-sm-9 ">Profile</button>
+          <button type="button" class="btn btn-primary col-sm-9 mb-2">Contact</button>
+        </div>
+      </div>
+    </div>
+
+
+
+    <div class="card mb-3 mt-3">
+      <div class="row no-gutters">
+        <div class="col-md-3">
+          <img src="./images/featured_1.jpg" class="card-img" alt="...">
+        </div>
+        <div class="col-md-6">
+          <div class="card-body">
+            <h5 class="card-title">Garu</h5>
+            <p class="card-text">Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. </p>
+            <div class="d-flex justify-content-between">
+              <small class=" text-muted">Female</small>
+              <small class=" text-muted">Golden</small>
+            </div>
+
+            <div class="d-flex justify-content-between">
+              <small class="text-muted">3 years</small>
+              <small class="text-muted">Medium hair</small>
+            </div>
+
+            <div lass="card-text">
+              <small class="text-muted">Toronto</small>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 d-flex flex-column align-items-center justify-content-center ">
+          <button type="button" class="btn btn-primary mb-4 col-sm-9 ">Profile</button>
+          <button type="button" class="btn btn-primary col-sm-9 mb-2">Contact</button>
+        </div>
+      </div>
+    </div>
+
+
+
+    <div class="card mb-3 mt-3">
+      <div class="row no-gutters">
+        <div class="col-md-3">
+          <img src="./images/featured_1.jpg" class="card-img" alt="...">
+        </div>
+        <div class="col-md-6">
+          <div class="card-body">
+            <h5 class="card-title">Garu</h5>
+            <p class="card-text">Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. </p>
+            <div class="d-flex justify-content-between">
+              <small class=" text-muted">Female</small>
+              <small class=" text-muted">Golden</small>
+            </div>
+
+            <div class="d-flex justify-content-between">
+              <small class="text-muted">3 years</small>
+              <small class="text-muted">Medium hair</small>
+            </div>
+
+            <div lass="card-text">
+              <small class="text-muted">Toronto</small>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 d-flex flex-column align-items-center justify-content-center ">
+          <button type="button" class="btn btn-primary mb-4 col-sm-9 ">Profile</button>
+          <button type="button" class="btn btn-primary col-sm-9 mb-2">Contact</button>
+        </div>
+      </div>
+    </div>
   
+    
 
-
-  <div class="card mb-3 mt-3">
-  <div class="row no-gutters">
-    <div class="col-md-3">
-      <img src="./images/featured_1.jpg" class="card-img" alt="...">
-    </div>
-    <div class="col-md-6">
-      <div class="card-body">
-        <h5 class="card-title">Garu</h5>
-        <p class="card-text">Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. </p>
-        <div class="d-flex justify-content-between">
-          <small class=" text-muted">Female</small>
-          <small class=" text-muted">Golden</small>
-        </div>
-
-        <div class="d-flex justify-content-between">
-        <div lass="card-text"><small class="text-muted">3 years</small></div>
-        <div lass="card-text"><small class="text-muted">Medium hair</small></div>
-
-        </div>
-
-        <div lass="card-text"><small class="text-muted">Toronto</small></div>
-      </div>
-    </div>
-    <div class="col-md-3 d-flex flex-column align-items-center justify-content-center ">
-    <button type="button" class="btn btn-primary mb-4 col-sm-9 ">Profile</button>
-    <button type="button" class="btn btn-primary col-sm-9 mb-2">Contact</button>
-    </div>
-  </div>
-</div>
-
-  <div class="card mb-3 mt-3">
-  <div class="row no-gutters">
-    <div class="col-md-3">
-      <img src="./images/featured_1.jpg" class="card-img" alt="...">
-    </div>
-    <div class="col-md-6">
-      <div class="card-body">
-        <h5 class="card-title">Garu</h5>
-        <p class="card-text">Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. </p>
-        <div class="d-flex justify-content-between">
-          <small class=" text-muted">Female</small>
-          <small class=" text-muted">Golden</small>
-        </div>
-
-        <div class="d-flex justify-content-between">
-        <div lass="card-text"><small class="text-muted">3 years</small></div>
-        <div lass="card-text"><small class="text-muted">Medium hair</small></div>
-
-        </div>
-
-        <div lass="card-text"><small class="text-muted">Toronto</small></div>
-      </div>
-    </div>
-    <div class="col-md-3 d-flex flex-column align-items-center justify-content-center ">
-    <button type="button" class="btn btn-primary mb-4 col-sm-9 ">Profile</button>
-    <button type="button" class="btn btn-primary col-sm-9 ">Contact</button>
-    </div>
-  </div>
-</div>
-
-  <div class="card mb-3 mt-3">
-  <div class="row no-gutters">
-    <div class="col-md-3">
-      <img src="./images/featured_1.jpg" class="card-img" alt="...">
-    </div>
-    <div class="col-md-6">
-      <div class="card-body">
-        <h5 class="card-title">Garu</h5>
-        <p class="card-text">Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. </p>
-        <div class="d-flex justify-content-between">
-          <small class=" text-muted">Female</small>
-          <small class=" text-muted">Golden</small>
-        </div>
-
-        <div class="d-flex justify-content-between">
-        <div lass="card-text"><small class="text-muted">3 years</small></div>
-        <div lass="card-text"><small class="text-muted">Medium hair</small></div>
-
-        </div>
-
-        <div lass="card-text"><small class="text-muted">Toronto</small></div>
-      </div>
-    </div>
-    <div class="col-md-3 d-flex flex-column align-items-center justify-content-center ">
-    <button type="button" class="btn btn-primary mb-4 col-sm-9 ">Profile</button>
-    <button type="button" class="btn btn-primary col-sm-9 ">Contact</button>
-    </div>
-  </div>
-</div>
-
-  <div class="card mb-3 mt-3">
-  <div class="row no-gutters">
-    <div class="col-md-3">
-      <img src="./images/featured_1.jpg" class="card-img" alt="...">
-    </div>
-    <div class="col-md-6">
-      <div class="card-body">
-        <h5 class="card-title">Garu</h5>
-        <p class="card-text">Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. </p>
-        <div class="d-flex justify-content-between">
-          <small class=" text-muted">Female</small>
-          <small class=" text-muted">Golden</small>
-        </div>
-
-        <div class="d-flex justify-content-between">
-        <div lass="card-text"><small class="text-muted">3 years</small></div>
-        <div lass="card-text"><small class="text-muted">Medium hair</small></div>
-
-        </div>
-
-        <div lass="card-text"><small class="text-muted">Toronto</small></div>
-      </div>
-    </div>
-    <div class="col-md-3 d-flex flex-column align-items-center justify-content-center ">
-    <button type="button" class="btn btn-primary mb-4 col-sm-9 ">Profile</button>
-    <button type="button" class="btn btn-primary col-sm-9 ">Contact</button>
-    </div>
-  </div>
-</div>
-
-  <div class="card mb-3 mt-3">
-  <div class="row no-gutters">
-    <div class="col-md-3">
-      <img src="./images/featured_1.jpg" class="card-img" alt="...">
-    </div>
-    <div class="col-md-6">
-      <div class="card-body">
-        <h5 class="card-title">Garu</h5>
-        <p class="card-text">Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. </p>
-        <div class="d-flex justify-content-between">
-          <small class=" text-muted">Female</small>
-          <small class=" text-muted">Golden</small>
-        </div>
-
-        <div class="d-flex justify-content-between">
-        <div lass="card-text"><small class="text-muted">3 years</small></div>
-        <div lass="card-text"><small class="text-muted">Medium hair</small></div>
-
-        </div>
-
-        <div lass="card-text"><small class="text-muted">Toronto</small></div>
-      </div>
-    </div>
-    <div class="col-md-3 d-flex flex-column align-items-center justify-content-center ">
-    <button type="button" class="btn btn-primary mb-4 col-sm-9 ">Profile</button>
-    <button type="button" class="btn btn-primary col-sm-9 ">Contact</button>
-    </div>
-  </div>
-</div>
-
-  <div class="card mb-3 mt-3">
-  <div class="row no-gutters">
-    <div class="col-md-3">
-      <img src="./images/featured_1.jpg" class="card-img" alt="...">
-    </div>
-    <div class="col-md-6">
-      <div class="card-body">
-        <h5 class="card-title">Garu</h5>
-        <p class="card-text">Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. </p>
-        <div class="d-flex justify-content-between">
-          <small class=" text-muted">Female</small>
-          <small class=" text-muted">Golden</small>
-        </div>
-
-        <div class="d-flex justify-content-between">
-        <div lass="card-text"><small class="text-muted">3 years</small></div>
-        <div lass="card-text"><small class="text-muted">Medium hair</small></div>
-
-        </div>
-
-        <div lass="card-text"><small class="text-muted">Toronto</small></div>
-      </div>
-    </div>
-    <div class="col-md-3 d-flex flex-column align-items-center justify-content-center ">
-    <button type="button" class="btn btn-primary mb-4 col-sm-9 ">Profile</button>
-    <button type="button" class="btn btn-primary col-sm-9 ">Contact</button>
-    </div>
-  </div>
 </div>
 
 
 
 
 
-
-    </section>
-    </div>
 </body>
 </html>
