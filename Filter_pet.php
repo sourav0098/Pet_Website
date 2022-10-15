@@ -23,9 +23,88 @@
 </head>
 <body>
 <?php include "./Header_top.php" ?>
-<div class="container cards-container mt-3 overflow-auto ">
+
+
+
+<div class="filter-container sticky-top row g-0 p-3 ">
+<div class="col-md">
+    <div class="form-floating">
+    <select class="form-select" id="floatingSelectGrid" aria-label="Floating label select example">
+        <option value="dog" selected>Dog</option>
+        <option value="cat">Cat</option>
+        <option value="Cow">Cow</option>
+      </select>
+      <label for="floatingSelectGrid">Pet</label>
+    </div>
+  </div>
+  <div class="col-md">
+    <div class="form-floating">
+    <select class="form-select" id="floatingSelectGrid" aria-label="Floating label select example">
+        <option value="any" selected>Any</option>
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+      </select>
+      <label for="floatingSelectGrid">Gender</label>
+    </div>
+  </div>
+  <div class="col-md">
+    <div class="form-floating">
+      <select class="form-select" id="floatingSelectGrid" aria-label="Floating label select example">
+        <option selected value="any">Any</option>
+        <option value="1">0-1</option>
+        <option value="2">1-5</option>
+        <option value="3">5-10</option>
+        <option value="3">+10</option>
+      </select>
+      <label for="floatingSelectGrid">Age</label>
+    </div>
+  </div>
+  <div class="col-md">
+    <div class="form-floating">
+      <select class="form-select" id="floatingSelectGrid" aria-label="Floating label select example">
+        <option selected value="any">Any</option>
+        <option value="1">Akita</option>
+        <option value="2">Alaskan Malamute</option>
+        <option value="3">American Bulldog</option>
+        <option value="3">Airedale Terrier</option>
+      </select>
+      <label for="floatingSelectGrid">Breed</label>
+    </div>
+  </div>
+  <div class="col-md">
+    <div class="form-floating">
+      <select class="form-select" id="floatingSelectGrid" aria-label="Floating label select example">
+        <option selected value="any">Any</option>
+        <option value="1">Hairless</option>
+        <option value="2">Low</option>
+        <option value="3">Medium</option>
+        <option value="3">Long</option>
+      </select>
+      <label for="floatingSelectGrid">Hair Length</label>
+    </div>
+  </div>
+  <div class="col-md">
+    <div class="form-floating">
+      <select class="form-select" id="floatingSelectGrid" aria-label="Floating label select example">
+        <option selected value="any">Any</option>
+        <option value="1">Toronto</option>
+        <option value="2">Montreal</option>
+        <option value="3">Calgary</option>
+        <option value="3">Ottawa</option>
+      </select>
+      <label for="floatingSelectGrid">City</label>
+    </div>
+  </div>
+</div>
+
+
+
+
+<div class="container cards-container mt-3 ">
 <section class="container d-flex flex-column align-items-center justify-content-center ">
   
+
+
   <div class="card mb-3 mt-3">
   <div class="row no-gutters">
     <div class="col-md-3">
@@ -51,7 +130,7 @@
     </div>
     <div class="col-md-3 d-flex flex-column align-items-center justify-content-center ">
     <button type="button" class="btn btn-primary mb-4 col-sm-9 ">Profile</button>
-    <button type="button" class="btn btn-primary col-sm-9 ">Contact</button>
+    <button type="button" class="btn btn-primary col-sm-9 mb-2">Contact</button>
     </div>
   </div>
 </div>

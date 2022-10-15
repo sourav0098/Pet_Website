@@ -10,3 +10,7 @@
 .card-img {
   height: 100%;
 }
+
+div.filter-container {
+  background-color: white;
+}
