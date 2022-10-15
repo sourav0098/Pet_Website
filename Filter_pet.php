@@ -37,7 +37,7 @@
         <p class="card-text">Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. </p>
         <div lass="card-text"><small class="text-muted">Female</small></div>
         <div lass="card-text"><small class="text-muted">3 years</small></div>
-        <div lass="card-text"><small class="text-muted">Medium hair length</small></div>
+        <div lass="card-text"><small class="text-muted">Toronto</small></div>
       </div>
     </div>
     <div class="col-md-3 d-flex flex-column align-items-center justify-content-center ">
@@ -59,7 +59,7 @@
         <p class="card-text">Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. </p>
         <div><small class="text-muted">Female</small></div>
         <div><small class="text-muted">3 years</small></div>
-        <div><small class="text-muted">Medium hair length</small></div>
+        <div><small class="text-muted">Toronto</small></div>
       </div>
     </div>
     <div class="col-md-3 d-flex flex-column align-items-center justify-content-center ">
@@ -81,7 +81,7 @@
         <p class="card-text">Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. </p>
         <div><small class="text-muted">Female</small></div>
         <div><small class="text-muted">3 years</small></div>
-        <div><small class="text-muted">Medium hair length</small></div>
+        <div><small class="text-muted">Toronto</small></div>
       </div>
     </div>
     <div class="col-md-3 d-flex flex-column align-items-center justify-content-center ">
@@ -103,7 +103,7 @@
         <p class="card-text">Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. </p>
         <div><small class="text-muted">Female</small></div>
         <div><small class="text-muted">3 years</small></div>
-        <div><small class="text-muted">Medium hair length</small></div>
+        <div><small class="text-muted">Toronto</small></div>
       </div>
     </div>
     <div class="col-md-3 d-flex flex-column align-items-center justify-content-center ">
@@ -125,7 +125,7 @@
         <p class="card-text">Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. </p>
         <div><small class="text-muted">Female</small></div>
         <div><small class="text-muted">3 years</small></div>
-        <div><small class="text-muted">Medium hair length</small></div>
+        <div><small class="text-muted">Toronto</small></div>
       </div>
     </div>
     <div class="col-md-3 d-flex flex-column align-items-center justify-content-center ">
@@ -147,7 +147,7 @@
         <p class="card-text">Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. </p>
         <div><small class="text-muted">Female</small></div>
         <div><small class="text-muted">3 years</small></div>
-        <div><small class="text-muted">Medium hair length</small></div>
+        <div><small class="text-muted">Toronto</small></div>
       </div>
     </div>
     <div class="col-md-3 d-flex flex-column align-items-center justify-content-center ">
@@ -169,7 +169,7 @@
         <p class="card-text">Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. </p>
         <div><small class="text-muted">Female</small></div>
         <div><small class="text-muted">3 years</small></div>
-        <div><small class="text-muted">Medium hair length</small></div>
+        <div><small class="text-muted">Toronto</small></div>
       </div>
     </div>
     <div class="col-md-3 d-flex flex-column align-items-center justify-content-center ">
