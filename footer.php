@@ -15,7 +15,7 @@
                             <a href="" class="nav-link"><i class="fas fa-paw pe-3"></i>FAQ</a>
                         </li>
                         <li class="mb-2">
-                            <a href="#!" class="nav-link"><i class="fas fa-paw pe-3"></i>About Us</a>
+                            <a href="About_us.php" class="nav-link"><i class="fas fa-paw pe-3"></i>About Us</a>
                         </li>
                         <li class="mb-2">
                             <a href="#!" class="nav-link"><i class="fas fa-paw pe-3"></i>Contact Us</a>
