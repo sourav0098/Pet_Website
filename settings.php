@@ -62,12 +62,12 @@
                     <div class="col-md-6 position-relative" id="new-password-container">
                         <label for="new-password" class="form-label">New Password</label>
                         <input type="password" readonly class="form-control" id="new-password" name="new-password" value="">
-                        <i class="fa-solid fa-eye" id="toggleNewEye"></i>
+                        <i class="fa-solid fa-eye-slash" id="toggleNewEye"></i>
                     </div>
                     <div class="col-md-6 position-relative" id="confirm-password-container">
                         <label for="cpassword" class="form-label">Confirm Password</label>
                         <input type="password" readonly class="form-control" id="confirm-password" name="cpassword" value="">
-                        <i class="fa-solid fa-eye" id="toggleConfirmEye"></i>
+                        <i class="fa-solid fa-eye-slash" id="toggleConfirmEye"></i>
                     </div>
                     <div class="col-12">
                         <button class="btn btn-primary" id="passEditBtn">Edit</button>

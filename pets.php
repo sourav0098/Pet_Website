@@ -57,14 +57,13 @@
                         <div class="col-12">
                             <label for="animalTypeEdit" class="form-label">Animal Type</label>
                             <select id="animalTypeEdit" class="form-select" name="animalTypeEdit">
-                                <option>Dog</option>
-                                <option>Cat</option>
-                                <option>Rabbit</option>
-                                <option>Bird</option>
-                                <option>Fish</option>
-                                <option>Other</option>
+                                <option value="Dog">Dog</option>
+                                <option value="Cat">Cat</option>
+                                <option value="Rabbit">Rabbit</option>
+                                <option value="Bird">Bird</option>
+                                <option value="Fish">Fish</option>
+                                <option value="other">Other</option>
                             </select>
-
                         </div>
                         <div class="col-md-12">
                             <label for="coatEdit" class="form-label">Coat Length</label>

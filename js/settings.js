@@ -76,7 +76,7 @@ passEditBtn.addEventListener("click", (e) => {
   document.getElementById("new-password").removeAttribute("readonly");
   document.getElementById("confirm-password").removeAttribute("readonly");
   document.getElementById("old-password").focus();
-  document.getElementById("old-password").value=""
+  document.getElementById("old-password").value = "";
 
   // Display New Password and Confirm Password
   displayBlock(newPasswordContainer);
@@ -89,7 +89,7 @@ passCancelBtn.addEventListener("click", (e) => {
   displayNone(passCancelBtn);
   displayNone(passUpdateBtn);
 
-  document.getElementById("old-password").value="xxxxxxxxxxxxxxxx"
+  document.getElementById("old-password").value = "xxxxxxxxxxxxxxxx";
 
   document.getElementById("old-password").setAttribute("readonly", true);
   document.getElementById("new-password").setAttribute("readonly", true);
@@ -106,7 +106,7 @@ passUpdateBtn.addEventListener("click", (e) => {
   displayNone(passCancelBtn);
   displayNone(passUpdateBtn);
 
-  document.getElementById("old-password").value="xxxxxxxxxxxxxxxx"
+  document.getElementById("old-password").value = "xxxxxxxxxxxxxxxx";
 
   document.getElementById("old-password").setAttribute("readonly", true);
   document.getElementById("new-password").setAttribute("readonly", true);
