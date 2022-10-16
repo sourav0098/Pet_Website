@@ -131,8 +131,8 @@
           </div>
         </div>
         <div class="col-md-3 d-flex flex-column align-items-center justify-content-center ">
-          <button type="button" class="btn btn-primary mb-4 col-sm-9 ">Profile</button>
-          <button type="button" class="btn btn-primary col-sm-9 mb-2">Contact</button>
+          <button type="button" onClick="location.href='pet-profile.php'" class="btn btn-primary mb-4 col-sm-9 ">Profile</button>
+          <button type="button" onClick="location.href='contact-owner.php'" class="btn btn-primary col-sm-9 mb-2">Contact</button>
         </div>
       </div>
     </div>
@@ -164,8 +164,8 @@
           </div>
         </div>
         <div class="col-md-3 d-flex flex-column align-items-center justify-content-center ">
-          <button type="button" class="btn btn-primary mb-4 col-sm-9 ">Profile</button>
-          <button type="button" class="btn btn-primary col-sm-9 mb-2">Contact</button>
+          <button type="button" onClick="location.href='pet-profile.php'" class="btn btn-primary mb-4 col-sm-9 ">Profile</button>
+          <button type="button" onClick="location.href='contact-owner.php'" class="btn btn-primary col-sm-9 mb-2">Contact</button>
         </div>
       </div>
     </div>
@@ -197,8 +197,8 @@
           </div>
         </div>
         <div class="col-md-3 d-flex flex-column align-items-center justify-content-center ">
-          <button type="button" class="btn btn-primary mb-4 col-sm-9 ">Profile</button>
-          <button type="button" class="btn btn-primary col-sm-9 mb-2">Contact</button>
+          <button type="button" onClick="location.href='pet-profile.php'" class="btn btn-primary mb-4 col-sm-9 ">Profile</button>
+          <button type="button" onClick="location.href='contact-owner.php'" class="btn btn-primary col-sm-9 mb-2">Contact</button>
         </div>
       </div>
     </div>
@@ -230,8 +230,8 @@
           </div>
         </div>
         <div class="col-md-3 d-flex flex-column align-items-center justify-content-center ">
-          <button type="button" class="btn btn-primary mb-4 col-sm-9 ">Profile</button>
-          <button type="button" class="btn btn-primary col-sm-9 mb-2">Contact</button>
+          <button type="button" onClick="location.href='pet-profile.php'" class="btn btn-primary mb-4 col-sm-9 ">Profile</button>
+          <button type="button" onClick="location.href='contact-owner.php'" class="btn btn-primary col-sm-9 mb-2">Contact</button>
         </div>
       </div>
     </div>
@@ -263,8 +263,8 @@
           </div>
         </div>
         <div class="col-md-3 d-flex flex-column align-items-center justify-content-center ">
-          <button type="button" class="btn btn-primary mb-4 col-sm-9 ">Profile</button>
-          <button type="button" class="btn btn-primary col-sm-9 mb-2">Contact</button>
+          <button type="button" onClick="location.href='pet-profile.php'" class="btn btn-primary mb-4 col-sm-9 ">Profile</button>
+          <button type="button" onClick="location.href='contact-owner.php'" class="btn btn-primary col-sm-9 mb-2">Contact</button>
         </div>
       </div>
     </div>

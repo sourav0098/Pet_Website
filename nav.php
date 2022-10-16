@@ -27,7 +27,7 @@
                     <a class="nav-link active" aria-current="page" href="About_us.php">About Us</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Contact Us</a>
+                    <a class="nav-link active" aria-current="page" href="contact_us.php">Contact Us</a>
                 </li>
             </ul>
         </div>
