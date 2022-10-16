@@ -1,0 +1,21 @@
+.cards-container {
+  /* background-color: red; */
+  max-height: 100vh;
+}
+
+.card {
+  max-width: 840px;
+}
+
+.card-img {
+  height: 100%;
+}
+
+div.filter-container {
+  background-color: white;
+}
+
+button.btn {
+  background-color: var(--secondary);
+  border-color: var(--secondary);
+}
