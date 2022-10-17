@@ -7,19 +7,15 @@
   font-family: "Poppins" , sans-serif;
 }
 body{
-  min-height: 100vh;
-  width: 100%;
   background: #efeef1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 .container{
   width: 85%;
   background: #fff;
   border-radius: 6px;
   padding: 20px 60px 30px 40px;
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  margin: 64px auto;
 }
 .container .content{
   display: flex;
@@ -71,7 +67,7 @@ body{
 .content .right-side .topic-text{
   font-size: 23px;
   font-weight: 600;
-  color: #6504b4;
+  color: var(--secondary);
 }
 .right-side .input-box{
   height: 50px;
@@ -107,12 +103,15 @@ body{
   border: none;
   padding: 8px 16px;
   border-radius: 6px;
-  background: #6504b4;
+  background: var(--secondary);
   cursor: pointer;
   transition: all 0.3s ease;
 }
 .button input[type="button"]:hover{
-  background: #5029bc;
+  background: var(--hoverColor);
+}
+.back a{
+  color: var(--secondary)
 }
 
 @media (max-width: 950px) {

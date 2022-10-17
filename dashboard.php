@@ -39,7 +39,7 @@
                 <button type="button" id="sideBarCollapse" class="btn btn-secondary me-3"><i class="fa-solid fa-bars"></i></button>
                 <h1 class="fw-bold">Dashboard</h1>
             </div>
-            <div class="container d-flex flex-wrap align-items-center">
+            <div class="container d-flex flex-wrap align-items-center justify-content-evenly">
                 <div class="chart">
                     <canvas id="chart1"></canvas>
                 </div>

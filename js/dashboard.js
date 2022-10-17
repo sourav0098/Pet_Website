@@ -55,22 +55,6 @@ const config1 = {
   type: "bar",
   data: usersData,
   options: {
-    scales: {
-      xAxes: {
-        beginAtZero: true,
-        title: {
-          display: true,
-          text: "City",
-        },
-      },
-      yAxes: {
-        beginAtZero: true,
-        title: {
-          display: true,
-          text: "Number of users",
-        },
-      },
-    },
     plugins: {
       legend: {
         display: false,
