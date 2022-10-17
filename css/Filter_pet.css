@@ -19,3 +19,7 @@ button.btn {
   background-color: var(--secondary);
   border-color: var(--secondary);
 }
+
+.navbar{
+  z-index: 2000 !important;
+}

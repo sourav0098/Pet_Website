@@ -15,6 +15,7 @@
   <link rel="stylesheet" href="./css/nav.css">
   <link rel="stylesheet" href="./css/index.css">
   <link rel="stylesheet" href="./css/Filter_pet.css">
+  <link rel="shortcut icon" href="./images/favicon-32x32.png" type="image/x-icon">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
@@ -25,8 +26,6 @@
 
 <body>
   <?php include "./nav.php" ?>
-
-
 
   <div class="filter-container sticky-top row g-0 p-3 ">
     <div class="col-md ps-2 pe-2">
@@ -101,9 +100,6 @@
       </div>
     </div>
   </div>
-
-
-
 
   <div class="container mt-3 d-flex flex-column align-items-center justify-content-center ">
     <div class="card mb-3 mt-3">
