@@ -37,7 +37,7 @@
             </a>
         </li>
         <li title="Add a Pet" class="nav-item ps-2">
-            <a href="./addpet.php" class="nav-link active text-white pe-3" aria-current="page">
+            <a href="./add-pet.php" class="nav-link active text-white pe-3" aria-current="page">
                 <i class="fa-solid fa-paw pe-2"></i>
                 <span class="sidebar-item pe-3">Add a Pet</span>
             </a>
