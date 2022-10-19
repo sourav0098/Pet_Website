@@ -8,7 +8,7 @@
         </div>
         <div class="d-flex align-items-center">
             <div class="login-btn">
-                <i class="fa-solid fa-heart" title="Favourites"></i>
+                <a href="./favourites.php"><i class="fa-solid fa-heart" title="Favourites"></i></a>
                 <a href="./register.php">SignUp</a>
                 <a href="./login.php">Login</a>
             </div>

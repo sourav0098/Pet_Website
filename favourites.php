@@ -11,26 +11,22 @@
     <link rel="stylesheet" href="./css/index.css">
     <link rel="stylesheet" href="./css/sidebar.css">
     <link rel="stylesheet" href="./css/nav.css">
+    <link rel="stylesheet" href="./css/favourites.css">
     <link rel="stylesheet" href="./css/footer.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.css">
     <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
     <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.js"></script>
-    <script>
-        $(document).ready(function() {
-            $('#pets_table').DataTable();
-        });
-  
-    </script>
 </head>
+
 <body>
 
-    
+
     <?php include "./Header_top.php" ?>
     <div id="wrapper" class="d-flex">
 
-    <!-- SideBar -->
-    <?php include "./sidebar.php" ?>
+        <!-- SideBar -->
+        <?php include "./sidebar.php" ?>
 
         <!-- PageContent -->
         <div id="content" class="container-fluid">
@@ -38,42 +34,46 @@
                 <button type="button" id="sideBarCollapse" class="btn btn-secondary me-3"><i class="fa-solid fa-bars"></i></button>
                 <h1 class="fw-bold">Favourites</h1>
             </div>
-            <div class="container table-responsive">
-
-                <table class="table overflow-auto nowrap table-striped" id="pets_table">
-                        <thead>
-                            <tr>
-                                <th scope="col">S. No.</th>
-                                <th scope="col">Name</th>
-                                <th scope="col">Date of Birth</th>
-                                <th scope="col">Gender</th>
-                                <th scope="col">Animal Type</th>
-                                <th scope="col">Coat Length</th>
-                                <th scope="col">Characteristic</th>
-                                <th scope="col"></th>
-                            </tr>
-                        </thead>
-                            <tbody>
-                                <
-                            <tr>
-                                <th scope="row">1</th>
-                                <td>Milo</td>
-                                <td>2012-07-21</td>
-                                <td>Male</td>
-                                <td>Dog</td>
-                                <td>Short</td>
-                                <td>Friendly</td>
-                                <td><i onclick="toggleFav(this)" class="fa-solid fa-heart"></i></td>
-                                <script> function toggleFav(x){
-                                    x.classList.toggle("fa-thin fa-heart")
-                                }</script>
-                            </tr>
-                            </tbody>
-                </table>
-                <button type="button"  class="btn btn-primary" title="Add"
-                onclick="">
-                    <i class="fa-solid fa-plus"></i> Add Favourite
-                </button>
+            <div class="container d-flex">
+                <div class="favourite-pet-card">
+                    <a href="" class="nav-link">
+                        <div class="favourite-pet-image">
+                            <img src="./images/featured_1.jpg" width="230px" alt="">
+                            <i id="1" class="fa-solid fa-heart favourite-icon"></i>
+                        </div>
+                        <div class="favourite-pet-content">
+                            <h3 class="text-center fw-bold">Duke</h3>
+                            <p class="text-center m-0">Male</p>
+                            <p class="text-center m-0">Toronto</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="favourite-pet-card">
+                    <a href="" class="nav-link">
+                        <div class="favourite-pet-image">
+                            <img src="./images/featured_1.jpg" width="230px" alt="">
+                            <i id="2" class="fa-solid fa-heart favourite-icon"></i>
+                        </div>
+                        <div class="favourite-pet-content">
+                            <h3 class="text-center fw-bold">Duke</h3>
+                            <p class="text-center m-0">Male</p>
+                            <p class="text-center m-0">Toronto</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="favourite-pet-card">
+                    <a href="" class="nav-link">
+                        <div class="favourite-pet-image">
+                            <img src="./images/featured_1.jpg" width="230px" alt="">
+                            <i id="3" class="fa-solid fa-heart favourite-icon"></i>
+                        </div>
+                        <div class="favourite-pet-content">
+                            <h3 class="text-center fw-bold">Duke</h3>
+                            <p class="text-center m-0">Male</p>
+                            <p class="text-center m-0">Toronto</p>
+                        </div>
+                    </a>
+                </div>
             </div>
         </div>
     </div>

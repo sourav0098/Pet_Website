@@ -75,6 +75,7 @@
                     <a href="" class="nav-link">
                         <div class="featured-pet-image">
                             <img src="./images/featured_1.jpg" width="230px" alt="">
+                            <i id="3" class="fa-regular fa-heart favourite-icon"></i>
                         </div>
                         <div class="featured-pet-content">
                             <h3 class="text-center fw-bold">Duke</h3>
@@ -87,6 +88,7 @@
                     <a href="" class="nav-link">
                         <div class="featured-pet-image">
                             <img src="./images/featured_2.jpg" width="230px" alt="">
+                            <i id="3" class="fa-regular fa-heart favourite-icon"></i>
                         </div>
                         <div class="featured-pet-content">
                             <h3 class="text-center fw-bold">Milo</h3>
@@ -99,6 +101,7 @@
                     <a href="" class="nav-link">
                         <div class="featured-pet-image">
                             <img src="./images/featured_3.jpg" width="230px" alt="">
+                            <i id="3" class="fa-regular fa-heart favourite-icon"></i>
                         </div>
                         <div class="featured-pet-content">
                             <h3 class="text-center fw-bold">Rex</h3>
@@ -111,6 +114,7 @@
                     <a href="" class="nav-link">
                         <div class="featured-pet-image">
                             <img src="./images/featured_4.jpg" alt="">
+                            <i id="3" class="fa-regular fa-heart favourite-icon"></i>
                         </div>
                         <div class="featured-pet-content">
                             <h3 class="text-center fw-bold">Dollar</h3>
@@ -123,6 +127,7 @@
                     <a href="" class="nav-link">
                         <div class="featured-pet-image">
                             <img src="./images/featured_5.jpg" alt="">
+                            <i id="3" class="fa-regular fa-heart favourite-icon"></i>
                         </div>
                         <div class="featured-pet-content">
                             <h3 class="text-center fw-bold">Leo</h3>
@@ -218,5 +223,6 @@
         }
     });
 </script>
+<script src="./js/home.js"></script>
 
 </html>

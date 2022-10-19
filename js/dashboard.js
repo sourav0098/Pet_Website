@@ -61,7 +61,7 @@ const config1 = {
       },
       title: {
         display: true,
-        text: "Number of pets according to city",
+        text: "Number of users according to city",
         font: {
           size: 16,
         },
@@ -142,11 +142,11 @@ const pieChart = new Chart(document.getElementById("chart3"), config3);
 
 // Pets Adopted according to date
 const petsDataByDate = {
-  labels: ["Oct 15", "Oct 16", "Oct 18", "Oct 19", "Oct 20"],
+  labels: ["Oct 15", "Oct 16", "Oct 17", "Oct 18", "Oct 19", "Oct 20"],
   datasets: [
     {
       label: "Adopted Pet",
-      data: [8, 11, 7, 9, 7],
+      data: [8, 11, 7, 9, 7,13],
       fill: false,
       borderColor: "rgb(75, 192, 192)",
       tension: 0.1,

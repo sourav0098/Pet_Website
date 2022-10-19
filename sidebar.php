@@ -31,19 +31,19 @@
             </a>
         </li>
         <li title="Favourites" class="nav-item ps-2">
-            <a href="" class="nav-link active text-white pe-3" aria-current="page">
+            <a href="./favourites.php" class="nav-link active text-white pe-3" aria-current="page">
                 <i class="fa-solid fa-heart pe-2"></i>
                 <span class="sidebar-item pe-3">Favourites</span>
             </a>
         </li>
         <li title="Add a Pet" class="nav-item ps-2">
-            <a href="" class="nav-link active text-white pe-3" aria-current="page">
+            <a href="./addpet.php" class="nav-link active text-white pe-3" aria-current="page">
                 <i class="fa-solid fa-paw pe-2"></i>
                 <span class="sidebar-item pe-3">Add a Pet</span>
             </a>
         </li>
         <li title="Logout" class="nav-item ps-2">
-            <a href="" class="nav-link active text-white pe-3" aria-current="page">
+            <a href="./logout.php" class="nav-link active text-white pe-3" aria-current="page">
                 <i class="fa-solid fa-right-from-bracket pe-2"></i>
                 <span class="sidebar-item pe-3">Logout</span>
             </a>
