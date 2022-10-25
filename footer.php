@@ -12,13 +12,13 @@
                     <h5 class="mb-4 text-white">Help & Support</h5>
                     <ul class="list-unstyled footer-list">
                         <li class="mb-2">
-                            <a href="" class="nav-link"><i class="fas fa-paw pe-3"></i>FAQ</a>
+                            <a href="./FAQ.php" class="nav-link"><i class="fas fa-paw pe-3"></i>FAQ</a>
                         </li>
                         <li class="mb-2">
                             <a href="About_us.php" class="nav-link"><i class="fas fa-paw pe-3"></i>About Us</a>
                         </li>
                         <li class="mb-2">
-                            <a href="#!" class="nav-link"><i class="fas fa-paw pe-3"></i>Contact Us</a>
+                            <a href="./contact_us.php" class="nav-link"><i class="fas fa-paw pe-3"></i>Contact Us</a>
                         </li>
                         <li class="mb-2">
                             <a href="#!" class="nav-link"><i class="fas fa-paw pe-3"></i>Terms of Service</a>
@@ -34,13 +34,13 @@
 
                     <ul class="list-unstyled footer-list">
                         <li class="mb-2">
-                            <a href="#!" class="nav-link"><i class="fas fa-paw pe-3"></i>Dog Adoption</a>
+                            <a href="./Filter_pet.php" class="nav-link"><i class="fas fa-paw pe-3"></i>Dog Adoption</a>
                         </li>
                         <li class="mb-2">
-                            <a href="#!" class="nav-link"><i class="fas fa-paw pe-3"></i>Cat Adoption</a>
+                            <a href="./Filter_pet.php" class="nav-link"><i class="fas fa-paw pe-3"></i>Cat Adoption</a>
                         </li>
                         <li class="mb-2">
-                            <a href="#!" class="nav-link"><i class="fas fa-paw pe-3"></i>Other Pet Adoption</a>
+                            <a href="./Filter_pet.php" class="nav-link"><i class="fas fa-paw pe-3"></i>Other Pet Adoption</a>
                         </li>
 
                     </ul>

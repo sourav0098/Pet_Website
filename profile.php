@@ -17,52 +17,61 @@
 </head>
 
 <body>
-<?php include "./header_top.php" ?>
+    <?php include "./header_top.php" ?>
 
     <div id="wrapper" class="d-flex">
         <!-- SideBar -->
         <?php include "./sidebar.php" ?>
         <!-- PageContent -->
-        <div id="content" class="container-fluid">
+        <div id="content" class="container-fluid mb-3">
             <div class="container-fluid d-flex align-items-center">
                 <button type="button" id="sideBarCollapse" class="btn btn-secondary me-3"><i class="fa-solid fa-bars"></i></button>
                 <h1 class="fw-bold">Profile</h1>
             </div>
             <div>
-                <div class="text-center d-flex flex-column align-items-center" id="profile-img">
-                    <img src="./images/user.png" alt="" class="mb-2">
-                    <div class="file btn btn-primary position-relative overflow-hidden" id="upload-img">
-                        Upload
-                        <input type="file" name="file" id="image-input" />
-                    </div>
-                </div>
                 <div class="container">
                     <form class="row g-3" action="" method="POST">
                         <!-- Add ID here -->
                         <input type="hidden" name="id" value="" />
+
+                        <div class="text-center d-flex flex-column align-items-center" id="profile-img">
+                            <div id="image" class="circular mb-2">
+                                <img src="./images/user.png" alt="" >
+                            </div>
+                            <div class="file btn btn-primary position-relative overflow-hidden" id="upload-img">
+                                <label for="image-input">Upload</label>
+                                <input type="file" name="file" id="image-input" accept="image/x-png,image/gif,image/jpeg" />
+                            </div>
+                        </div>
                         <div class="col-md-6">
                             <label for="fname" class="form-label">First Name</label>
-                            <input type="text" readonly class="form-control" id="fname" name="fname" value="Sourav">
+                            <input type="text" readonly class="form-control" id="fname" name="fname" value="Sourav" min="2" max="4">
+                            <span class="text-danger fst-italic d-none">Please enter valid first name</span>
                         </div>
                         <div class="col-md-6">
                             <label for="lname" class="form-label">Last Name</label>
                             <input type="text" readonly class="form-control" id="lname" name="lname" value="Choudhary">
+                            <span class="text-danger fst-italic d-none">Please enter valid last name</span>
                         </div>
                         <div class="col-md-6">
                             <label for="email" class="form-label">Email</label>
-                            <input type="email" readonly class="form-control" id="email" name="email" value="sourav@gmail.com">
+                            <input type="email" readonly class="form-control" id="email" name="email" value="sourav@gmail.com" min="2" max="4">
+                            <span class="text-danger fst-italic d-none">Please enter valid email</span>
                         </div>
                         <div class="col-md-6">
                             <label for="phone" class="form-label">Phone</label>
                             <input type="text" readonly class="form-control" id="phone" name="phone" value="6478989899">
+                            <span class="text-danger fst-italic d-none">Please enter valid phone number</span>
                         </div>
                         <div class="col-12">
                             <label for="streetAddress" class="form-label">Street Address</label>
                             <input type="text" readonly class="form-control" id="streetAddress" name="streetAddress" value="32 Halsey Avenue">
+                            <span class="text-danger fst-italic d-none">Please enter your street address</span>
                         </div>
                         <div class="col-md-6">
                             <label for="city" class="form-label">City</label>
                             <input type="text" readonly class="form-control" id="city" name="city" value="Toronto">
+                            <span class="text-danger fst-italic d-none">Please enter your city name</span>
                         </div>
                         <div class="col-md-6">
                             <label for="province" class="form-label">Province</label>
@@ -85,6 +94,7 @@
                         <div class="col-md-4">
                             <label for="postal-code" class="form-label">Postal Code</label>
                             <input type="text" class="form-control" id="postal-code" name="postal-code" readonly value="M3B2W6">
+                            <span class="text-danger fst-italic d-none">Please enter valid postal code</span>
                         </div>
                         <div class="col-12">
                             <button class="btn btn-primary" id="editBtn">Edit</button>
@@ -102,5 +112,7 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+<script src="./js/validation.js"></script>
 <script src="./js/profile.js"></script>
+
 </html>
