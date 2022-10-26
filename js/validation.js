@@ -4,7 +4,7 @@ function validateName(name){
     if (regex.test(input)) {
         return true;
     }else{
-        return false
+        return false;
     }
 }
 
@@ -14,7 +14,7 @@ function validateEmail(email){
     if (regex.test(input)) {
         return true;
     }else{
-        return false
+        return false;
     }
 }
 
@@ -24,16 +24,26 @@ function validatePhone(phone){
     if (regex.test(input)) {
         return true;
     }else{
-        return false
+        return false;
     }
 }
 
 function validatePostalCode(postalcode){
-    let regex = /^[ABCEGHJ-NPRSTVXY]\d[ABCEGHJ-NPRSTV-Z]\d[ABCEGHJ-NPRSTV-Z]\d$/;
+    let regex = /^[ABCEGHJ-NPRSTVXYabceghj-nprstvxy]\d[ABCEGHJ-NPRSTV-Zabceghj-nprstv-z]\d[ABCEGHJ-NPRSTV-Zabceghj-nprstv-z]\d$/;
     let input=postalcode;
     if (regex.test(input)) {
         return true;
     }else{
-        return false
+        return false;
+    }
+}
+
+function validatePassword(pass){
+    let regex=/^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*-]).{8,20}$/;
+    let input=pass;
+    if(regex.test(input)){
+        return true;
+    }else{
+        return false;
     }
 }

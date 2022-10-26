@@ -5,6 +5,14 @@ $(document).ready(function () {
   });
 });
 
+let date = new Date();
+let todaydate = date.getDate();
+let month = date.getMonth() + 1;
+let year = date.getFullYear();
+let maxdate=`${year}-${month}-${todaydate}`
+let dobEdit=document.getElementById('dobEdit')
+dobEdit.setAttribute('max',maxdate)
+
 var editModal = new bootstrap.Modal(document.getElementById("editModal"));
 edits = document.getElementsByClassName("edit");
 Array.from(edits).forEach((element) => {
@@ -32,3 +40,24 @@ Array.from(edits).forEach((element) => {
     editModal.toggle();
   });
 });
+
+let validPetName=false
+
+let updateBtn=document.getElementById('update-btn');
+updateBtn.addEventListener('click',(e)=>{
+  let petname=document.getElementById('petnameEdit')
+  e.preventDefault();
+  if (validateName(petname.value)) {
+    validPetName = true;
+    petname.classList.remove("is-invalid");
+    petname.nextElementSibling.classList.add("d-none");
+  } else {
+    validPetName = false;
+    petname.nextElementSibling.classList.remove("d-none");
+    petname.classList.add("is-invalid");
+  }
+
+  if(validPetName==true){
+    editModal.toggle()
+  }
+})

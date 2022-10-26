@@ -43,6 +43,7 @@
                     <div class="col-md-6">
                         <label for="email" class="form-label">Email</label>
                         <input type="email" readonly class="form-control" id="email" name="email" value="sourav@gmail.com">
+                        <span class="text-danger fst-italic d-none">Please enter valid email</span>
                     </div>
                     <div class="col-12">
                         <button class="btn btn-primary" id="emailEditBtn">Edit</button>
@@ -63,11 +64,21 @@
                         <label for="new-password" class="form-label">New Password</label>
                         <input type="password" readonly class="form-control" id="new-password" name="new-password" value="">
                         <i class="fa-solid fa-eye-slash" id="toggleNewEye"></i>
+                        <span class="text-danger fst-italic d-none">Password should have
+                            <ul>
+                                <li>a minimum of 8 characters</li>
+                                <li>at least one lowercase character</li>
+                                <li>at least one uppercase character</li>
+                                <li>at least one special character</li>
+                                <li>at least one number(digit)</li>
+                            </ul>
+                        </span>
                     </div>
                     <div class="col-md-6 position-relative" id="confirm-password-container">
                         <label for="cpassword" class="form-label">Confirm Password</label>
                         <input type="password" readonly class="form-control" id="confirm-password" name="cpassword" value="">
                         <i class="fa-solid fa-eye-slash" id="toggleConfirmEye"></i>
+                        <span class="text-danger fst-italic d-none">Confirm Password does not match</span>
                     </div>
                     <div class="col-12">
                         <button class="btn btn-primary" id="passEditBtn">Edit</button>
@@ -83,6 +94,7 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+<script src="./js/validation.js"></script>
 <script src="./js/settings.js"></script>
 
 </html>

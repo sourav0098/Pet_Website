@@ -38,26 +38,32 @@
                         <div class="col-md-6">
                             <label for="fnameEdit" class="form-label">First Name</label>
                             <input type="text" class="form-control" id="fnameEdit" name="fnameEdit">
+                            <span class="text-danger fst-italic d-none">Please enter valid first name</span>
                         </div>
                         <div class="col-md-6">
                             <label for="lnameEdit" class="form-label">Last Name</label>
                             <input type="text" class="form-control" id="lnameEdit" name="lnameEdit">
+                            <span class="text-danger fst-italic d-none">Please enter valid last name</span>
                         </div>
                         <div class="col-md-6">
                             <label for="emailEdit" class="form-label">Email</label>
                             <input type="email" class="form-control" id="emailEdit" name="emailEdit">
+                            <span class="text-danger fst-italic d-none">Please enter valid email</span>
                         </div>
                         <div class="col-md-6">
                             <label for="phoneEdit" class="form-label">Phone</label>
                             <input type="text" class="form-control" id="phoneEdit" name="phoneEdit">
+                            <span class="text-danger fst-italic d-none">Please enter valid phone</span>
                         </div>
                         <div class="col-12">
                             <label for="addressEdit" class="form-label">Street Address</label>
                             <input type="text" class="form-control" id="addressEdit" name="addressEdit">
+                            <span class="text-danger fst-italic d-none">Please enter your street address</span>
                         </div>
                         <div class="col-md-6">
                             <label for="cityEdit" class="form-label">City</label>
                             <input type="text" class="form-control" id="cityEdit" name="cityEdit">
+                            <span class="text-danger fst-italic d-none">Please enter your city</span>
                         </div>
                         <div class="col-md-6">
                             <label for="provinceEdit" class="form-label">Province</label>
@@ -80,11 +86,12 @@
                         <div class="col-md-12">
                             <label for="postalcodeEdit" class="form-label">Postal Code</label>
                             <input type="text" class="form-control" id="postalcodeEdit" name="postalcodeEdit">
+                            <span class="text-danger fst-italic d-none">Please enter valid postal code</span>
                         </div>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button type="submit" class="btn btn-primary">Update</button>
+                        <button type="submit" id="update-btn" class="btn btn-primary">Update</button>
                     </div>
                 </form>
             </div>
@@ -92,7 +99,7 @@
     </div>
 
 
-    <?php include "./header_top.php"?>
+    <?php include "./header_top.php" ?>
 
     <div id="wrapper" style="height:100vh" class="d-flex">
         <!-- SideBar -->
@@ -156,11 +163,9 @@
         </div>
     </div>
 
-
-
-
 </body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+<script src="./js/validation.js"></script>
 <script src="./js/users.js"></script>
 
 </html>

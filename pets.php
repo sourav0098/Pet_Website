@@ -38,6 +38,7 @@
                         <div class="col-md-12">
                             <label for="petnameEdit" class="form-label">Name</label>
                             <input type="text" class="form-control" id="petnameEdit" name="petnameEdit">
+                            <span class="text-danger fst-italic d-none">Please enter valid pet name</span>
                         </div>
                         <div class="col-md-12">
                             <label for="dobEdit" class="form-label">Date of Birth</label>
@@ -54,7 +55,7 @@
                                 <label for="female" class="form-check-label">Female</label><br>
                             </div>
                         </div>
-                        <div class="col-12">
+                        <div class="col-md-6">
                             <label for="animalTypeEdit" class="form-label">Animal Type</label>
                             <select id="animalTypeEdit" class="form-select" name="animalTypeEdit">
                                 <option value="Dog">Dog</option>
@@ -65,7 +66,7 @@
                                 <option value="other">Other</option>
                             </select>
                         </div>
-                        <div class="col-md-12">
+                        <div class="col-md-6">
                             <label for="coatEdit" class="form-label">Coat Length</label>
                             <select id="coatEdit" class="form-select" name="coatEdit">
                                 <option>Hairless</option>
@@ -81,7 +82,7 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button type="submit" class="btn btn-primary">Update</button>
+                        <button type="submit" class="btn btn-primary" id="update-btn">Update</button>
                     </div>
                 </form>
             </div>
@@ -150,6 +151,7 @@
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js" integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+<script src="./js/validation.js"></script>
 <script src="./js/pets.js"></script>
 
 </html>

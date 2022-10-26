@@ -40,7 +40,7 @@
                             </div>
                             <div class="file btn btn-primary position-relative overflow-hidden" id="upload-img">
                                 <label for="image-input">Upload</label>
-                                <input type="file" name="file" id="image-input" accept="image/x-png,image/gif,image/jpeg" />
+                                <input type="file" name="profile-image" id="image-input" accept="image/x-png,image/gif,image/jpeg" />
                             </div>
                         </div>
                         <div class="col-md-6">
