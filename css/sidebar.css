@@ -34,6 +34,10 @@
   color: white !important;
 }
 
+.text-danger{
+  font-size: 0.8rem;
+}
+
 @media screen and (max-width: 1415px) {
   .table-responsive,
   .table-responsive button {

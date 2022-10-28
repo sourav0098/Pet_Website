@@ -39,7 +39,7 @@
                         <input type="hidden" name="id" value="" />
                         <div class="text-center d-flex flex-column align-items-center" id="profile-img">
                             <div id="image" class="circular mb-2">
-                                <img src="./images/pet_default.jpg" alt="" >
+                                <img src="./images/pet_default.jpg" alt="">
                             </div>
                             <div class="file btn btn-primary position-relative overflow-hidden" id="upload-img">
                                 <label for="image-input">Upload</label>
@@ -52,8 +52,13 @@
                             <span class="text-danger fst-italic d-none">Please enter valid first pet name</span>
                         </div>
                         <div class="col-md-12">
-                            <label for="dob" class="form-label">Date of Birth</label>
-                            <input type="date" class="form-control" id="dob" name="dob">
+                            <label for="age" class="form-label">Age</label>
+                            <select id="age" class="form-select" name="age">
+                                <option value="Baby">Baby</option>
+                                <option value="Young">Young</option>
+                                <option value="Adult">Adult</option>
+                                <option value="Senior">Senior</option>
+                            </select>
                         </div>
                         <div class="col-md-12">
                             <p class="form-label">Gender</p>
@@ -64,6 +69,41 @@
                             <div class="form-check form-check-inline">
                                 <input type="radio" class="form-check-input" id="female" name="gender" value="Female">
                                 <label for="female" class="form-check-label">Female</label><br>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <p class="form-label">Characteristic</p>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="checkbox" id="Cute" name="characteristic[]" value="Cute">
+                                <label class="form-check-label" for="Cute">Cute</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="checkbox" id="Loyal" name="characteristic[]" value="Loyal">
+                                <label class="form-check-label" for="Loyal">Loyal</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="checkbox" id="Friendly" name="characteristic[]" value="Friendly">
+                                <label class="form-check-label" for="Friendly">Friendly</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="checkbox" id="Playful" name="characteristic[]" value="Playful">
+                                <label class="form-check-label" for="Playful">Playful</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="checkbox" id="Intelligent" name="characteristic[]" value="Intelligent">
+                                <label class="form-check-label" for="Intelligent">Intelligent</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="checkbox" id="Happy" name="characteristic[]" value="Happy">
+                                <label class="form-check-label" for="Happy">Happy</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="checkbox" id="Affectionate" name="characteristic[]" value="Affectionate">
+                                <label class="form-check-label" for="Affectionate">Affectionate</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="checkbox" id="Courageous" name="characteristic[]" value="Courageous">
+                                <label class="form-check-label" for="Courageous">Courageous</label>
                             </div>
                         </div>
                         <div class="col-md-6">
@@ -77,21 +117,26 @@
                                 <option value="other">Other</option>
                             </select>
                         </div>
-
                         <div class="col-6">
                             <label for="coat" class="form-label">Coat Length</label>
                             <select id="coat" class="form-select" name="coat">
-                                <option>Hairless</option>
-                                <option>Short</option>
-                                <option>Medium</option>
-                                <option>Full</option>
+                                <option value="Hairless">Hairless</option>
+                                <option value="Short">Short</option>
+                                <option value="Medium">Medium</option>
+                                <option value="Full">Full</option>
                             </select>
                         </div>
                         <div class="col-md-12">
-                            <label for="characteristic" class="form-label">Characteristic</label>
-                            <textarea class="form-control" rows="4" style="resize:none;" name="characteristic" id="characteristic"></textarea>
+                            <label for="color" class="form-label">Color</label>
+                            <input type="text" class="form-control" id="color" name="color">
+                            <span class="text-danger fst-italic d-none">Please enter valid color</span>
                         </div>
-
+                        
+                        <div class="col-md-12">
+                            <label for="description" class="form-label">Description</label>
+                            <textarea class="form-control" placeholder="Leave a description here" id="description" col="10" rows="4"></textarea>
+                            <span class="text-danger fst-italic d-none">Please enter valid description</span>
+                        </div>
                         <div class="col-12">
                             <button type="submit" class="btn btn-primary" id="add-pet" name="addBtn">Add pet</button>
                         </div>

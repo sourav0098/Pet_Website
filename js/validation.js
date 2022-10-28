@@ -47,3 +47,13 @@ function validatePassword(pass){
         return false;
     }
 }
+
+function validateDescription(pass){
+    let regex=/^[a-zA-Z0-9\n\t ,'".!@?-]{2,500}$/;
+    let input=pass;
+    if(regex.test(input)){
+        return true;
+    }else{
+        return false;
+    }
+}
