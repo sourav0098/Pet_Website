@@ -120,7 +120,7 @@
                                 <option value="Full">Full</option>
                             </select>
                         </div>
-                        <div class="col-md-6">
+                        <div class="col-md-12">
                             <label for="colorEdit" class="form-label">Color</label>
                             <input type="text" class="form-control" id="colorEdit" name="colorEdit">
                             <span class="text-danger fst-italic d-none">Please enter valid color</span>

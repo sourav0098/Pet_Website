@@ -21,7 +21,7 @@
                     </ul>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">How it works</a>
+                    <a class="nav-link active" aria-current="page" href="how-it-works.php">How it works</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="About_us.php">About Us</a>

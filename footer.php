@@ -12,7 +12,7 @@
                     <h5 class="mb-4 text-white">Help & Support</h5>
                     <ul class="list-unstyled footer-list">
                         <li class="mb-2">
-                            <a href="./FAQ.php" class="nav-link"><i class="fas fa-paw pe-3"></i>FAQ</a>
+                            <a href="how-it-works.php" class="nav-link"><i class="fas fa-paw pe-3"></i>FAQ</a>
                         </li>
                         <li class="mb-2">
                             <a href="About_us.php" class="nav-link"><i class="fas fa-paw pe-3"></i>About Us</a>
