@@ -22,3 +22,37 @@
   height: 100%;
   object-fit: cover;
 }
+
+.cards-container {
+  max-height: 100vh;
+}
+
+.card {
+  max-width: 610px;
+}
+
+.card-img {
+  height: 100%;
+  object-fit: cover;
+  cursor: pointer;
+}
+#edit-icon {
+  position: absolute;
+  right: 17px;
+  top: 12px;
+  padding: 9px;
+  background-color: white;
+  color: var(--secondary);
+  border-radius: 50%;
+}
+#edit-icon:hover{
+  background-color: var(--secondary);
+  color: white;
+}
+.card-body {
+  position: relative;
+  cursor: pointer;
+}
+.card:hover{
+  border-color: var(--secondary);
+}

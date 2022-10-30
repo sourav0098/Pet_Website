@@ -4,6 +4,9 @@
 #sidebar {
   width: 220px;
   transition: width 1s ease;
+  position: sticky;
+  top: 0px;
+  height: 100vh;
 }
 #sidebar.active {
   width: 100px;
@@ -34,7 +37,7 @@
   color: white !important;
 }
 
-.text-danger{
+.text-danger {
   font-size: 0.8rem;
 }
 

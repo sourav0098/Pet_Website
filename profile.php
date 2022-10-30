@@ -23,20 +23,20 @@
         <!-- SideBar -->
         <?php include "./sidebar.php" ?>
         <!-- PageContent -->
-        <div id="content" class="container-fluid mb-3">
-            <div class="container-fluid d-flex align-items-center">
-                <button type="button" id="sideBarCollapse" class="btn btn-secondary me-3"><i class="fa-solid fa-bars"></i></button>
-                <h1 class="fw-bold">Profile</h1>
-            </div>
-            <div>
-                <div class="container">
+        <section id="content" class="container-fluid">
+            <div id="profile">
+                <div class="container-fluid d-flex align-items-center">
+                    <button type="button" id="sideBarCollapse" class="btn btn-secondary me-3"><i class="fa-solid fa-bars"></i></button>
+                    <h1 class="fw-bold">Profile</h1>
+                </div>
+                <div class="container mb-3">
                     <form class="row g-3" action="" method="POST">
                         <!-- Add ID here -->
                         <input type="hidden" name="id" value="" />
 
                         <div class="text-center d-flex flex-column align-items-center" id="profile-img">
                             <div id="image" class="circular mb-2">
-                                <img src="./images/user.png" alt="" >
+                                <img src="./images/user.png" alt="">
                             </div>
                             <div class="file btn btn-primary position-relative overflow-hidden" id="upload-img">
                                 <label for="image-input">Upload</label>
@@ -104,7 +104,98 @@
                     </form>
                 </div>
             </div>
-        </div>
+            <div id="cuurent-pets">
+                <div class="container-fluid d-flex align-items-center mt-4">
+                    <h1 class="fw-bold fs-3">Current Pets</h1>
+                </div>
+                <div class="container d-flex justify-content-between flex-wrap">
+                    <div class="card mb-3 mt-3">
+                        <div class="row no-gutters">
+                            <div class="col-md-4">
+                                <img src="./images/featured_1.jpg" class="card-img" alt="...">
+                            </div>
+                            <div class="col-md-8">
+                                <div class="card-body">
+                                    <i class="fa-solid fa-pen-to-square" id="edit-icon"></i>
+
+                                    <h5 class="card-title fw-bold">Garu</h5>
+                                    <p class="card-text text-justify">Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. </p>
+                                    <div class="d-flex justify-content-between">
+                                        <small class=" text-muted">Female</small>
+                                        <small class=" text-muted">Golden</small>
+                                    </div>
+
+                                    <div class="d-flex justify-content-between">
+                                        <small class="text-muted">Baby</small>
+                                        <small class="text-muted">Medium hair</small>
+                                    </div>
+
+                                    <div class="d-flex justify-content-between">
+                                        <small class="text-muted">Toronto</small>
+                                        <small class="text-muted">Friendly, Loyal, Playful</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card mb-3 mt-3">
+                        <div class="row no-gutters">
+                            <div class="col-md-4">
+                                <img src="./images/featured_1.jpg" class="card-img" alt="...">
+                            </div>
+                            <div class="col-md-8">
+                                <div class="card-body">
+                                    <i class="fa-solid fa-pen-to-square" id="edit-icon"></i>
+                                    <h5 class="card-title fw-bold">Garu</h5>
+                                    <p class="card-text text-justify">Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. </p>
+                                    <div class="d-flex justify-content-between">
+                                        <small class=" text-muted">Female</small>
+                                        <small class=" text-muted">Golden</small>
+                                    </div>
+
+                                    <div class="d-flex justify-content-between">
+                                        <small class="text-muted">Baby</small>
+                                        <small class="text-muted">Medium hair</small>
+                                    </div>
+
+                                    <div class="d-flex justify-content-between">
+                                        <small class="text-muted">Toronto</small>
+                                        <small class="text-muted">Friendly, Loyal, Playful</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card mb-3 mt-3">
+                        <div class="row no-gutters">
+                            <div class="col-md-4">
+                                <img src="./images/featured_1.jpg" class="card-img" alt="...">
+                            </div>
+                            <div class="col-md-8">
+                                <div class="card-body">
+                                    <i class="fa-solid fa-pen-to-square" id="edit-icon"></i>
+                                    <h5 class="card-title fw-bold">Garu</h5>
+                                    <p class="card-text text-justify">Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. </p>
+                                    <div class="d-flex justify-content-between">
+                                        <small class=" text-muted">Female</small>
+                                        <small class=" text-muted">Golden</small>
+                                    </div>
+
+                                    <div class="d-flex justify-content-between">
+                                        <small class="text-muted">Baby</small>
+                                        <small class="text-muted">Medium hair</small>
+                                    </div>
+
+                                    <div class="d-flex justify-content-between">
+                                        <small class="text-muted">Toronto</small>
+                                        <small class="text-muted">Friendly, Loyal, Playful</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </section>
     </div>
 
 
