@@ -104,7 +104,8 @@
                     </form>
                 </div>
             </div>
-            <div id="cuurent-pets">
+            <!-- Current Pets -->
+            <div id="current-pets">
                 <div class="container-fluid d-flex align-items-center mt-4">
                     <h1 class="fw-bold fs-3">Current Pets</h1>
                 </div>
@@ -197,7 +198,6 @@
                 </div>
         </section>
     </div>
-
 
 </body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>

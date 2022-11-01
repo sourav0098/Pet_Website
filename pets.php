@@ -99,6 +99,10 @@
                                 <input class="form-check-input" type="checkbox" id="Courageous" name="characteristic[]" value="Courageous">
                                 <label class="form-check-label" for="Courageous">Courageous</label>
                             </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="checkbox" id="Aggressive" name="characteristic[]" value="Courageous">
+                                <label class="form-check-label" for="Aggressive">Aggressive</label>
+                            </div>
                         </div>
                         <div class="col-md-6">
                             <label for="animalTypeEdit" class="form-label">Animal Type</label>

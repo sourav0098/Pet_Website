@@ -45,7 +45,7 @@
   color: var(--secondary);
   border-radius: 50%;
 }
-#edit-icon:hover{
+#edit-icon:hover {
   background-color: var(--secondary);
   color: white;
 }
@@ -53,6 +53,15 @@
   position: relative;
   cursor: pointer;
 }
-.card:hover{
+.card:hover {
   border-color: var(--secondary);
+}
+.fa-plus {
+  padding: 19px 10px;
+  background-color: var(--secondary);
+  color: white;
+  text-align: center;
+  border-radius: 50%;
+  font-size: 28px;
+  cursor: pointer;
 }
