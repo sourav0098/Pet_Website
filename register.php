@@ -26,28 +26,32 @@
 
             <form action="#" class="pt-4">
                 <div class="form-floating">
-                    <input type="text" class="form-control" id="floatingFirstName" placeholder="Please enter your first name">
+                    <input type="text" class="form-control" id="floatingFirstName" placeholder="Please enter your first name"   min="2" max="4">
                     <label for="floatingFirstName">First Name</label>
+                    <span class="text-danger fst-italic d-none" id="floatingFirstNameSpan">Please enter valid first name</span>
                 </div>
                 <div class="form-floating">
-                    <input type="text" class="form-control" id="floatingLastName" placeholder="Please enter your last name">
+                    <input type="text" class="form-control" id="floatingLastName" placeholder="Please enter your last name" >
                     <label for="floatingLastName">Last Name</label>
+                    <span class="text-danger fst-italic d-none" id="floatingLastNameSpan">Please enter a valid last name</span>
                 </div>
                 <div class="form-floating">
-                    <input type="email" class="form-control" id="floatingEmail" placeholder="Please enter your email">
+                    <input type="email" class="form-control" id="floatingEmail" placeholder="Please enter your email" >
                     <label for="floatingEmail">Email Address</label>
+                    <span class="text-danger fst-italic d-none" id="emailSpan">Please enter valid email</span>
                 </div>
 
                 <div class="form-floating">
-                    <!-- <span class="password-show-toggle toggle-btn"><span class="uil"></span></span> -->
-                    <input type="password" class="form-control floatingPassword" id="floatingPassword" placeholder="Please enter your password">
+                    <input type="password" class="form-control floatingPassword" id="floatingPassword" placeholder="Please enter your password" >
                     <label for="floatingPassword">Password</label>
+                    <span class="text-danger fst-italic d-none" id="passwordSpan">Must be minimum eight characters and a number </span>
                 </div>
 
                 <div class="form-floating">
                     <span class="password-show-toggle toggle-btn"><span class="uil"></span></span>
-                    <input type="password" class="form-control floatingPassword" id="floatingConfirmPassword" placeholder="Please repeat your password">
+                    <input type="password" class="form-control floatingPassword" id="floatingConfirmPassword" placeholder="Please repeat your password" >
                     <label for="floatingConfirmPassword">Confirm Password</label>
+                    <span class="text-danger fst-italic d-none" id="floatingConfirmPasswordSpan">Passwords must match </span>
                 </div>
 
                 <div class="d-flex justify-content-between">
@@ -58,7 +62,7 @@
                 </div>
 
                 <div class="d-grid mb-4">
-                    <button type="submit" class="btn btn-primary">Sign Up</button>
+                    <button type="submit" class="btn btn-primary" id="signUpBtn">Sign Up</button>
                 </div>
 
                 <div class="mb-2">Already have an account? <a href="login.php">Sign in</a></div>
@@ -73,6 +77,9 @@
 
 
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+
+    <script src="js/validation.js"></script>
+    <script src="js/register.js"></script>
 
 </body>
 

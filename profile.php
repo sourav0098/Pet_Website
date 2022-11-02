@@ -17,11 +17,11 @@
 </head>
 
 <body>
-    <?php include "./header_top.php" ?>
+    <?php include "./header_top.php"?>
 
     <div id="wrapper" class="d-flex">
         <!-- SideBar -->
-        <?php include "./sidebar.php" ?>
+        <?php include "./sidebar.php"?>
         <!-- PageContent -->
         <section id="content" class="container-fluid">
             <div id="profile">
@@ -56,7 +56,7 @@
                         <div class="col-md-6">
                             <label for="email" class="form-label">Email</label>
                             <input type="email" readonly class="form-control" id="email" name="email" value="sourav@gmail.com" min="2" max="4">
-                            <span class="text-danger fst-italic d-none">Please enter valid email</span>
+                            <span class="text-danger fst-italic d-none">Please enter valid totoro</span>
                         </div>
                         <div class="col-md-6">
                             <label for="phone" class="form-label">Phone</label>

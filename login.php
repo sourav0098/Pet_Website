@@ -28,12 +28,14 @@
                 <div class="form-floating">
                     <input type="email" class="form-control" id="floatingEmail" placeholder="Please enter your email">
                     <label for="floatingEmail">Email Address</label>
+                    <span class="text-danger fst-italic d-none" id="emailSpan">Please enter valid email</span>
                 </div>
 
                 <div class="form-floating">
                     <span class="password-show-toggle toggle-btn"><span class="uil"></span></span>
                     <input type="password" class="form-control floatingPassword" id="floatingPassword" placeholder="Please enter your password">
                     <label for="floatingPassword">Password</label>
+                    <span class="text-danger fst-italic d-none" id="passwordSpan">Must be minimum eight characters and a number </span>
                 </div>
 
                 <div class="d-flex justify-content-between">
@@ -45,7 +47,7 @@
                 </div>
 
                 <div class="d-grid mb-4">
-                    <button type="submit" class="btn btn-primary">Log in</button>
+                    <button type="submit" id="loginBtn" class="btn btn-primary">Log in</button>
                 </div>
 
                 <div class="mb-2">Don't have an account? <a href="./register.php">Register</a></div>
@@ -60,6 +62,9 @@
 
 
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+
+    <script src="js/validation.js"></script>
+    <script src="js/login.js"></script>
 
 </body>
 
