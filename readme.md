@@ -41,3 +41,5 @@ Font Family: Roboto
     ├───js
     │       ... js files
 ```
+
+Run composer install
