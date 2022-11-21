@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\FindPetController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -29,9 +30,11 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-Route::get('/filter-pets', function () {
-    return view('pets.filter-pets');
-});
+Route::get("/filter-pets", [FindPetController::class, "findDogs"]);
+
+// Route::get('/filter-pets', function () {
+//     return view('pets.filter-pets');
+// });
 /*
 Route::get('/profile', function () {
 return view('pets.profile');
