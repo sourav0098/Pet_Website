@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -11,63 +12,78 @@ use Illuminate\Support\Facades\Route;
 | routes are loaded by the RouteServiceProvider within a group which
 | contains the "web" middleware group. Now create something great!
 |
-*/
+ */
 
 Route::get('/', function () {
+    // return view('welcome');
     return view('pets.index');
-});
-
-Route::get('/profile', function () {
-    return view('pets.profile');
 });
 
 Route::get('/dashboard', function () {
     return view('pets.dashboard');
+})->middleware(['auth', 'verified'])->name('dashboard');
+
+Route::middleware('auth')->group(function () {
+    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-Route::get('/users', function () {
-    return view('pets.users');
-});
-
-Route::get('/pets', function () {
-    return view('pets.pets');
-});
-
-Route::get('/settings', function () {
-    return view('pets.settings');
-});
-
-Route::get('/favourites', function () {
-    return view('pets.favourites');
-});
-
-Route::get('/add-pet', function () {
-    return view('pets.add-pet');
-});
-
-Route::get('/login', function () {
-    return view('pets.login');
-});
-
-Route::get('/register', function () {
-    return view('pets.register');
-});
-
-Route::get('/about-us', function () {
-    return view('pets.about-us');
-});
-Route::get('/contact', function () {
-    return view('pets.contact');
-});
-Route::get('/how-it-works', function () {
-    return view('pets.how-it-works');
-});
 Route::get('/filter-pets', function () {
     return view('pets.filter-pets');
 });
+/*
+Route::get('/profile', function () {
+return view('pets.profile');
+});
+
+Route::get('/dashboard', function () {
+return view('pets.dashboard');
+});
+
+Route::get('/users', function () {
+return view('pets.users');
+});
+
+Route::get('/pets', function () {
+return view('pets.pets');
+});
+
+Route::get('/settings', function () {
+return view('pets.settings');
+});
+
+Route::get('/favourites', function () {
+return view('pets.favourites');
+});
+
+Route::get('/add-pet', function () {
+return view('pets.add-pet');
+});
+
+Route::get('/login', function () {
+return view('pets.login');
+});
+
+Route::get('/register', function () {
+return view('pets.register');
+});
+
+Route::get('/about-us', function () {
+return view('pets.about-us');
+});
+Route::get('/contact', function () {
+return view('pets.contact');
+});
+Route::get('/how-it-works', function () {
+return view('pets.how-it-works');
+});
+
 Route::get('/contact-owner', function () {
-    return view('pets.contact-owner');
+return view('pets.contact-owner');
 });
 Route::get('/pet-profile', function () {
-    return view('pets.pet-profile');
+return view('pets.pet-profile');
 });
+ */
+require __DIR__ . '/auth.php';

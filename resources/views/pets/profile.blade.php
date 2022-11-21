@@ -41,7 +41,7 @@
                 <div class="col-md-6">
                     <label for="email" class="form-label">Email</label>
                     <input type="email" readonly class="form-control" id="email" name="email" value="sourav@gmail.com" min="2" max="4">
-                    <span class="text-danger fst-italic d-none">Please enter valid totoro</span>
+                    <span class="text-danger fst-italic d-none">Please enter valid email</span>
                 </div>
                 <div class="col-md-6">
                     <label for="phone" class="form-label">Phone</label>
@@ -189,5 +189,5 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
     <script src="{{asset('/js/validation.js')}}"></script>
-    <script src="{{asset('/js/profile.js')}}"></script>    
+    <script src="{{asset('/js/profile.js')}}"></script>
 @endsection
