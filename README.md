@@ -15,6 +15,9 @@ CLIENT_SECRET = Your secret
 
 To avoid code repetition the code to call the API is in the class RequestManager.php. Just call the getRequest method with your specific query String.
 
+### Postman 
+
+Import the PetFinder.postman_collection.json file to Postman to test the API. 
 
 ## **Project Phase 3 - Database Design**
 
