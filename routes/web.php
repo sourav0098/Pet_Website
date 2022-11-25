@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AboutController;
 use App\Http\Controllers\AcceptTermsController;
 use App\Http\Controllers\FindPetController;
 use App\Http\Controllers\HomePageController;
@@ -34,6 +35,7 @@ Route::get("/filter-pets", [FindPetController::class, "findDogs"]);
 Route::get("/logout", [LogoutController::class, "logout"]);
 
 Route::get("/conditions", [AcceptTermsController::class, "see_conditions"]);
+Route::get("/about-us", [AboutController::class, "get_screen"]);
 
 // Route::get('/filter-pets', function () {
 //     return view('pets.filter-pets');
