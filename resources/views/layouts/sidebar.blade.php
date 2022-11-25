@@ -23,15 +23,22 @@
             </div>
             <div class="d-flex align-items-center">
                 <div class="login-btn">
+                    @if (Auth::check()) 
                     <a href="./favourites"><i class="fa-solid fa-heart" title="Favourites"></i></a>
+                    <a href="./logout">Logout</a>
+                    @else
                     <a href="./register">SignUp</a>
                     <a href="./login">Login</a>
+                    @endif
                 </div>
+                @if (Auth::check())
                 <div class="profile">
                     <a class="navbar-brand" href="./profile">
                         <img src="./images/user.png" alt="">
                     </a>
                 </div>
+                @endif
+            </div>
             </div>
         </div>
     </header>

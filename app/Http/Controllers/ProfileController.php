@@ -17,10 +17,12 @@ class ProfileController extends Controller
      */
     public function edit(Request $request)
     {
-        return view('profile.edit', [
+        return view('pets.profile', [
             'user' => $request->user(),
         ]);
     }
+
+
 
     /**
      * Update the user's profile information.

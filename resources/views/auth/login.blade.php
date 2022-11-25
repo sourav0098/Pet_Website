@@ -57,7 +57,6 @@
 
                 <div class="mb-2">Don't have an account? <a href="./register">Register</a></div>
                 <div class="mb-2">Return without login <a href="index.php">Home</a></div>
-
             </form>
         </div>
     </div>

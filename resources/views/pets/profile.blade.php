@@ -15,9 +15,9 @@
             <h1 class="fw-bold">Profile</h1>
         </div>
         <div class="container mb-3">
-            <form class="row g-3" action="" method="POST">
-                <!-- Add ID here -->
-                <input type="hidden" name="id" value="" />
+            <form class="row g-3" action="{{ route('profile.update') }}" method="POST">
+                @csrf
+                @method('patch')
 
                 <div class="text-center d-flex flex-column align-items-center" id="profile-img">
                     <div id="image" class="circular mb-2">
@@ -30,32 +30,32 @@
                 </div>
                 <div class="col-md-6">
                     <label for="fname" class="form-label">First Name</label>
-                    <input type="text" readonly class="form-control" id="fname" name="fname" value="Sourav" min="2" max="4">
+                    <input type="text" readonly class="form-control" id="fname" name="fname" value={{$user->fname}} min="2" max="4">
                     <span class="text-danger fst-italic d-none">Please enter valid first name</span>
                 </div>
                 <div class="col-md-6">
                     <label for="lname" class="form-label">Last Name</label>
-                    <input type="text" readonly class="form-control" id="lname" name="lname" value="Choudhary">
+                    <input type="text" readonly class="form-control" id="lname" name="lname" value={{$user->lname}}>
                     <span class="text-danger fst-italic d-none">Please enter valid last name</span>
                 </div>
                 <div class="col-md-6">
                     <label for="email" class="form-label">Email</label>
-                    <input type="email" readonly class="form-control" id="email" name="email" value="sourav@gmail.com" min="2" max="4">
+                    <p class="form-control mb-0">{{$user->email}}</p>
                     <span class="text-danger fst-italic d-none">Please enter valid email</span>
                 </div>
                 <div class="col-md-6">
                     <label for="phone" class="form-label">Phone</label>
-                    <input type="text" readonly class="form-control" id="phone" name="phone" value="6478989899">
+                    <input type="text" readonly class="form-control" id="phone" name="phone" value={{$user->phone}}>
                     <span class="text-danger fst-italic d-none">Please enter valid phone number</span>
                 </div>
                 <div class="col-12">
                     <label for="streetAddress" class="form-label">Street Address</label>
-                    <input type="text" readonly class="form-control" id="streetAddress" name="streetAddress" value="32 Halsey Avenue">
+                    <input type="text" readonly class="form-control" id="streetAddress" name="streetAddress" value={{$user->street}}>
                     <span class="text-danger fst-italic d-none">Please enter your street address</span>
                 </div>
                 <div class="col-md-6">
                     <label for="city" class="form-label">City</label>
-                    <input type="text" readonly class="form-control" id="city" name="city" value="Toronto">
+                    <input type="text" readonly class="form-control" id="city" name="city" value={{$user->city}}>
                     <span class="text-danger fst-italic d-none">Please enter your city name</span>
                 </div>
                 <div class="col-md-6">
@@ -76,15 +76,15 @@
                         <option>Yukon Territory</option>
                     </select>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-6">
                     <label for="postal-code" class="form-label">Postal Code</label>
-                    <input type="text" class="form-control" id="postal-code" name="postal-code" readonly value="M3B2W6">
+                    <input type="text" class="form-control" id="postal-code" name="postal_code" readonly value={{$user->postal_code}}>
                     <span class="text-danger fst-italic d-none">Please enter valid postal code</span>
                 </div>
                 <div class="col-12">
                     <button class="btn btn-primary" id="editBtn">Edit</button>
-                    <button type="submit" class="btn btn-primary" id="cancelBtn" name="cancelButton">Cancel</button>
-                    <button type="submit" class="btn btn-success" id="saveBtn" name="saveButton">Save</button>
+                    <button class="btn btn-primary" id="cancelBtn">Cancel</button>
+                    <button type="submit" class="btn btn-success" id="saveBtn">Save</button>
                 </div>
             </form>
         </div>

@@ -23,8 +23,9 @@
             </div>
             <div class="d-flex align-items-center">
                 <div class="login-btn">
-                    @if (Auth::check())
+                    @if (Auth::check()) 
                     <a href="./favourites"><i class="fa-solid fa-heart" title="Favourites"></i></a>
+                    <a href="./logout">Logout</a>
                     @else
                     <a href="./register">SignUp</a>
                     <a href="./login">Login</a>

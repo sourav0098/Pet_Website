@@ -20,19 +20,29 @@
             <h1 class="title">Register</h1>
             <p class="mb-4">Please enter your basic information.</p>
 
+            {{-- Validation errors --}}
+            {{-- <auth-validation-errors class="mb-4" :errors="$errors"/> --}}
+
             <form method="POST" action="{{ route('register') }}" class="pt-4">
             @csrf
                 <div class="form-floating">
                     <!-- <input type="text" class="form-control" id="floatingFirstName" placeholder="Please enter your first name"   min="2" max="4"> -->
-                    <x-text-input id="name" class="form-control" type="text" name="name" :value="old('name')" required autofocus />
+                    <x-text-input id="fname" class="form-control" type="text" name="fname" :value="old('fname')" required autofocus />
                     <label for="floatingFirstName">First Name</label>
                     <span class="text-danger fst-italic d-none" id="floatingFirstNameSpan">Please enter valid first name</span>
                 </div>
 
                 <div class="form-floating">
+                    <!-- <input type="text" class="form-control" id="floatingFirstName" placeholder="Please enter your first name"   min="2" max="4"> -->
+                    <x-text-input id="lname" class="form-control" type="text" name="lname" :value="old('lname')" required autofocus />
+                    <label for="floatingFirstName">Last Name</label>
+                    <span class="text-danger fst-italic d-none" id="floatingFirstNameSpan">Please enter valid last name</span>
+                </div>
+
+                <div class="form-floating">
                     <!-- <input type="email" class="form-control" id="floatingEmail" placeholder="Please enter your email" > -->
                     <x-text-input id="email" class="form-control" type="email" name="email" :value="old('email')" required />
-                    <label for="floatingEmail">Email Address</label>
+                    <label for="floatingEmail">Email</label>
                     <span class="text-danger fst-italic d-none" id="emailSpan">Please enter valid email</span>
                 </div>
 
