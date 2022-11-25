@@ -61,19 +61,13 @@
                 <div class="col-md-6">
                     <label for="province" class="form-label">Province</label>
                     <select id="province" disabled class="form-select" name="province">
-                        <option>Alberta</option>
-                        <option>British Columbia</option>
-                        <option>Manitoba</option>
-                        <option>New Brunswick</option>
-                        <option>New Foundland and Labrador</option>
-                        <option>Northwest Territories</option>
-                        <option>Nova Scotia</option>
-                        <option>Nunavut</option>
-                        <option selected>Ontario</option>
-                        <option>Prince Edward Island</option>
-                        <option>Quebec</option>
-                        <option>Saskatchewan</option>
-                        <option>Yukon Territory</option>
+                        @foreach($provinces as $province)
+                            @if($province==$user->province)
+                            <option selected>{{$province}}</option>
+                            @else
+                            <option>{{$province}}</option>
+                            @endif
+                        @endforeach
                     </select>
                 </div>
                 <div class="col-md-6">
