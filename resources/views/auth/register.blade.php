@@ -69,7 +69,8 @@
                 <div class="d-flex justify-content-between">
                     <div class="form-check">
                         <input type="checkbox" class="form-check-input" id="remember">
-                        <label for="remember" class="form-check-label">I accept the <a href="#">Terms and Conditions</a></label>
+                        <label for="remember" class="form-check-label">I accept the <a href="conditions">Terms and Conditions</a></label>
+                        <span class="text-danger fst-italic d-none" id="conditionsSpan">You must read and accept the terms and conditions </span>
                     </div>
                 </div>
 

@@ -11,6 +11,19 @@ signUpBtn.addEventListener("click", (e) => {
     const floatingConfirmPassword = document.getElementById(
         "password_confirmation"
     );
+    const conditions = document.getElementById("remember");
+    const conditionsError = document.getElementById("conditionsSpan");
+
+    //Terms and conditions
+    console.log("conditions.checked ", conditions.checked);
+    if (conditions.checked) {
+        conditions.classList.remove("is-invalid");
+        conditionsError.classList.add("d-none");
+    } else {
+        e.preventDefault();
+        conditions.classList.add("is-invalid");
+        conditionsError.classList.remove("d-none");
+    }
 
     // First name
     if (validateName(floatingFirstName.value)) {

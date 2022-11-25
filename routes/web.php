@@ -1,9 +1,10 @@
 <?php
 
+use App\Http\Controllers\AcceptTermsController;
 use App\Http\Controllers\FindPetController;
 use App\Http\Controllers\HomePageController;
-use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\LogoutController;
+use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,12 +18,11 @@ use Illuminate\Support\Facades\Route;
 |
  */
 
-Route::get('/', [HomePageController::class,'index']);
+Route::get('/', [HomePageController::class, 'index']);
 
 Route::get('/dashboard', function () {
     return view('pets.dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
-
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -30,10 +30,10 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-
-
 Route::get("/filter-pets", [FindPetController::class, "findDogs"]);
 Route::get("/logout", [LogoutController::class, "logout"]);
+
+Route::get("/conditions", [AcceptTermsController::class, "see_conditions"]);
 
 // Route::get('/filter-pets', function () {
 //     return view('pets.filter-pets');
