@@ -28,15 +28,15 @@
                 <div class="form-floating">
                     <!-- <input type="text" class="form-control" id="floatingFirstName" placeholder="Please enter your first name"   min="2" max="4"> -->
                     <x-text-input id="fname" class="form-control" type="text" name="fname" :value="old('fname')" required autofocus />
-                    <label for="floatingFirstName">First Name</label>
+                    <label for="fname">First Name</label>
                     <span class="text-danger fst-italic d-none" id="floatingFirstNameSpan">Please enter valid first name</span>
                 </div>
 
                 <div class="form-floating">
                     <!-- <input type="text" class="form-control" id="floatingFirstName" placeholder="Please enter your first name"   min="2" max="4"> -->
                     <x-text-input id="lname" class="form-control" type="text" name="lname" :value="old('lname')" required autofocus />
-                    <label for="floatingFirstName">Last Name</label>
-                    <span class="text-danger fst-italic d-none" id="floatingFirstNameSpan">Please enter valid last name</span>
+                    <label for="lname">Last Name</label>
+                    <span class="text-danger fst-italic d-none" id="floatingLastNameSpan">Please enter valid last name</span>
                 </div>
 
                 <div class="form-floating">
@@ -74,7 +74,7 @@
                 </div>
 
                 <div class="d-grid mb-4">
-                    <button type="submit" class="btn btn-primary" >Sign Up</button>
+                    <button type="submit" class="btn btn-primary" id="signUpBtn">Sign Up</button>
                 </div>
 
                 <div class="mb-2">Already have an account? <a href="login">Sign in</a></div>

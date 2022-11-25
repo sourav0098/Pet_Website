@@ -25,7 +25,7 @@
             @csrf
                             <!-- Email Address -->
                             <div class="form-floating">
-                <x-text-input id="floatingEmail" class="form-control"  type="email" name="email" :value="old('email')" required autofocus />
+                <x-text-input id="floatingEmail" class="form-control"  type="email" name="email" :value="old('email')" autofocus />
                     <label for="floatingEmail">Email Address</label>
                     <span class="text-danger fst-italic d-none" id="emailSpan">Please enter valid email</span>
                     <x-input-error :messages="$errors->get('email')" class="mt-2" />
@@ -37,9 +37,9 @@
                     <x-text-input id="password" class="form-control floatingPassword"
                                 type="password"
                                 name="password"
-                                required autocomplete="current-password" />
+                                autocomplete="current-password" />
                     <label for="floatingPassword">Password</label>
-                    <span class="text-danger fst-italic d-none" id="passwordSpan">Must be minimum eight characters and a number </span>
+                    <span class="text-danger fst-italic d-none" id="passwordSpan">Please add a valid password</span>
                     <x-input-error :messages="$errors->get('password')" class="mt-2" />
                 </div>
 
@@ -52,7 +52,7 @@
                 </div>
 
                 <div class="d-grid mb-4">
-                    <x-primary-button type="submit" class="btn btn-primary">{{ __('Log in') }}</x-primary-button>
+                    <x-primary-button id="loginBtn" type="submit" class="btn btn-primary">{{ __('Log in') }}</x-primary-button>
                 </div>
 
                 <div class="mb-2">Don't have an account? <a href="./register">Register</a></div>
