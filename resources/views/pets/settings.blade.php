@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
         #toggleConfirmEye,
-        #toggleNewEye {
+        #toggleCurrentEye {
             position: absolute;
             top: 43px;
             right: 23px;
@@ -15,39 +15,31 @@
 @endsection
 
 @section('content')
-    <div id="content" class="container-fluid">
-        <!-- Email Container -->
-        <div class="container-fluid d-flex align-items-center">
-            <button type="button" id="sideBarCollapse" class="btn btn-secondary me-3"><i class="fa-solid fa-bars"></i></button>
-            <h1 class="fw-bold">Settings</h1>
-        </div>
-        <div class="container mb-3">
-            <h3 class="fw-bold">Email</h3>
-            <form class="row g-3" action="" method="POST">
-                <div class="col-md-6">
-                    <label for="email" class="form-label">Email</label>
-                    <input type="email" readonly class="form-control" id="email" name="email" value="sourav@gmail.com">
-                    <span class="text-danger fst-italic d-none">Please enter valid email</span>
-                </div>
-                <div class="col-12">
-                    <button class="btn btn-primary" id="emailEditBtn">Edit</button>
-                    <button type="submit" class="btn btn-primary" id="emailCancelBtn" name="cancelButton">Cancel</button>
-                    <button type="submit" class="btn btn-success" id="emailUpdateBtn" name="saveButton">Update</button>
-                </div>
-            </form>
-        </div>
-        <!-- Password Container -->
-        <div class="container">
-            <h3 class="fw-bold">Password</h3>
-            <form class="row g-3 flex-column" action="" method="POST">
-                <div class="col-md-6">
-                    <label for="old-password" class="form-label">Current Password</label>
-                    <input type="password" readonly class="form-control" id="old-password" name="old-password" value="xxxxxxxxxxxxxxxx">
+<div id="content" class="container-fluid">
+        @if (session('status') === 'password-updated')
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                <strong>Success! </strong>Password has been successfully updated
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        @endif
+            <!-- Password Container -->
+            <div class="container">
+                <h3 class="fw-bold">Password</h3>
+                <x-input-error :messages="$errors->updatePassword->get('current_password')" class="mt-2" />
+                <x-input-error :messages="$errors->updatePassword->get('password')" class="mt-2" />
+                <x-input-error :messages="$errors->updatePassword->get('password_confirmation')" class="mt-2" />
+            <form class="row g-3 flex-column" action="{{ route('settings.update') }}" method="POST">
+                @csrf
+                @method('PUT')
+                <div class="col-md-6 position-relative" id="current-password-container">
+                    <label for="current_password" class="form-label">Current Password</label>
+                    <input type="password" readonly class="form-control" id="current_password" name="current_password" autocomplete="current-password">
+                    <i class="fa-solid fa-eye-slash" id="toggleCurrentEye"></i>
+                    <span class="text-danger fst-italic d-none">Please enter your current password</span>
                 </div>
                 <div class="col-md-6 position-relative" id="new-password-container">
-                    <label for="new-password" class="form-label">New Password</label>
-                    <input type="password" readonly class="form-control" id="new-password" name="new-password" value="">
-                    <i class="fa-solid fa-eye-slash" id="toggleNewEye"></i>
+                    <label for="password" class="form-label">New Password</label>
+                    <input type="password" readonly class="form-control" id="password" name="password" autocomplete="new-password">
                     <span class="text-danger fst-italic d-none">Password should have
                         <ul>
                             <li>a minimum of 8 characters</li>
@@ -59,19 +51,95 @@
                     </span>
                 </div>
                 <div class="col-md-6 position-relative" id="confirm-password-container">
-                    <label for="cpassword" class="form-label">Confirm Password</label>
-                    <input type="password" readonly class="form-control" id="confirm-password" name="cpassword" value="">
+                    <label for="password_confirmation" class="form-label">Confirm Password</label>
+                    <input type="password" readonly class="form-control" id="password_confirmation" name="password_confirmation" autocomplete="new-password">
                     <i class="fa-solid fa-eye-slash" id="toggleConfirmEye"></i>
-                    <span class="text-danger fst-italic d-none">Confirm Password does not match</span>
+                    <span class="text-danger fst-italic d-none">Password does not match</span>
                 </div>
                 <div class="col-12">
                     <button class="btn btn-primary" id="passEditBtn">Edit</button>
-                    <button type="submit" class="btn btn-primary" id="passCancelBtn" name="cancelButton">Cancel</button>
-                    <button type="submit" class="btn btn-success" id="passUpdateBtn" name="saveButton">Update</button>
+                    <button class="btn btn-primary" id="passCancelBtn" name="cancelButton">Cancel</button>
+                    <button type="submit" class="btn btn-success" id="passUpdateBtn">Update</button>
                 </div>
             </form>
         </div>
+
+        <!-- Delete Account Container -->
+        <div class="container mt-4">
+            <h3 class="fw-bold">Delete Account</h3>
+            <x-input-error :messages="$errors->userDeletion->get('password')" class="mt-2" />
+            <p class="col-md-6">Once your account is deleted, all of its resources and data will be permanently deleted. Before deleting your account, please download any data or information that you wish to retain.</p>
+            <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#dangerModal">
+                Delete Account
+            </button>
+        </div>
     </div>
+
+    {{-- Danger Modal --}}
+    <div class="modal fade" id="dangerModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <div class="modal-header border-bottom-0 d-flex flex-column align-items-start pb-0">
+            <h5 class="fw-bold">Are you sure your want to delete your account?</h5>
+            <p class="mb-0">Once your account is deleted, all of its resources and data will be permanently deleted. Please enter your password to confirm you would like to permanently delete your account.</p>
+            </div>
+            <form action="{{ route('settings.destroy') }}" method="POST">
+                @csrf
+                @method('delete')
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <label for="del_password" class="form-label">Password</label>
+                        <input type="password" class="form-control" id="password" name="del_password">
+                      </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Cancel</button>
+                  <button type="submit" class="btn btn-danger">Delete Account</button>
+                </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    {{-- <section class="space-y-6">
+        <x-danger-button
+            x-data=""
+            x-on:click.prevent="$dispatch('open-modal', 'confirm-user-deletion')"
+        >Delete Account</x-danger-button>
+    
+        <x-modal name="confirm-user-deletion" :show="$errors->userDeletion->isNotEmpty()" focusable>
+            <form method="post" action="" class="p-6">
+                @csrf
+                @method('delete')
+    
+                <h2 class="text-lg font-medium text-gray-900">Are you sure your want to delete your account?</h2>
+                <p class="mt-1 text-sm text-gray-600">Once your account is deleted, all of its resources and data will be permanently deleted. Please enter your password to confirm you would like to permanently delete your account.</p>
+    
+                <div class="mt-6">
+                    <x-input-label for="password" value="Password" class="sr-only" />
+    
+                    <x-text-input
+                        id="password"
+                        name="password"
+                        type="password"
+                        class="mt-1 block w-3/4"
+                        placeholder="Password"
+                    />
+    
+                    <x-input-error :messages="$errors->userDeletion->get('password')" class="mt-2" />
+                </div>
+    
+                <div class="mt-6 flex justify-end">
+                    <x-secondary-button x-on:click="$dispatch('close')">
+                        {{ __('Cancel') }}
+                    </x-secondary-button>
+    
+                    <x-danger-button class="ml-3">
+                        {{ __('Delete Account') }}
+                    </x-danger-button>
+                </div>
+            </form>
+        </x-modal>
+    </section>     --}}
 @endsection
 
 @section('js')
