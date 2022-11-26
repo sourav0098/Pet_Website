@@ -6,7 +6,6 @@ use App\Http\Controllers\FindPetController;
 use App\Http\Controllers\HomePageController;
 use App\Http\Controllers\LogoutController;
 use App\Http\Controllers\ProfileController;
-use App\Http\Controllers\LogoutController;
 use App\Http\Controllers\SettingsController;
 use Illuminate\Support\Facades\Route;
 
@@ -35,7 +34,6 @@ Route::middleware('auth')->group(function () {
     Route::get("/settings", [SettingsController::class, "edit"])->name('settings.edit');
     Route::put("/settings", [SettingsController::class, "update"])->name('settings.update');
     Route::delete("/settings", [SettingsController::class, "destroy"])->name('settings.destroy');
-    // Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
     
     Route::get("/logout", [LogoutController::class, "logout"]);
 });
@@ -47,8 +45,8 @@ Route::get("/filter-pets", [FindPetController::class, "findDogs"]);
 Route::get("/conditions", [AcceptTermsController::class, "see_conditions"]);
 Route::get("/about-us", [AboutController::class, "get_screen"]);
 
-Route::get("/conditions", [AcceptTermsController::class, "see_conditions"]);
-Route::get("/about-us", [AboutController::class, "get_screen"]);
+// Route::get("/conditions", [AcceptTermsController::class, "see_conditions"]);
+// Route::get("/about-us", [AboutController::class, "get_screen"]);
 
 // Route::get('/filter-pets', function () {
 //     return view('pets.filter-pets');
