@@ -36,7 +36,7 @@
                     x-transition
                     x-init="setTimeout(() => show = false, 2000)"
                     class="text-sm text-gray-600"
-                >Saved.</p>
+                >Password has been successfully updated</p>
             @endif
         </div>
     </form>
