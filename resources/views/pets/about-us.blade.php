@@ -10,18 +10,18 @@
 @section('content')
 <div class="about-us-container">
     <div class="container">
-        <div class="row">
+        <div class="row align-items-center ">
             <div class="col-md-6">
                 <div class="about-us-img">
-                    <img src="images/featured_2.jpg" alt="" class="img-fluid">
+                    <img src="images/featured_2.jpg" alt="" class="w-50 img-fluid">
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="about-content">
                     <div class="about-sub-heading">
-                        
+
                     </div>
-                    <h2>About Us</h2>
+                    <h1>About Us</h1>
                     <p>This website is designed to support Canada residents to adopt or offer a pet in adoption. Its important that the person adopting knows that it needs to be with the animal the rest of its life. Also, the person that puts a dog in adoption is responsible for providing as accurate as possible information about the animal.</p>
                 </div>
                 <h5 class="mb-5">What you can do using Little Paws: </h5>
@@ -43,6 +43,38 @@
                 </div>
             </div>
         </div>
+        <section class="team">
+            <div class="container py-5">
+               <div class="row text-center">
+                <div class="col-lg-8 mx-auto col-md-12 col-sm-12 col-12">
+                    <h2>Meet The Team </h2>
+                    <p class="p-more-info">Please feel free to contact any of the people on the team for any questions or opportunities</p>
+                </div>
+               </div>
+               <div class="row pt-4">
+                   @foreach ($team as $person)
+                <div class="col-lg-6 col-md-12 col-sm-12 col-12 pt-5">
+                    <div class="row">
+                        <div class="col-lg-5 col-md-6 col-sm-6 col-6">
+                        @php
+                        $imagePath = "./images/" . $person->fname . ".jpg"
+                        @endphp
+
+                            <img src={{$imagePath}}  class="img-fluid team-member-img" alt="Toto">
+                        </div>
+                        <div class="col-lg-7 col-md-6 col-sm-6 col-6 pt-3">
+                            <h5>{{$person->fname}} {{$person->lname}}</h5>
+                            <small class="role">{{$person->role}}</small>
+                            <p class="dev-description">{{$person->description}}</p>
+                            <small class="text-muted">{{$person->email}}</small><br>
+                            <span><a href={{$person->linkedinUrl}}><i class="fab fa-linkedin"></i></a></span>
+                        </div>
+                    </div>
+                </div>
+                @endforeach
+                <div class="col-lg-6"></div>
+               </div>
+        </div></section>
     </div>
 </div>
 @endsection
