@@ -51,11 +51,11 @@ class DatabaseSeeder extends Seeder
         ]);
         DB::table('about')->insert([
             'fname' => "Jordan",
-            'lname' => "",
+            'lname' => "Chan",
             'role' => "developer",
-            'description' => "Willing to travel the world programming and in company of my guitar",
-            'email' => "jordan@gmail.com",
-            'linkedinUrl' => "",
+            'description' => "Curious about Web Programming and SQL databases",
+            'email' => "jordan.14chan@gmail.com",
+            'linkedinUrl' => "https://www.linkedin.com/in/jordan-chan49/",
 
         ]);
 
