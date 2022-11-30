@@ -1,5 +1,8 @@
-### Instructions to make it work in local
+## **Project Phase 4**
 
+## Prerequisites
+-   VS Code
+-   XAMPP
 -   Register in the **petfinder** API
 -   Generate the API key and secret
 -   Add the following variables to the env file
@@ -19,26 +22,37 @@ To avoid code repetition the code to call the API is in the class RequestManager
 
 Import the PetFinder.postman_collection.json file to Postman to test the API.
 
-## **Project Phase 3 - Database Design**
+## Instructions to Run the Application
+clone the git repo  
+Create a .env file and copy the contents of .env.example to it and enter your credentials for MySQL database
+
+composer install  
+npm install  
+php artisan migrate  
+php artisan db:seed  
+php artisan db:seed --class=UserSeeder  
+npm run dev
+
+Open a new terminal  
+php artisan serve
 
 ## Tasks
 
--   [x] Created front end of the website
--   [x] Designed the database
--   [x] Populated Database
--   [x] Proper naming conventions for tables and columns
--   [x] Table relationship (primary/foreign key)
+-   [x] Register and Login Page
+-   [x] Admin Dashboard
+-   [x] Database (Migrations and Seeders)
+-   [x] Update User/Admin Profile
+-   [x] Change Password
+-   [x] Delete Account
+-   [x] Find Pets
 
 ## Resources
-
--   Browser: Chrome
 -   Datbase: MySQL
 -   Server: XAMPP
 -   IDE: VS Code
--   Bootstrap, Unsplash, Font Awesome, Git and GitHub
+-   Bootstrap, Laravel Breeze, DataTables, Git and GitHub
 
 ### Color
-
 black: hsl(276, 7%, 30%);  
 secondary: hsl(273, 96%, 36%);  
 hoverColor: hsl(273, 70%, 45%);  
@@ -46,23 +60,10 @@ footer: hsl(260, 100%, 73%);
 border: hsl(0, 0%, 82%);
 
 ### Font
-
 Font Family: Roboto
 
-### Folder Structure
-
-```
-    │   .gitignore
-    │   readme.md
-    │   ... php files
-    ├───css
-    │       ... css files
-    │
-    ├───images
-    │       ... images
-    │
-    ├───js
-    │       ... js files
-```
-
-Run composer install
+### Contributors
+Juan Gutierrez [<img src="https://i.stack.imgur.com/gVE0j.png" alt="Linkedin">](https://www.linkedin.com/in/-juan-gutierrez/)  
+Jordan Chan [<img src="https://i.stack.imgur.com/gVE0j.png" alt="Linkedin">](https://www.linkedin.com/in/jordan-chan49/)   
+Rutvik Joshi [<img src="https://i.stack.imgur.com/gVE0j.png" alt="Linkedin">](https://www.linkedin.com/)  
+Sourav Choudhary [<img src="https://i.stack.imgur.com/gVE0j.png" alt="Linkedin">](https://www.linkedin.com/in/sourav009/) 
