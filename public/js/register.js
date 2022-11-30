@@ -2,8 +2,7 @@ let validEmail = false;
 const signUpBtn = document.getElementById("signUpBtn");
 
 signUpBtn.addEventListener("click", (e) => {
-    //e.preventDefault();
-    console.log("Register pressed");
+    // e.preventDefault();
     const floatingFirstName = document.getElementById("fname");
     const floatingLastName = document.getElementById("lname");
     const floatingEmail = document.getElementById("email");

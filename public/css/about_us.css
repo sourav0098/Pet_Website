@@ -43,6 +43,8 @@ img.team-member-img {
 
 .team-member-img {
     border-radius: 10px;
+    max-height: 350px;
+    object-fit: cover;
 }
 
 .p-more-info {
@@ -62,8 +64,12 @@ small {
 }
 
 .fa-linkedin {
-    color: blue;
+    color: #0A66C2;
     font-size: 1.2rem;
+}
+
+#emailIcon:hover{
+    color:#6c757d!important
 }
 
 .role {

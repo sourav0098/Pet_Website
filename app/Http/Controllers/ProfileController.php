@@ -20,7 +20,7 @@ class ProfileController extends Controller
         $provinces=['Alberta','British Columbia','Manitoba','New Brunswick','New Foundland and Labrador','Northwest Territories','Nova Scotia','Nunavut','Ontario','Prince Edward Island','Quebec','Saskatchewan','Yukon Territory'];
         return view('pets.profile', [
             'user' => $request->user(),
-            'provinces'=>$provinces
+            'provinces'=>$provinces,
         ]);
     }
 

@@ -10,7 +10,9 @@ use Illuminate\Support\Facades\Redirect;
 class SettingsController extends Controller
 {
     function edit(Request $request){
-        return view('pets.settings');
+        return view('pets.settings',[
+            'user'=>$request->user()
+        ]);
     }
 
     public function update(Request $request)

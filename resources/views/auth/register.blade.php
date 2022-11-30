@@ -30,6 +30,7 @@
                     <x-text-input id="fname" class="form-control" type="text" name="fname" :value="old('fname')" required autofocus />
                     <label for="fname">First Name</label>
                     <span class="text-danger fst-italic d-none" id="floatingFirstNameSpan">Please enter valid first name</span>
+                    <x-input-error :messages="$errors->get('fname')" class="mt-2" />
                 </div>
 
                 <div class="form-floating">
@@ -37,6 +38,7 @@
                     <x-text-input id="lname" class="form-control" type="text" name="lname" :value="old('lname')" required autofocus />
                     <label for="lname">Last Name</label>
                     <span class="text-danger fst-italic d-none" id="floatingLastNameSpan">Please enter valid last name</span>
+                    <x-input-error :messages="$errors->get('lname')" class="mt-2" />
                 </div>
 
                 <div class="form-floating">
@@ -44,6 +46,7 @@
                     <x-text-input id="email" class="form-control" type="email" name="email" :value="old('email')" required />
                     <label for="floatingEmail">Email</label>
                     <span class="text-danger fst-italic d-none" id="emailSpan">Please enter valid email</span>
+                    <x-input-error :messages="$errors->get('email')" class="mt-2" />
                 </div>
 
                 <div class="form-floating">
@@ -53,7 +56,17 @@
                                 name="password"
                                 required autocomplete="new-password" />
                     <label for="floatingPassword">Password</label>
-                    <span class="text-danger fst-italic d-none" id="passwordSpan">Must be minimum eight characters and a number </span>
+                    <span class="text-danger fst-italic d-none" id="passwordSpan">Password should have
+                        <ul>
+                            <li>a minimum of 8 characters</li>
+                            <li>at least one lowercase character</li>
+                            <li>at least one uppercase character</li>
+                            <li>at least one special character</li>
+                            <li>at least one number(digit)</li>
+                        </ul>
+                    </span>
+                    {{-- <span class="text-danger fst-italic d-none" id="passwordSpan">Password must be minimum eight characters and a number</span> --}}
+                    <x-input-error :messages="$errors->get('password')" class="mt-2" />
                 </div>
 
                 <div class="form-floating">
@@ -63,13 +76,14 @@
                                 type="password"
                                 name="password_confirmation" required />
                     <label for="floatingConfirmPassword">Confirm Password</label>
-                    <span class="text-danger fst-italic d-none" id="floatingConfirmPasswordSpan">Passwords must match </span>
+                    <span class="text-danger fst-italic d-none" id="floatingConfirmPasswordSpan">Passwords must match</span>
+                    <x-input-error :messages="$errors->get('password_confirmation')" class="mt-2" />
                 </div>
 
                 <div class="d-flex justify-content-between">
                     <div class="form-check">
                         <input type="checkbox" class="form-check-input" id="remember">
-                        <label for="remember" class="form-check-label">I accept the <a href="conditions">Terms and Conditions</a></label>
+                        <label for="remember" class="form-check-label d-block">I accept the <a href="conditions">Terms and Conditions</a></label>
                         <span class="text-danger fst-italic d-none" id="conditionsSpan">You must read and accept the terms and conditions </span>
                     </div>
                 </div>

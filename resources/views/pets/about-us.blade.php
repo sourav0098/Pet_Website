@@ -57,17 +57,17 @@
                     <div class="row">
                         <div class="col-lg-5 col-md-6 col-sm-6 col-6">
                         @php
-                        $imagePath = "./images/" . $person->fname . ".jpg"
+                        $imagePath = "./images/" . $person->fname . ".png"
                         @endphp
 
-                            <img src={{$imagePath}}  class="img-fluid team-member-img" alt="Toto">
+                            <img src={{$imagePath}}  class="w-100 team-member-img" alt="Toto">
                         </div>
                         <div class="col-lg-7 col-md-6 col-sm-6 col-6 pt-3">
-                            <h5>{{$person->fname}} {{$person->lname}}</h5>
-                            <small class="role">{{$person->role}}</small>
-                            <p class="dev-description">{{$person->description}}</p>
-                            <small class="text-muted">{{$person->email}}</small><br>
+                            <h5 class="fw-bold d-inline-block">{{$person->fname}} {{$person->lname}}</h5>
                             <span><a href={{$person->linkedinUrl}}><i class="fab fa-linkedin"></i></a></span>
+                            <small class="role d-block">{{$person->role}}</small>
+                            <p class="dev-description">{{$person->description}}</p>
+                            <a class="nav-link d-inline pe-2 text-muted" id="emailIcon" href="mailto:{{$person->email}}"><i class="fa-solid fa-envelope"></i></a><small class="text-muted">{{$person->email}}</small><br>
                         </div>
                     </div>
                 </div>
