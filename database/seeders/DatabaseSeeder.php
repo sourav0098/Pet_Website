@@ -60,9 +60,9 @@ class DatabaseSeeder extends Seeder
             'fname' => "Jordan",
             'lname' => "Chan",
             'role' => "developer",
-            'description' => "Willing to travel the world programming and in company of my guitar",
-            'email' => "jordan@gmail.com",
-            'linkedinUrl' => "",
+            'description' => "Curious about Web Programming and SQL databases",
+            'email' => "jordan.14chan@gmail.com",
+            'linkedinUrl' => "https://www.linkedin.com/in/jordan-chan49/",
             'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
             'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
         ]);
