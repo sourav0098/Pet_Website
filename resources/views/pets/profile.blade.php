@@ -9,33 +9,39 @@
 
 @section('content')
 <section id="content" class="container-fluid">
+    @if (session('status') === 'profile-updated')
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                <strong>Success! </strong>Profile has been successfully updated
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+    @endif
     <div id="profile">
         <div class="container-fluid d-flex align-items-center">
             <button type="button" id="sideBarCollapse" class="btn btn-secondary me-3"><i class="fa-solid fa-bars"></i></button>
             <h1 class="fw-bold">Profile</h1>
         </div>
         <div class="container mb-3">
-            <form class="row g-3" action="{{ route('profile.update') }}" method="POST">
+            <form class="row g-3" action="{{ route('profile.update') }}" enctype="multipart/form-data" method="POST">
                 @csrf
                 @method('patch')
 
                 <div class="text-center d-flex flex-column align-items-center" id="profile-img">
                     <div id="image" class="circular mb-2">
-                        <img src="./images/user.png" alt="">
+                        <img src="{{asset('uploads/'.$user->image)}}" alt="">
                     </div>
                     <div class="file btn btn-primary position-relative overflow-hidden" id="upload-img">
-                        <label for="image-input">Upload</label>
-                        <input type="file" name="profile-image" id="image-input" accept="image/x-png,image/gif,image/jpeg" />
+                        <label for="image-input">Choose Image</label>
+                        <input type="file" name="image" id="image-input" accept="image/x-png,image/gif,image/jpeg" />
                     </div>
                 </div>
                 <div class="col-md-6">
                     <label for="fname" class="form-label">First Name</label>
-                    <input type="text" readonly class="form-control" id="fname" name="fname" value={{$user->fname}} min="2" max="4">
+                    <input type="text" readonly class="form-control" id="fname" name="fname" value="{{$user->fname}}" min="2" max="4">
                     <span class="text-danger fst-italic d-none">Please enter valid first name</span>
                 </div>
                 <div class="col-md-6">
                     <label for="lname" class="form-label">Last Name</label>
-                    <input type="text" readonly class="form-control" id="lname" name="lname" value={{$user->lname}}>
+                    <input type="text" readonly class="form-control" id="lname" name="lname" value="{{$user->lname}}">
                     <span class="text-danger fst-italic d-none">Please enter valid last name</span>
                 </div>
                 <div class="col-md-6">
@@ -45,17 +51,17 @@
                 </div>
                 <div class="col-md-6">
                     <label for="phone" class="form-label">Phone</label>
-                    <input type="text" readonly class="form-control" id="phone" name="phone" value={{$user->phone}}>
+                    <input type="text" readonly class="form-control" id="phone" name="phone" value="{{$user->phone}}">
                     <span class="text-danger fst-italic d-none">Please enter valid phone number</span>
                 </div>
                 <div class="col-12">
                     <label for="streetAddress" class="form-label">Street Address</label>
-                    <input type="text" readonly class="form-control" id="streetAddress" name="streetAddress" value={{$user->street}}>
+                    <input type="text" readonly class="form-control" id="streetAddress" name="streetAddress" value="{{$user->street}}">
                     <span class="text-danger fst-italic d-none">Please enter your street address</span>
                 </div>
                 <div class="col-md-6">
                     <label for="city" class="form-label">City</label>
-                    <input type="text" readonly class="form-control" id="city" name="city" value={{$user->city}}>
+                    <input type="text" readonly class="form-control" id="city" name="city" value="{{$user->city}}">
                     <span class="text-danger fst-italic d-none">Please enter your city name</span>
                 </div>
                 <div class="col-md-6">
@@ -72,7 +78,7 @@
                 </div>
                 <div class="col-md-6">
                     <label for="postal-code" class="form-label">Postal Code</label>
-                    <input type="text" class="form-control" id="postal-code" name="postal_code" readonly value={{$user->postal_code}}>
+                    <input type="text" class="form-control" id="postal-code" name="postal_code" readonly value="{{$user->postal_code}}">
                     <span class="text-danger fst-italic d-none">Please enter valid postal code</span>
                 </div>
                 <div class="col-12">

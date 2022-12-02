@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 class HomePageController extends Controller
 {
-    function index(){
-        return view('pets.index');
+    function index(Request $request){
+        return view('pets.index',['user'=>$request->user()]);
     }
 }

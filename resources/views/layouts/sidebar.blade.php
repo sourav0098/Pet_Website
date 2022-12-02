@@ -32,11 +32,11 @@
                     @endif
                 </div>
                 @if (Auth::check())
-                <div class="profile">
-                    <a class="navbar-brand" href="./profile">
-                        <img src="./images/user.png" alt="">
-                    </a>
-                </div>
+                    <div class="profile circular-image">
+                        <a class="navbar-brand" href="./profile">
+                            <img src="{{asset('uploads/'.$user->image)}}" alt="">
+                        </a>
+                    </div>
                 @endif
             </div>
             </div>

@@ -32,9 +32,9 @@
                     @endif
                 </div>
                 @if (Auth::check())
-                <div class="profile">
+                <div class="profile circular-image">
                     <a class="navbar-brand" href="./profile">
-                        <img src="./images/user.png" alt="">
+                        <img src="{{asset('uploads/'.$user->image)}}" alt="">
                     </a>
                 </div>
                 @endif

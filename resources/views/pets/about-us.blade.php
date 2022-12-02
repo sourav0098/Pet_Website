@@ -56,11 +56,7 @@
                 <div class="col-lg-6 col-md-12 col-sm-12 col-12 pt-5">
                     <div class="row">
                         <div class="col-lg-5 col-md-6 col-sm-6 col-6">
-                        @php
-                        $imagePath = "./images/" . $person->fname . ".png"
-                        @endphp
-
-                            <img src={{$imagePath}}  class="w-100 team-member-img" alt="Toto">
+                            <img src="{{asset('uploads/'.$person->image)}}"  class="w-100 team-member-img" alt="Toto">
                         </div>
                         <div class="col-lg-7 col-md-6 col-sm-6 col-6 pt-3">
                             <h5 class="fw-bold d-inline-block">{{$person->fname}} {{$person->lname}}</h5>

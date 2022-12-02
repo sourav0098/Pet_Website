@@ -8,6 +8,7 @@ use App\Http\Controllers\HomePageController;
 use App\Http\Controllers\LogoutController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SettingsController;
+use App\Http\Controllers\UsersController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -24,6 +25,9 @@ use Illuminate\Support\Facades\Route;
 
 // Routes which needs no authentication
 Route::get('/', [HomePageController::class, 'index']);
+Route::get("/filter-pets", [FindPetController::class, "findDogs"]);
+Route::get("/conditions", [AcceptTermsController::class, "see_conditions"]);
+Route::get("/about-us", [AboutController::class, "index"]);
 
 // Route::get('/dashboard', function () {
 //     return view('pets.dashboard');
@@ -44,14 +48,10 @@ Route::middleware('auth')->group(function () {
 // Admin Login Authentication
 Route::middleware(['auth','auth_admin'])->group(function(){
     Route::get('/dashboard',[DashboardController::class,"edit"])->name('dashboard.edit');
+    Route::get('/users',[UsersController::class,"edit"])->name('users.edit');
+    Route::patch('/users',[UsersController::class,"update"])->name('users.update');
+    Route::delete('/users',[UsersController::class,"destroy"])->name('users.destroy');
 });
-
-
-Route::get("/filter-pets", [FindPetController::class, "findDogs"]);
-
-
-Route::get("/conditions", [AcceptTermsController::class, "see_conditions"]);
-Route::get("/about-us", [AboutController::class, "get_screen"]);
 
 // Route::get('/filter-pets', function () {
 //     return view('pets.filter-pets');

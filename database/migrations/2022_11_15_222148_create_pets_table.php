@@ -22,7 +22,7 @@ return new class extends Migration
             $table->string('animal_type');
             $table->string('color');
             $table->string('coat_length');
-            $table->binary('pet_image');
+            $table->string('pet_image');
             $table->boolean('is_adopted');
             $table->text('description');
             $table->timestamps();

@@ -26,8 +26,7 @@ return new class extends Migration
             $table->string('city')->nullable();
             $table->string('province')->nullable();
             $table->string('postal_code',6)->nullable();
-            $table->string('role')->default('user');
-            $table->binary('image')->nullable();
+            $table->string('image')->default('user.png');
             $table->rememberToken();
             $table->timestamps();
         });
