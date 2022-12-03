@@ -11,6 +11,19 @@ class UsersController extends Controller
         return view('pets.users',['users'=>$users]);
     }
     public function update(Request $request){
+        // Validation
+        $this->validate($request,[
+            'fnameEdit'=>'required|string',
+            'lnameEdit'=>'required|string',
+            'emailEdit'=>'required|email',
+            'phoneEdit'=>'required|digits:10|numeric',
+            'addressEdit'=>'required|string',
+            'cityEdit'=>'required|string',
+            'provinceEdit'=>'required',
+            'postalcodeEdit'=>'required|string|min:6|max:6',
+
+        ]);
+
         $user=User::find($request->get('idEdit'));
 
         $user->fname=$request->get('fnameEdit');

@@ -49,9 +49,9 @@ function validatePostalCode(postalcode) {
   }
 }
 
-function validateDescription(pass) {
-  let regex = /^[a-zA-Z0-9\n\t ,'".!@?-]{2,500}$/;
-  let input = pass;
+function validateDescription(description) {
+  let regex = /^(.|\s)*[a-zA-Z]+(.|\s)*$/;
+  let input = description;
   if (regex.test(input)) {
     return true;
   } else {

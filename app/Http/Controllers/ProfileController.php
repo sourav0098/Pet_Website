@@ -51,7 +51,7 @@ class ProfileController extends Controller
         $request->user()->street=$request->get('streetAddress');
         $request->user()->city=$request->get('city');
         $request->user()->province=$request->get('province');
-        $request->user()->postal_code=$request->get('postal_code');
+        $request->user()->postal_code=strtoupper($request->get('postal_code'));
 
         $request->user()->save();
 

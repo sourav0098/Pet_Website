@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\AcceptTermsController;
+use App\Http\Controllers\AddPetController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\FindPetController;
 use App\Http\Controllers\HomePageController;
@@ -29,10 +30,6 @@ Route::get("/filter-pets", [FindPetController::class, "findDogs"]);
 Route::get("/conditions", [AcceptTermsController::class, "see_conditions"]);
 Route::get("/about-us", [AboutController::class, "index"]);
 
-// Route::get('/dashboard', function () {
-//     return view('pets.dashboard');
-// })->middleware(['auth', 'verified'])->name('dashboard');
-
 // User Login Authentication
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -41,6 +38,9 @@ Route::middleware('auth')->group(function () {
     Route::get("/settings", [SettingsController::class, "edit"])->name('settings.edit');
     Route::put("/settings", [SettingsController::class, "update"])->name('settings.update');
     Route::delete("/settings", [SettingsController::class, "destroy"])->name('settings.destroy');
+
+    Route::get('/add-pet',[AddPetController::class,"edit"])->name('add-pet.edit');
+    Route::post('/add-pet',[AddPetController::class,"store"])->name('add-pet.store');
     
     Route::get("/logout", [LogoutController::class, "logout"]);
 });
@@ -79,10 +79,6 @@ return view('pets.settings');
 
 Route::get('/favourites', function () {
 return view('pets.favourites');
-});
-
-Route::get('/add-pet', function () {
-return view('pets.add-pet');
 });
 
 Route::get('/login', function () {

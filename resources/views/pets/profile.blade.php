@@ -20,6 +20,13 @@
             <button type="button" id="sideBarCollapse" class="btn btn-secondary me-3"><i class="fa-solid fa-bars"></i></button>
             <h1 class="fw-bold">Profile</h1>
         </div>
+        @if ($errors->any())
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                @foreach ($errors->all() as $error)
+                    <p class="mb-0 text-danger">{{ $error }}</p>
+                @endforeach
+            </div>
+        @endif
         <div class="container mb-3">
             <form class="row g-3" action="{{ route('profile.update') }}" enctype="multipart/form-data" method="POST">
                 @csrf

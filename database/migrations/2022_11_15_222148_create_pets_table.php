@@ -22,8 +22,8 @@ return new class extends Migration
             $table->string('animal_type');
             $table->string('color');
             $table->string('coat_length');
-            $table->string('pet_image');
-            $table->boolean('is_adopted');
+            $table->string('pet_image')->default('pet_default.png');
+            $table->boolean('is_adopted')->default('0');
             $table->text('description');
             $table->timestamps();
             $table->foreign('user_id')->references('id')->on('users');

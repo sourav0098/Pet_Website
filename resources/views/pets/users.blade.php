@@ -107,7 +107,14 @@
             <button type="button" id="sideBarCollapse" class="btn btn-secondary me-3"><i class="fa-solid fa-bars"></i></button>
             <h1 class="fw-bold">Users</h1>
         </div>
-        <div class="container table-responsive">
+        @if ($errors->any())
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                @foreach ($errors->all() as $error)
+                    <p class="mb-0 text-danger">{{ $error }}</p>
+                @endforeach
+            </div>
+        @endif
+        <div class="container table-responsive mb-3">
             <table class="table overflow-auto nowrap table-striped" id="user_table">
                 <thead>
                     <tr>
