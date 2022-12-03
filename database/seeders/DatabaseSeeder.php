@@ -29,7 +29,8 @@ class DatabaseSeeder extends Seeder
             'role' => "developer",
             'description' => "Full Stack Developer +3 years of experience. Especially interested in React, Node and Java Spring Boot",
             'email' => "jgutierrezoa2@gmail.com",
-            'linkedinUrl' => "https://www.linkedin.com/in/-juan-gutierrez/",            
+            'linkedin' => "https://www.linkedin.com/in/-juan-gutierrez/", 
+            'image'=>'juan.png',           
             'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
             'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
 
@@ -40,7 +41,8 @@ class DatabaseSeeder extends Seeder
             'role' => "developer",
             'description' => "IT Student at Humber College | Java | MERN Stack | HTML | CSS | JavaScript | SQL | Php | Laravel",
             'email' => "souravchoudhary1998@gmail.com",
-            'linkedinUrl' => "https://www.linkedin.com/in/sourav009",
+            'linkedin' => "https://www.linkedin.com/in/sourav009",
+            'image'=>'sourav.png',           
             'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
             'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
 
@@ -51,7 +53,8 @@ class DatabaseSeeder extends Seeder
             'role' => "developer",
             'description' => "Passionate about quality kitchen and front-end development",
             'email' => "rutvik@gmail.com",
-            'linkedinUrl' => "",
+            'linkedin' => "",
+            'image'=>'rutvik.png',           
             'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
             'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
 
@@ -62,7 +65,8 @@ class DatabaseSeeder extends Seeder
             'role' => "developer",
             'description' => "Curious about Web Programming and SQL databases",
             'email' => "jordan.14chan@gmail.com",
-            'linkedinUrl' => "https://www.linkedin.com/in/jordan-chan49/",
+            'image'=>'jordan.png',           
+            'linkedin' => "https://www.linkedin.com/in/jordan-chan49/",
             'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
             'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
         ]);

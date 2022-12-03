@@ -2,12 +2,14 @@
 
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\AcceptTermsController;
+use App\Http\Controllers\AddPetController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\FindPetController;
 use App\Http\Controllers\HomePageController;
 use App\Http\Controllers\LogoutController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SettingsController;
+use App\Http\Controllers\UsersController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -23,10 +25,9 @@ use Illuminate\Support\Facades\Route;
 
 // Routes which needs no authentication
 Route::get('/', [HomePageController::class, 'index']);
-
-// Route::get('/dashboard', function () {
-//     return view('pets.dashboard');
-// })->middleware(['auth', 'verified'])->name('dashboard');
+Route::get("/filter-pets", [FindPetController::class, "findDogs"]);
+Route::get("/conditions", [AcceptTermsController::class, "see_conditions"]);
+Route::get("/about-us", [AboutController::class, "index"]);
 
 // User Login Authentication
 Route::middleware('auth')->group(function () {
@@ -37,18 +38,19 @@ Route::middleware('auth')->group(function () {
     Route::put("/settings", [SettingsController::class, "update"])->name('settings.update');
     Route::delete("/settings", [SettingsController::class, "destroy"])->name('settings.destroy');
 
+    Route::get('/add-pet', [AddPetController::class, "edit"])->name('add-pet.edit');
+    Route::post('/add-pet', [AddPetController::class, "store"])->name('add-pet.store');
+
     Route::get("/logout", [LogoutController::class, "logout"]);
 });
 
 // Admin Login Authentication
 Route::middleware(['auth', 'auth_admin'])->group(function () {
     Route::get('/dashboard', [DashboardController::class, "edit"])->name('dashboard.edit');
+    Route::get('/users', [UsersController::class, "edit"])->name('users.edit');
+    Route::patch('/users', [UsersController::class, "update"])->name('users.update');
+    Route::delete('/users', [UsersController::class, "destroy"])->name('users.destroy');
 });
-
-Route::get("/filter-pets", [FindPetController::class, "findDogs"]);
-
-Route::get("/conditions", [AcceptTermsController::class, "see_conditions"]);
-Route::get("/about-us", [AboutController::class, "get_screen"]);
 
 // Route::get('/filter-pets', function () {
 //     return view('pets.filter-pets');
@@ -76,10 +78,6 @@ return view('pets.settings');
 
 Route::get('/favourites', function () {
 return view('pets.favourites');
-});
-
-Route::get('/add-pet', function () {
-return view('pets.add-pet');
 });
 
 Route::get('/login', function () {

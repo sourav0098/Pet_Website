@@ -17,11 +17,11 @@ return new class extends Migration
             $table->id();
             $table->string('fname');
             $table->string('lname');
-            $table->text('role');
+            $table->string('role');
             $table->text('description');
-            $table->text('email');
-            $table->text('linkedinUrl');
-
+            $table->string('email');
+            $table->string('linkedin');
+            $table->string('image');
             $table->timestamps();
         });
     }

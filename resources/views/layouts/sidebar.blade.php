@@ -32,11 +32,11 @@
                     @endif
                 </div>
                 @if (Auth::check())
-                <div class="profile">
-                    <a class="navbar-brand" href="./profile">
-                        <img src="./images/user.png" alt="">
-                    </a>
-                </div>
+                    <div class="profile circular-image" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="Hello, {{$user->fname}}">
+                        <a class="navbar-brand" href="./profile">
+                            <img src="{{asset('uploads/'.$user->image)}}" alt="">
+                        </a>
+                    </div>
                 @endif
             </div>
             </div>
@@ -105,5 +105,9 @@
 
     {{-- JavaScript --}}
     @yield('js')
+    <script>
+        const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+        const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+    </script>
 </body>
 </html>

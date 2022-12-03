@@ -29,11 +29,11 @@ let validDescription = false;
 
 const addPetBtn = document.getElementById("add-pet");
 addPetBtn.addEventListener("click", (e) => {
-  e.preventDefault();
-  let petName = document.getElementById("pet-name");
+  let petName = document.getElementById("pet_name");
   let color = document.getElementById("color");
   let description = document.getElementById("description");
 
+  // Pet Name
   if (validateName(petName.value)) {
     validPetName = true;
     petName.classList.remove("is-invalid");
@@ -65,8 +65,7 @@ addPetBtn.addEventListener("click", (e) => {
     description.nextElementSibling.classList.remove("d-none");
     description.classList.add("is-invalid");
   }
-
-  if (validPetName == true && validColor == true && validDescription == true) {
-    alert('submitted')
+  if (validPetName ==false || validColor == false || validDescription == false) {
+    e.preventDefault();
   }
 });

@@ -6,6 +6,7 @@ use App\Http\Requests\ProfileUpdateRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\File;
 
 class ProfileController extends Controller
 {
@@ -32,13 +33,25 @@ class ProfileController extends Controller
      */
     public function update(ProfileUpdateRequest $request)
     {
+        if($request->hasFile('image')){
+            $destination='uploads/'.$request->user()->image;
+            if(File::exists($destination)){
+                if($destination!='uploads/user.png'){
+                    File::delete($destination);
+                }
+            }
+            $imagePath=time().$request->image->getClientOriginalName();
+            $request->image->move(public_path('uploads'),$imagePath);
+            $request->user()->image=$imagePath;
+        }
+
         $request->user()->fname=$request->get('fname');
         $request->user()->lname=$request->get('lname');
         $request->user()->phone=$request->get('phone');
         $request->user()->street=$request->get('streetAddress');
         $request->user()->city=$request->get('city');
         $request->user()->province=$request->get('province');
-        $request->user()->postal_code=$request->get('postal_code');
+        $request->user()->postal_code=strtoupper($request->get('postal_code'));
 
         $request->user()->save();
 

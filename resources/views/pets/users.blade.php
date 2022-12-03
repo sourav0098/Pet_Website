@@ -22,9 +22,11 @@
                     <h5 class="modal-title fw-bold" id="editModalLabel">Edit User</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <form action="  " method="POST">
+                <form action="{{route('users.update')}}" method="POST">
+                    @csrf
+                    @method('patch')
                     <div class="modal-body row g-3">
-                        <input type="hidden" name="snoEdit" id="snoEdit">
+                        <input type="hidden" name="idEdit" id="idEdit">
                         <div class="col-md-6">
                             <label for="fnameEdit" class="form-label">First Name</label>
                             <input type="text" class="form-control" id="fnameEdit" name="fnameEdit">
@@ -89,15 +91,35 @@
     </div>
 
     <div id="content" class="container-fluid">
+        @if (session('status') === 'user-profile-updated')
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                <strong>Success! </strong>User Profile has been successfully updated
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        @endif
+        @if (session('status') === 'user-profile-deleted')
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                <strong>Success! </strong>User Profile has been deleted successfully 
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        @endif
         <div class="container-fluid d-flex align-items-center">
             <button type="button" id="sideBarCollapse" class="btn btn-secondary me-3"><i class="fa-solid fa-bars"></i></button>
             <h1 class="fw-bold">Users</h1>
         </div>
-        <div class="container table-responsive">
+        @if ($errors->any())
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                @foreach ($errors->all() as $error)
+                    <p class="mb-0 text-danger">{{ $error }}</p>
+                @endforeach
+            </div>
+        @endif
+        <div class="container table-responsive mb-3">
             <table class="table overflow-auto nowrap table-striped" id="user_table">
                 <thead>
                     <tr>
                         <th scope="col">S. No.</th>
+                        <th scope="col" class="d-none">Id</th>
                         <th scope="col">First Name</th>
                         <th scope="col">Last Name</th>
                         <th scope="col">Email</th>
@@ -110,36 +132,33 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Sourav</td>
-                        <td>Choudhary</td>
-                        <td>sourav@gmail.com</td>
-                        <td>6478999999</td>
-                        <td>32 Halsey Avenue</td>
-                        <td>Toronto</td>
-                        <td>Ontario</td>
-                        <td>M3B2W6</td>
-                        <td>
-                            <button type="button" class="btn btn-primary edit me-2" title="Edit">Edit</button>
-                            <button type="submit" class="btn btn-danger" title="Delete">Delete</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th scope="row">2</th>
-                        <td>Rohit</td>
-                        <td>Sharma</td>
-                        <td>rohit@gmail.com</td>
-                        <td>6478999999</td>
-                        <td>32 Shady Glen Avenue</td>
-                        <td>Toronto</td>
-                        <td>Ontario</td>
-                        <td>M3B2N5</td>
-                        <td>
-                            <button type="button" class="btn btn-primary edit me-2" title="Edit">Edit</button>
-                            <button type="submit" class="btn btn-danger" title="Delete">Delete</button>
-                        </td>
-                    </tr>
+                    <?php $i=0?>
+                    @foreach($users as $user)
+                        @if($user->is_admin!=1)
+                            <tr>
+                                <?php $i++?>
+                                <th scope="row">{{$i}}</th>
+                                <td class="d-none">{{$user->id}}</td>
+                                <td>{{$user->fname}}</td>
+                                <td>{{$user->lname}}</td>
+                                <td>{{$user->email}}</td>
+                                <td>{{$user->phone}}</td>
+                                <td>{{$user->street}}</td>
+                                <td>{{$user->city}}</td>
+                                <td>{{$user->province}}</td>
+                                <td>{{$user->postal_code}}</td>
+                                <td class="d-flex">
+                                    <button type="button" class="btn btn-primary edit me-2" title="Edit">Edit</button>
+                                    <form action="{{route('users.destroy')}}" method="POST">
+                                        @csrf
+                                        @method('delete')
+                                        <input type="hidden" name="id" id="id" value="{{$user->id}}"> 
+                                        <button type="submit" class="btn btn-danger" title="Delete">Delete</button>
+                                    </form>
+                                </td>
+                            </tr>
+                        @endif
+                    @endforeach
                 </tbody>
             </table>
         </div>
