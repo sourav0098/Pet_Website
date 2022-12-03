@@ -23,7 +23,7 @@
             </div>
             <div class="d-flex align-items-center">
                 <div class="login-btn">
-                    @if (Auth::check()) 
+                    @if (Auth::check())
                     <a href="./favourites"><i class="fa-solid fa-heart" title="Favourites"></i></a>
                     <a href="./logout">Logout</a>
                     @else
@@ -58,9 +58,9 @@
                             Find a Pet
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="filter-pets">Dog</a></li>
-                            <li><a class="dropdown-item" href="filter-pets">Cat</a></li>
-                            <li><a class="dropdown-item" href="filter-pets">Other Animals</a></li>
+                            <li><a class="dropdown-item" href="filter-pets?type=dog">Dog</a></li>
+                            <li><a class="dropdown-item" href="filter-pets?type=cat">Cat</a></li>
+                            <li><a class="dropdown-item" href="filter-pets?type=barnyard">Other Animals</a></li>
                         </ul>
                     </li>
                     <li class="nav-item">

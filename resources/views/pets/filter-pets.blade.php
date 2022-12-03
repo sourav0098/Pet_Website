@@ -11,71 +11,77 @@
 <div class="filter-container sticky-top row g-0 p-3 ">
     <div class="col-md ps-2 pe-2">
       <div class="form-floating">
-        <select class="form-select" id="floatingSelectGrid" aria-label="Floating label select example">
-          <option value="Dog">Dog</option>
-          <option value="Cat">Cat</option>
-          <option value="Rabbit">Rabbit</option>
-          <option value="Bird">Bird</option>
-          <option value="Fish">Fish</option>
-          <option value="other">Other</option>
+        <select class="form-select" id="type" aria-label="Floating label select example">
+          <option value="dog">Dog</option>
+          <option value="cat">Cat</option>
+          <option value="rabbit">Rabbit</option>
+          <option value="bird">Bird</option>
+          <option value="horse">Horse</option>
+          <option value="barnyard">Barnyard</option>
         </select>
         <label for="floatingSelectGrid">Pet</label>
       </div>
     </div>
     <div class="col-md ps-2 pe-2">
       <div class="form-floating">
-        <select class="form-select" id="floatingSelectGrid" aria-label="Floating label select example">
-          <option value="any" selected>Any</option>
-          <option value="male">Male</option>
-          <option value="female">Female</option>
+        <select class="form-select" id="gender" aria-label="Floating label select example">
+          <option name="gender" value="any" selected>Any</option>
+          <option name="gender" value="male">Male</option>
+          <option name="gender" value="female">Female</option>
         </select>
         <label for="floatingSelectGrid">Gender</label>
       </div>
     </div>
     <div class="col-md ps-2 pe-2">
       <div class="form-floating">
-        <select class="form-select" id="floatingSelectGrid" aria-label="Floating label select example">
+        <select class="form-select" id="age" aria-label="Floating label select example">
           <option selected value="any">Any</option>
-          <option value="1">0-1</option>
-          <option value="2">1-5</option>
-          <option value="3">5-10</option>
-          <option value="3">+10</option>
+          <option name="age" value="baby">Baby</option>
+          <option name="age" value="young">Young</option>
+          <option name="age" value="adult">Adult</option>
+          <option name="age" value="senior">Senior</option>
         </select>
         <label for="floatingSelectGrid">Age</label>
       </div>
     </div>
     <div class="col-md ps-2 pe-2">
       <div class="form-floating">
-        <select class="form-select" id="floatingSelectGrid" aria-label="Floating label select example">
+        <select class="form-select" id="breed" aria-label="Floating label select example">
           <option selected value="any">Any</option>
-          <option value="1">Akita</option>
-          <option value="2">Alaskan Malamute</option>
-          <option value="3">American Bulldog</option>
-          <option value="3">Airedale Terrier</option>
+          @foreach ($breeds as $breed)
+          <option value="{{$breed["name"]}}"">{{$breed["name"]}}</option>
+          @endforeach
         </select>
         <label for="floatingSelectGrid">Breed</label>
       </div>
     </div>
     <div class="col-md ps-2 pe-2">
       <div class="form-floating">
-        <select class="form-select" id="floatingSelectGrid" aria-label="Floating label select example">
+        <select class="form-select" id="coat" aria-label="Floating label select example">
           <option selected value="any">Any</option>
-          <option value="1">Hairless</option>
-          <option value="2">Low</option>
-          <option value="3">Medium</option>
-          <option value="3">Long</option>
+          <option value="short">Short</option>
+          <option value="medium">Medium</option>
+          <option value="long">Long</option>
+          <option value="wire">Wire</option>
+          <option value="hairless">Hairless</option>
+          <option value="curly">Curly</option>
         </select>
         <label for="floatingSelectGrid">Hair Length</label>
       </div>
     </div>
     <div class="col-md ps-2 pe-2">
       <div class="form-floating">
-        <select class="form-select" id="floatingSelectGrid" aria-label="Floating label select example">
+        <select class="form-select" id="city" aria-label="Floating label select example">
           <option selected value="any">Any</option>
-          <option value="1">Toronto</option>
-          <option value="2">Montreal</option>
-          <option value="3">Calgary</option>
-          <option value="3">Ottawa</option>
+          <option value="Chicago,+Illinois">Chicago, Illinois</option>
+          <option value="Charleston,+South Carolina">Charleston, South Carolina</option>
+          <option value="Las+Vegas,+Nevada">Las Vegas, Nevada</option>
+          <option value="Seattle,+Washington">Seattle, Washington</option>
+          <option value="Seattle,+Washington">Seattle, Washington</option>
+          <option value="San+Francisco,+California"> San Francisco, California</option>
+          <option value="New+Orleans,+Louisiana">New Orleans, Louisiana</option>
+          <option value="Palm+Springs,+California">Palm Springs, California</option>
+          <option value="Sedona,+Arizona">Sedona, Arizona</option>
         </select>
         <label for="floatingSelectGrid">City</label>
       </div>
@@ -124,4 +130,8 @@
 
 
   </div>
+
+  <script src="js/filter-pet.js"></script>
+
+
 @endsection

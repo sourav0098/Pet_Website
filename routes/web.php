@@ -10,7 +10,6 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SettingsController;
 use Illuminate\Support\Facades\Route;
 
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -33,22 +32,20 @@ Route::get('/', [HomePageController::class, 'index']);
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-    
+
     Route::get("/settings", [SettingsController::class, "edit"])->name('settings.edit');
     Route::put("/settings", [SettingsController::class, "update"])->name('settings.update');
     Route::delete("/settings", [SettingsController::class, "destroy"])->name('settings.destroy');
-    
+
     Route::get("/logout", [LogoutController::class, "logout"]);
 });
 
 // Admin Login Authentication
-Route::middleware(['auth','auth_admin'])->group(function(){
-    Route::get('/dashboard',[DashboardController::class,"edit"])->name('dashboard.edit');
+Route::middleware(['auth', 'auth_admin'])->group(function () {
+    Route::get('/dashboard', [DashboardController::class, "edit"])->name('dashboard.edit');
 });
 
-
 Route::get("/filter-pets", [FindPetController::class, "findDogs"]);
-
 
 Route::get("/conditions", [AcceptTermsController::class, "see_conditions"]);
 Route::get("/about-us", [AboutController::class, "get_screen"]);
