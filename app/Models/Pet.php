@@ -8,4 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Pet extends Model
 {
     use HasFactory;
+
+    function characteristics(){
+        return $this->hasMany(Characteristic::class);
+    }
 }

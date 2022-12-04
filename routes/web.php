@@ -10,6 +10,7 @@ use App\Http\Controllers\LogoutController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SettingsController;
 use App\Http\Controllers\UsersController;
+use App\Http\Controllers\PetsController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -47,53 +48,32 @@ Route::middleware('auth')->group(function () {
 // Admin Login Authentication
 Route::middleware(['auth', 'auth_admin'])->group(function () {
     Route::get('/dashboard', [DashboardController::class, "edit"])->name('dashboard.edit');
+
     Route::get('/users', [UsersController::class, "edit"])->name('users.edit');
     Route::patch('/users', [UsersController::class, "update"])->name('users.update');
     Route::delete('/users', [UsersController::class, "destroy"])->name('users.destroy');
+    
+    Route::get('/pets', [PetsController::class, "edit"])->name('pets.edit');
+    Route::patch('/pets', [PetsController::class, "update"])->name('pets.update');
 });
 
-// Route::get('/filter-pets', function () {
-//     return view('pets.filter-pets');
-// });
 /*
 Route::get('/profile', function () {
 return view('pets.profile');
-});
-
-Route::get('/dashboard', function () {
-return view('pets.dashboard');
-});
-
-Route::get('/users', function () {
-return view('pets.users');
 });
 
 Route::get('/pets', function () {
 return view('pets.pets');
 });
 
-Route::get('/settings', function () {
-return view('pets.settings');
-});
-
 Route::get('/favourites', function () {
 return view('pets.favourites');
 });
 
-Route::get('/login', function () {
-return view('pets.login');
-});
-
-Route::get('/register', function () {
-return view('pets.register');
-});
-
-Route::get('/about-us', function () {
-return view('pets.about-us');
-});
 Route::get('/contact', function () {
 return view('pets.contact');
 });
+
 Route::get('/how-it-works', function () {
 return view('pets.how-it-works');
 });
@@ -101,6 +81,7 @@ return view('pets.how-it-works');
 Route::get('/contact-owner', function () {
 return view('pets.contact-owner');
 });
+
 Route::get('/pet-profile', function () {
 return view('pets.pet-profile');
 });

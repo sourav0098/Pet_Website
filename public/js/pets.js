@@ -10,16 +10,17 @@ edits = document.getElementsByClassName("edit");
 Array.from(edits).forEach((element) => {
   element.addEventListener("click", (e) => {
     tr = e.target.parentNode.parentNode;
-    pet_name = tr.getElementsByTagName("td")[0].innerText;
-    age = tr.getElementsByTagName("td")[1].innerText;
-    gender = tr.getElementsByTagName("td")[2].innerText;
-    animalType = tr.getElementsByTagName("td")[3].innerText;
-    coatLength = tr.getElementsByTagName("td")[4].innerText;
-    color = tr.getElementsByTagName("td")[5].innerText;
-    characteristic = tr.getElementsByTagName("td")[6].innerText.split(", ");
-    description = tr.getElementsByTagName("td")[7].innerText;
+    pet_id = tr.getElementsByTagName("td")[0].innerText;
+    pet_name = tr.getElementsByTagName("td")[1].innerText;
+    age = tr.getElementsByTagName("td")[2].innerText;
+    gender = tr.getElementsByTagName("td")[3].innerText;
+    animalType = tr.getElementsByTagName("td")[4].innerText;
+    coatLength = tr.getElementsByTagName("td")[5].innerText;
+    color = tr.getElementsByTagName("td")[6].innerText;
+    characteristic = tr.getElementsByTagName("td")[7].innerText.split(", ");
+    description = tr.getElementsByTagName("td")[8].innerText;
 
-    snoEdit.value = e.target.id;
+    idEdit.value = pet_id;
     petnameEdit.value = pet_name;
     ageEdit.value = age;
     if (male.value == gender) {
@@ -57,7 +58,6 @@ updateBtn.addEventListener("click", (e) => {
   let color = document.getElementById("colorEdit");
   let description = document.getElementById("descriptionEdit");
 
-  e.preventDefault();
   // Pet Name
   if (validateName(petname.value)) {
     validPetName = true;
@@ -92,10 +92,10 @@ updateBtn.addEventListener("click", (e) => {
   }
 
   if (
-    validPetName == true &&
-    validColor == true &&
-    validDescription == true
+    validPetName ==false ||
+    validColor ==false ||
+    validDescription ==false
   ) {
-    editModal.toggle();
+    e.preventDefault();
   }
 });
