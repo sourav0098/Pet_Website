@@ -1,4 +1,4 @@
-## **Project Phase 4**
+## **Project Phase 5**
 
 ## Prerequisites
 -   VS Code
@@ -8,7 +8,7 @@
 -   Add the following variables to the env file
 
 ```sh
-API_BASE_URL = "https://api.petfinder.com/v2/animals"
+API_BASE_URL = "https://api.petfinder.com/v2/"
 API_TOKEN_URL = "https://api.petfinder.com/v2/oauth2/token"
 CLIENT_ID = Your API key
 CLIENT_SECRET = Your secret
@@ -30,7 +30,7 @@ composer install
 npm install  
 php artisan migrate  
 php artisan db:seed  
-php artisan db:seed --class=UserSeeder  
+php artisan db:seed --class=UserSeeder
 npm run dev
 
 Open a new terminal  
@@ -39,12 +39,13 @@ php artisan serve
 ## Tasks
 
 -   [x] Register and Login Page
--   [x] Admin Dashboard
+-   [x] User Profile
+-   [x] Admin Dashboard(Users, Pets)
 -   [x] Database (Migrations and Seeders)
--   [x] Update User/Admin Profile
+-   [x] Add a new pet
+-   [x] Find Pets based on different filters
 -   [x] Change Password
 -   [x] Delete Account
--   [x] Find Pets
 
 ## Resources
 -   Datbase: MySQL
