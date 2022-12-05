@@ -119,10 +119,22 @@
                             <span class="text-danger fst-italic d-none">Please enter valid color</span>
                         </div>
                         <div class="col-md-12">
+                            <p class="form-label">Status</p>
+                            <div class="form-check form-check-inline">
+                                <input type="radio" class="form-check-input" id="adopted" name="statusEdit" value="1">
+                                <label for="adopted" class="form-check-label">Adopted</label><br>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input type="radio" class="form-check-input" id="not_adopted" name="statusEdit" value="0">
+                                <label for="not_adopted" class="form-check-label">Not Adopted</label><br>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
                             <label for="descriptionEdit" class="form-label">Description</label>
-                            <textarea class="form-control" style="resize: none;" placeholder="Leave a description here" id="descriptionEdit" col="10" rows="3"></textarea>
+                            <textarea class="form-control" style="resize: none;" name="descriptionEdit" placeholder="Leave a description here" id="descriptionEdit" col="10" rows="3"></textarea>
                             <span class="text-danger fst-italic d-none">Please enter valid description</span>
                         </div>
+                        
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -138,6 +150,12 @@
         @if (session('status') === 'pet-updated')
             <div class="alert alert-success alert-dismissible fade show" role="alert">
                 <strong>Success! </strong>Pet record has been successfully updated
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        @endif
+        @if (session('status') === 'pet-deleted')
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                <strong>Success! </strong>Pet record has been deleted successfully
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
         @endif
@@ -166,6 +184,7 @@
                         <th scope="col">Color</th>
                         <th scope="col">Characteristic</th>
                         <th scope="col" class="d-none">Description</th>
+                        <th scope="col">Status</th>
                         <th scope="col">Action</th>
                     </tr>
                 </thead>
@@ -191,9 +210,21 @@
                                     @endforeach
                                 </td>
                                 <td class="d-none">{{$pet->description}}</td>
+                                <td>
+                                    @if($pet->is_adopted=='0')
+                                        Not Adopted
+                                    @elseif($pet->is_adopted=='1')
+                                        Adopted
+                                    @endif
+                                </td>
                                 <td class="d-flex">
                                     <button type="button" class="btn btn-primary edit me-2" title="Edit">Edit</button>
-                                    <button type="submit" class="btn btn-danger" title="Delete">Delete</button>
+                                    <form action="{{ route('pets.destroy') }}" method="POST">
+                                        @csrf
+                                        @method('delete')
+                                        <input type="hidden" name="pet_id" value="{{$pet->id}}">
+                                        <button type="submit" class="btn btn-danger" title="Delete">Delete</button>
+                                    </form>
                                 </td>
                             </tr>                        
                     @endforeach

@@ -19,6 +19,7 @@ Array.from(edits).forEach((element) => {
     color = tr.getElementsByTagName("td")[6].innerText;
     characteristic = tr.getElementsByTagName("td")[7].innerText.split(", ");
     description = tr.getElementsByTagName("td")[8].innerText;
+    pet_status = tr.getElementsByTagName("td")[9].innerText;
 
     idEdit.value = pet_id;
     petnameEdit.value = pet_name;
@@ -31,6 +32,11 @@ Array.from(edits).forEach((element) => {
     animalTypeEdit.value = animalType;
     coatEdit.value = coatLength;
     colorEdit.value = color;
+    if (adopted.value == pet_status) {
+      adopted.setAttribute("checked", true);
+    } else {
+      not_adopted.setAttribute("checked", true);
+    }
     descriptionEdit.value = description;
 
     const characteristicEdit=document.querySelectorAll('input[type="checkbox"]');

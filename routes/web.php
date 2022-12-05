@@ -55,6 +55,7 @@ Route::middleware(['auth', 'auth_admin'])->group(function () {
     
     Route::get('/pets', [PetsController::class, "edit"])->name('pets.edit');
     Route::patch('/pets', [PetsController::class, "update"])->name('pets.update');
+    Route::delete('/pets', [PetsController::class, "destroy"])->name('pets.destroy');
 });
 
 /*
