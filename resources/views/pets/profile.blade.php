@@ -102,91 +102,52 @@
             <h1 class="fw-bold fs-3">Current Pets</h1>
         </div>
         <div class="container d-flex justify-content-between flex-wrap">
-            <div class="card mb-3 mt-3">
-                <div class="row no-gutters">
-                    <div class="col-md-4">
-                        <img src="./images/featured_1.jpg" class="card-img" alt="...">
-                    </div>
-                    <div class="col-md-8">
-                        <div class="card-body">
-                            <i class="fa-solid fa-pen-to-square" id="edit-icon"></i>
+            @foreach($pets as $pet)
+                <div class="card mb-3 mt-3">
+                    <div class="row no-gutters">
+                        <div class="col-md-4">
+                            <img src="{{asset('uploads/'.$pet->pet_image)}}" class="card-img" alt="...">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <i class="fa-solid fa-pen-to-square" id="edit-icon"></i>
+                                <div class="d-flex justify-content-between me-5">
+                                    <h5 class="card-title fw-bold d-inline">{{$pet->pet_name}}</h5>
+                                    @if($pet->is_adopted==1)
+                                        <small class="d-inline-flex mb-3 px-2 py-1 fw-semibold text-success bg-success bg-opacity-10 border border-success border-opacity-10 rounded-2">Adopted</small>
+                                    @elseif($pet->is_adopted==0)
+                                        <small class="d-inline-flex mb-3 px-2 py-1 fw-semibold text-danger bg-danger bg-opacity-10 border border-danger border-opacity-10 rounded-2">Not Adopted</small>
+                                    @endif
+                                </div>
+                                <p class="card-text text-justify" style="height: 185px">{{\Illuminate\Support\Str::limit($pet->description, 250)}}</p>
+                                <div class="d-flex justify-content-between">
+                                    <small class=" text-muted">{{$pet->gender}}</small>
+                                    <small class=" text-muted">{{$pet->color}}</small>
+                                </div>
 
-                            <h5 class="card-title fw-bold">Garu</h5>
-                            <p class="card-text text-justify">Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. </p>
-                            <div class="d-flex justify-content-between">
-                                <small class=" text-muted">Female</small>
-                                <small class=" text-muted">Golden</small>
-                            </div>
+                                <div class="d-flex justify-content-between">
+                                    <small class="text-muted">{{$pet->age}}</small>
+                                    <small class="text-muted">{{$pet->coat_length}} Coat</small>
+                                </div>
 
-                            <div class="d-flex justify-content-between">
-                                <small class="text-muted">Baby</small>
-                                <small class="text-muted">Medium hair</small>
-                            </div>
-
-                            <div class="d-flex justify-content-between">
-                                <small class="text-muted">Toronto</small>
-                                <small class="text-muted">Friendly, Loyal, Playful</small>
+                                <div class="d-flex justify-content-between">
+                                    <small class="text-muted">{{$user->city}}</small>
+                                    <small class="text-muted">
+                                        @foreach($pet->characteristics as $key=>$c)
+                                            @if($key!=(count($pet->characteristics)-1))
+                                                {{$c->characteristic}},
+                                            @endif
+                                            @if($key==(count($pet->characteristics)-1))
+                                                {{$c->characteristic}}
+                                            @endif
+                                        @endforeach
+                                    </small>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="card mb-3 mt-3">
-                <div class="row no-gutters">
-                    <div class="col-md-4">
-                        <img src="./images/featured_1.jpg" class="card-img" alt="...">
-                    </div>
-                    <div class="col-md-8">
-                        <div class="card-body">
-                            <i class="fa-solid fa-pen-to-square" id="edit-icon"></i>
-                            <h5 class="card-title fw-bold">Garu</h5>
-                            <p class="card-text text-justify">Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. </p>
-                            <div class="d-flex justify-content-between">
-                                <small class=" text-muted">Female</small>
-                                <small class=" text-muted">Golden</small>
-                            </div>
-
-                            <div class="d-flex justify-content-between">
-                                <small class="text-muted">Baby</small>
-                                <small class="text-muted">Medium hair</small>
-                            </div>
-
-                            <div class="d-flex justify-content-between">
-                                <small class="text-muted">Toronto</small>
-                                <small class="text-muted">Friendly, Loyal, Playful</small>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="card mb-3 mt-3">
-                <div class="row no-gutters">
-                    <div class="col-md-4">
-                        <img src="./images/featured_1.jpg" class="card-img" alt="...">
-                    </div>
-                    <div class="col-md-8">
-                        <div class="card-body">
-                            <i class="fa-solid fa-pen-to-square" id="edit-icon"></i>
-                            <h5 class="card-title fw-bold">Garu</h5>
-                            <p class="card-text text-justify">Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. </p>
-                            <div class="d-flex justify-content-between">
-                                <small class=" text-muted">Female</small>
-                                <small class=" text-muted">Golden</small>
-                            </div>
-
-                            <div class="d-flex justify-content-between">
-                                <small class="text-muted">Baby</small>
-                                <small class="text-muted">Medium hair</small>
-                            </div>
-
-                            <div class="d-flex justify-content-between">
-                                <small class="text-muted">Toronto</small>
-                                <small class="text-muted">Friendly, Loyal, Playful</small>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            @endforeach
         </div>
 </section>
 @endsection

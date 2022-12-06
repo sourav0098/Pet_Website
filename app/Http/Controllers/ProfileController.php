@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\File;
+use App\Models\Pet;
 
 class ProfileController extends Controller
 {
@@ -18,10 +19,12 @@ class ProfileController extends Controller
      */
     public function edit(Request $request)
     {
+        $pets=Pet::with('characteristics')->where('user_id',$request->user()->id)->get();
         $provinces=['Alberta','British Columbia','Manitoba','New Brunswick','New Foundland and Labrador','Northwest Territories','Nova Scotia','Nunavut','Ontario','Prince Edward Island','Quebec','Saskatchewan','Yukon Territory'];
         return view('pets.profile', [
-            'user' => $request->user(),
             'provinces'=>$provinces,
+            'user' => $request->user(),
+            'pets'=>$pets
         ]);
     }
 
