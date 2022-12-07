@@ -31,4 +31,11 @@ return [
         'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
     ],
 
+    'petfinder' => [
+        'api_base_url' => env('API_BASE_URL'),
+        'api_token_url' => env('API_TOKEN_URL'),
+        'client_id' => env('CLIENT_ID'),
+        'client_secret' => env('CLIENT_SECRET', 'us-east-1'),
+    ],
+
 ];

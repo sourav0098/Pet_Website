@@ -13,20 +13,22 @@
         <div class="right-side">
         <div class="topic-text" style="color: #6504b4; font-size:23px;"><strong> Interested in adopting this pet? Send owner a quick message. </strong></div>
         <p>If you have any questions or inquiries, you can contact the owner by sending a message.</p>
-        <form action="#">
-        <div class="input-box">
-            <input type="text" placeholder="Enter your name">
-        </div>
-        <div class="input-box">
-            <input type="text" placeholder="Enter your email">
-        </div>
-        <div class="input-box message-box">
-        <textarea placeholder="Enter your message"></textarea>
-        </div>
-        <div class="button" style="background-color: rgba(0, 0, 0, 0.2)">
-            <input type="button" value="Send Now" >
-        </div>
-        <div class="back"></br> Return home? <a href="/">Home</a></div>
+        <form action="{{ route('send-email', 'owner') }}" method="POST">
+            @csrf
+            <input type="hidden" name="receiver_email" value="{{ $pet['contact']['email'] }}">
+            <div class="input-box">
+                <input type="text" placeholder="Enter your name" name="name" required>
+            </div>
+            <div class="input-box">
+                <input type="text" placeholder="Enter your email" name="email" required>
+            </div>
+            <div class="input-box message-box">
+            <textarea placeholder="Enter your message" name="message" required></textarea>
+            </div>
+            <div class="button" style="background-color: rgba(0, 0, 0, 0.2)">
+                <input type="button" value="Send Now" onclick="this.form.submit();">
+            </div>
+            <div class="back"></br> Return home? <a href="/">Home</a></div>
         </form>
     </div>
     </div>

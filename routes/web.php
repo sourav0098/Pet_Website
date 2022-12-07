@@ -27,8 +27,9 @@ use Illuminate\Support\Facades\Route;
 // Routes which needs no authentication
 Route::get('/', [HomePageController::class, 'index']);
 Route::get("/filter-pets", [FindPetController::class, "findDogs"]);
+Route::get("/pet-profile/{id}/{type}", [FindPetController::class, "petProfile"])->name('pet-profile');
 Route::get("/conditions", [AcceptTermsController::class, "see_conditions"]);
-Route::get("/about-us", [AboutController::class, "index"]);
+Route::get("/about-us", [AboutController::class, "index"])->name('about-us');
 
 // User Login Authentication
 Route::middleware('auth')->group(function () {
@@ -70,20 +71,26 @@ Route::get('/favourites', function () {
 return view('pets.favourites');
 });
 
-Route::get('/contact', function () {
-return view('pets.contact');
-});
 
 Route::get('/how-it-works', function () {
-return view('pets.how-it-works');
+    return view('pets.how-it-works');
 });
 
-Route::get('/contact-owner', function () {
-return view('pets.contact-owner');
-});
+*/
+
+Route::get('/duke', function () { return view('pets.home-page-pets.duke'); })->name('duke');
+Route::get('/milo', function () { return view('pets.home-page-pets.milo'); })->name('milo');
+Route::get('/rex', function () { return view('pets.home-page-pets.rex'); })->name('rex');
+Route::get('/dollar', function () { return view('pets.home-page-pets.dollar'); })->name('dollar');
+Route::get('/leo', function () { return view('pets.home-page-pets.leo'); })->name('leo');
+
+Route::get('/contact', function () {
+return view('pets.contact');
+})->name('contact');
 
 Route::get('/pet-profile', function () {
-return view('pets.pet-profile');
+    return view('pets.pet-profile');
 });
- */
+
+Route::post('/send-message/{type}', [UsersController::class, "sendEmail"])->name('send-email');
 require __DIR__ . '/auth.php';

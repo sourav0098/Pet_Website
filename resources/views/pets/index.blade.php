@@ -62,7 +62,7 @@
             </div>
             <div class="d-flex flex-wrap featured-pet container justify-content-evenly p-0 pb-3">
                 <div class="featured-pet-card">
-                    <a href="" class="nav-link">
+                    <a href="{{ route('duke') }}" class="nav-link">
                         <div class="featured-pet-image">
                             <img src="./images/featured_1.jpg" width="230px" alt="">
                             <i id="3" class="fa-regular fa-heart favourite-icon"></i>
@@ -75,7 +75,7 @@
                     </a>
                 </div>
                 <div class="featured-pet-card">
-                    <a href="" class="nav-link">
+                    <a href="{{ route('milo') }}" class="nav-link">
                         <div class="featured-pet-image">
                             <img src="./images/featured_2.jpg" width="230px" alt="">
                             <i id="3" class="fa-regular fa-heart favourite-icon"></i>
@@ -88,7 +88,7 @@
                     </a>
                 </div>
                 <div class="featured-pet-card">
-                    <a href="" class="nav-link">
+                    <a href="{{ route('rex') }}" class="nav-link">
                         <div class="featured-pet-image">
                             <img src="./images/featured_3.jpg" width="230px" alt="">
                             <i id="3" class="fa-regular fa-heart favourite-icon"></i>
@@ -101,7 +101,7 @@
                     </a>
                 </div>
                 <div class="featured-pet-card">
-                    <a href="" class="nav-link">
+                    <a href="{{ route('dollar') }}" class="nav-link">
                         <div class="featured-pet-image">
                             <img src="./images/featured_4.jpg" alt="">
                             <i id="3" class="fa-regular fa-heart favourite-icon"></i>
@@ -114,7 +114,7 @@
                     </a>
                 </div>
                 <div class="featured-pet-card">
-                    <a href="" class="nav-link">
+                    <a href="{{ route('leo') }}" class="nav-link">
                         <div class="featured-pet-image">
                             <img src="./images/featured_5.jpg" alt="">
                             <i id="3" class="fa-regular fa-heart favourite-icon"></i>
