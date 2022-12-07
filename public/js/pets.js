@@ -24,15 +24,15 @@ Array.from(edits).forEach((element) => {
     idEdit.value = pet_id;
     petnameEdit.value = pet_name;
     ageEdit.value = age;
-    if (male.value == gender) {
-      male.setAttribute("checked", true);
+    if (gender=='Male') {
+      Male.setAttribute("checked", true);
     } else {
-      female.setAttribute("checked", true);
+      Female.setAttribute("checked", true);
     }
     animalTypeEdit.value = animalType;
     coatEdit.value = coatLength;
     colorEdit.value = color;
-    if (adopted.value == pet_status) {
+    if (pet_status=='Adopted') {
       adopted.setAttribute("checked", true);
     } else {
       not_adopted.setAttribute("checked", true);

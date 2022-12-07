@@ -172,3 +172,50 @@ function handleFileSelect(e) {
         reader.readAsDataURL(f);
     });
 }
+
+
+var editModal = new bootstrap.Modal(document.getElementById("editModal"));
+edits = document.getElementsByClassName("edit");
+Array.from(edits).forEach((element) => {
+  element.addEventListener("click", (e) => {
+    div=e.target.parentNode.parentNode.parentNode;
+    pet_id = div.getElementsByTagName('input')[2].value
+    pet_name = div.getElementsByTagName('h5')[0].innerText
+    pet_status = div.getElementsByTagName("small")[0].innerText;
+    gender = div.getElementsByTagName("small")[1].innerText;
+    color = div.getElementsByTagName("small")[2].innerText;
+    age = div.getElementsByTagName("small")[3].innerText;
+    coatLength = div.getElementsByTagName("small")[4].innerText.split(" ")[0];
+    characteristic = div.getElementsByTagName("small")[6].innerText;
+    description = div.getElementsByTagName("p")[0].innerText;
+
+    idEdit.value = pet_id;
+    petnameEdit.value = pet_name;
+    ageEdit.value = age;
+    if (gender=='Male') {
+      Male.setAttribute("checked", true);
+    } else {
+      Female.setAttribute("checked", true);
+    }
+    coatEdit.value = coatLength;
+    colorEdit.value = color;
+    if (pet_status=='Adopted') {
+      adopted.setAttribute("checked", true);
+    } else {
+      not_adopted.setAttribute("checked", true);
+    }
+    descriptionEdit.value = description;
+
+    const characteristicEdit=document.querySelectorAll('input[type="checkbox"]');
+    for(let i=0;i<characteristicEdit.length;i++){
+      if(characteristic.includes(characteristicEdit[i].value)){
+        characteristicEdit[i].setAttribute('checked',true);
+      }
+      else{
+        characteristicEdit[i].removeAttribute('checked');
+      }
+    }
+    // Toggle the Modal
+    editModal.toggle();
+  });
+});

@@ -11,8 +11,19 @@ use Carbon\Carbon;
 class PetsController extends Controller
 {
     public function edit(Request $request){
+        $age=['Baby','Young','Adult','Senior'];
+        $gender=['Male','Female'];
+        $characteristics=['Cute','Loyal','Friendly','Playful','Intelligent','Happy','Affectionate','Courageous'];
+        $animal_types=['Dog','Cat','Rabbit','Fish','Bird','Other'];
+        $coat_lengths=['Hairless','Short','Medium','Long'];
+
         $pets=Pet::with('characteristics')->get();
         return view('pets.pets',[
+            'ages'=>$age,
+            'genders'=>$gender,
+            'characteristics'=>$characteristics,
+            'animal_types'=>$animal_types,
+            'coat_lengths'=>$coat_lengths,
             'user' => $request->user(),
             'pets'=>$pets,
         ]);

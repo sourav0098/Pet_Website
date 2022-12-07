@@ -34,6 +34,8 @@ Route::get("/about-us", [AboutController::class, "index"]);
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::patch('/profile/pet-update', [ProfileController::class, 'petUpdate'])->name('profile.pet-update');
+    Route::delete('/profile', [ProfileController::class, 'petDelete'])->name('profile.pet-delete');
 
     Route::get("/settings", [SettingsController::class, "edit"])->name('settings.edit');
     Route::put("/settings", [SettingsController::class, "update"])->name('settings.update');

@@ -8,6 +8,9 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\File;
 use App\Models\Pet;
+use App\Models\Characteristic;
+use Illuminate\Support\Facades\DB;
+use Carbon\Carbon;
 
 class ProfileController extends Controller
 {
@@ -19,10 +22,19 @@ class ProfileController extends Controller
      */
     public function edit(Request $request)
     {
-        $pets=Pet::with('characteristics')->where('user_id',$request->user()->id)->get();
         $provinces=['Alberta','British Columbia','Manitoba','New Brunswick','New Foundland and Labrador','Northwest Territories','Nova Scotia','Nunavut','Ontario','Prince Edward Island','Quebec','Saskatchewan','Yukon Territory'];
+        $age=['Baby','Young','Adult','Senior'];
+        $gender=['Male','Female'];
+        $characteristics=['Cute','Loyal','Friendly','Playful','Intelligent','Happy','Affectionate','Courageous'];
+        $coat_lengths=['Hairless','Short','Medium','Long'];
+
+        $pets=Pet::with('characteristics')->where('user_id',$request->user()->id)->get();
         return view('pets.profile', [
             'provinces'=>$provinces,
+            'ages'=>$age,
+            'genders'=>$gender,
+            'characteristics'=>$characteristics,
+            'coat_lengths'=>$coat_lengths,
             'user' => $request->user(),
             'pets'=>$pets
         ]);
@@ -61,8 +73,44 @@ class ProfileController extends Controller
         return Redirect::route('profile.edit')->with('status', 'profile-updated');
     }
 
+    public function petUpdate(Request $request){
+        // Validation
+        $this->validate($request,[
+            'petnameEdit' => 'required|string',
+            'ageEdit' => 'required',
+            'genderEdit' => 'required|string',
+            'colorEdit' => 'required|string',
+            'characteristic' => 'required',
+            'coatEdit' => 'required|string',
+            'statusEdit'=>'required|string',
+            'descriptionEdit' => 'required|string'
+        ]);
+        
+        $pet=Pet::find($request->get('idEdit'));
+        $pet->pet_name=$request->get('petnameEdit');
+        $pet->age=$request->get('ageEdit');
+        $pet->gender=$request->get('genderEdit');
+        $pet->color=$request->get('colorEdit');
+        $pet->coat_length=$request->get('coatEdit');
+        $pet->is_adopted=$request->get('statusEdit');
+        $pet->description=$request->get('descriptionEdit');
+        $pet->save();
+        
+        // First delete all the characteristics for that pet_id then insert new records
+        Characteristic::where('pet_id',$request->get('idEdit'))->delete();
+        $data = [];
+        foreach ($request->characteristic as $c) {
+            $data[] = [
+                'pet_id' => $request->get('idEdit'),
+                'characteristic' => $c
+            ];
+        }
+        DB::table('characteristics')->insert($data);
+        return redirect()->route('profile.edit')->with('status', 'pet-updated');
+    }
+
     /**
-     * Delete the user's account.
+     * Logout user account.
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\RedirectResponse
@@ -74,14 +122,18 @@ class ProfileController extends Controller
         ]);
 
         $user = $request->user();
-
         Auth::logout();
-
         $user->delete();
-
         $request->session()->invalidate();
         $request->session()->regenerateToken();
 
         return Redirect::to('/');
+    }
+
+    // Delete Pet Record
+    public function petDelete(Request $request){
+        Characteristic::where('pet_id',$request->get('pet_id'))->delete();
+        Pet::find($request->get('pet_id'))->delete();
+        return redirect()->route('profile.edit')->with('status', 'pet-deleted');
     }
 }

@@ -37,80 +37,43 @@
                         <div class="col-md-12">
                             <label for="ageEdit" class="form-label">Age</label>
                             <select id="ageEdit" class="form-select" name="ageEdit">
-                                <option value="Baby">Baby</option>
-                                <option value="Young">Young</option>
-                                <option value="Adult">Adult</option>
-                                <option value="Senior">Senior</option>
+                                @foreach($ages as $age)
+                                    <option value="{{$age}}">{{$age}}</option>
+                                @endforeach
                             </select>
                         </div>
                         <div class="col-md-12">
                             <p class="form-label">Gender</p>
-                            <div class="form-check form-check-inline">
-                                <input type="radio" class="form-check-input" id="male" name="genderEdit" value="Male">
-                                <label for="male" class="form-check-label">Male</label><br>
-                            </div>
-                            <div class="form-check form-check-inline">
-                                <input type="radio" class="form-check-input" id="female" name="genderEdit" value="Female">
-                                <label for="female" class="form-check-label">Female</label><br>
-                            </div>
+                            @foreach($genders as $gender)
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" class="form-check-input" id="{{$gender}}" name="genderEdit" value="{{$gender}}">
+                                    <label for="{{$gender}}" class="form-check-label">{{$gender}}</label><br>
+                                </div>
+                            @endforeach
                         </div>
                         <div class="col-md-12">
                             <p class="form-label">Characteristic</p>
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" id="Cute" name="characteristic[]" value="Cute">
-                                <label class="form-check-label" for="Cute">Cute</label>
-                            </div>
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" id="Loyal" name="characteristic[]" value="Loyal">
-                                <label class="form-check-label" for="Loyal">Loyal</label>
-                            </div>
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" id="Friendly" name="characteristic[]" value="Friendly">
-                                <label class="form-check-label" for="Friendly">Friendly</label>
-                            </div>
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" id="Playful" name="characteristic[]" value="Playful">
-                                <label class="form-check-label" for="Playful">Playful</label>
-                            </div>
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" id="Intelligent" name="characteristic[]" value="Intelligent">
-                                <label class="form-check-label" for="Intelligent">Intelligent</label>
-                            </div>
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" id="Happy" name="characteristic[]" value="Happy">
-                                <label class="form-check-label" for="Happy">Happy</label>
-                            </div>
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" id="Affectionate" name="characteristic[]" value="Affectionate">
-                                <label class="form-check-label" for="Affectionate">Affectionate</label>
-                            </div>
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" id="Courageous" name="characteristic[]" value="Courageous">
-                                <label class="form-check-label" for="Courageous">Courageous</label>
-                            </div>
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" id="Aggressive" name="characteristic[]" value="Courageous">
-                                <label class="form-check-label" for="Aggressive">Aggressive</label>
-                            </div>
+                            @foreach($characteristics as $characteristic)
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="checkbox" id="{{$characteristic}}" name="characteristic[]" value="{{$characteristic}}">
+                                    <label class="form-check-label" for="{{$characteristic}}">{{$characteristic}}</label>
+                                </div>
+                            @endforeach
                         </div>
                         <div class="col-md-6">
                             <label for="animalTypeEdit" class="form-label">Animal Type</label>
                             <select id="animalTypeEdit" class="form-select" name="animalTypeEdit">
-                                <option value="Dog">Dog</option>
-                                <option value="Cat">Cat</option>
-                                <option value="Rabbit">Rabbit</option>
-                                <option value="Bird">Bird</option>
-                                <option value="Fish">Fish</option>
-                                <option value="other">Other</option>
+                                @foreach($animal_types as $animal)
+                                <option value="{{$animal}}">{{$animal}}</option>
+                                @endforeach
                             </select>
                         </div>
                         <div class="col-md-6">
                             <label for="coatEdit" class="form-label">Coat Length</label>
                             <select id="coatEdit" class="form-select" name="coatEdit">
-                                <option value="Hairless">Hairless</option>
-                                <option value="Short">Short</option>
-                                <option value="Medium">Medium</option>
-                                <option value="Full">Full</option>
+                                @foreach($coat_lengths as $coat)
+                                    <option value="{{$coat}}">{{$coat}}</option>
+                                @endforeach
                             </select>
                         </div>
                         <div class="col-md-12">

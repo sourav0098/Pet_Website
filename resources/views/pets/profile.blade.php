@@ -15,6 +15,18 @@
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
     @endif
+    @if (session('status') === 'pet-deleted')
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                <strong>Success! </strong>Pet Record has been deleted successfully
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+    @endif
+    @if (session('status') === 'pet-updated')
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                <strong>Success! </strong>Pet Record has been updated successfully
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+    @endif
     <div id="profile">
         <div class="container-fluid d-flex align-items-center">
             <button type="button" id="sideBarCollapse" class="btn btn-secondary me-3"><i class="fa-solid fa-bars"></i></button>
@@ -27,6 +39,91 @@
                 @endforeach
             </div>
         @endif
+
+        <!-- Pet Edit Modal -->
+        <div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title fw-bold" id="editModalLabel">Edit Pet</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <form action="{{ route('profile.pet-update') }}" method="POST">
+                        @csrf
+                        @method('patch')
+                        <div class="modal-body row g-3">
+                            <input type="hidden" name="idEdit" id="idEdit">
+                            <div class="col-md-12">
+                                <label for="petnameEdit" class="form-label">Pet Name</label>
+                                <input type="text" class="form-control" id="petnameEdit" name="petnameEdit">
+                                <span class="text-danger fst-italic d-none">Please enter valid pet name</span>
+                            </div>
+                            <div class="col-md-12">
+                                <label for="ageEdit" class="form-label">Age</label>
+                                <select id="ageEdit" class="form-select" name="ageEdit">
+                                    @foreach($ages as $age)
+                                        <option value="{{$age}}">{{$age}}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+                            <div class="col-md-12">
+                                <p class="form-label">Gender</p>
+                                @foreach($genders as $gender)
+                                    <div class="form-check form-check-inline">
+                                        <input type="radio" class="form-check-input" id="{{$gender}}" name="genderEdit" value="{{$gender}}">
+                                        <label for="{{$gender}}" class="form-check-label">{{$gender}}</label><br>
+                                    </div>
+                                @endforeach
+                            </div>
+                            <div class="col-md-12">
+                                <p class="form-label">Characteristic</p>
+                                @foreach($characteristics as $characteristic)
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="checkbox" id="{{$characteristic}}" name="characteristic[]" value="{{$characteristic}}">
+                                        <label class="form-check-label" for="{{$characteristic}}">{{$characteristic}}</label>
+                                    </div>
+                                @endforeach
+                            </div>
+                            <div class="col-md-6">
+                                <label for="colorEdit" class="form-label">Color</label>
+                                <input type="text" class="form-control" id="colorEdit" name="colorEdit">
+                                <span class="text-danger fst-italic d-none">Please enter valid color</span>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="coatEdit" class="form-label">Coat Length</label>
+                                <select id="coatEdit" class="form-select" name="coatEdit">
+                                    @foreach($coat_lengths as $coat)
+                                        <option value="{{$coat}}">{{$coat}}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+                            <div class="col-md-12">
+                                <p class="form-label">Status</p>
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" class="form-check-input" id="adopted" name="statusEdit" value="1">
+                                    <label for="adopted" class="form-check-label">Adopted</label><br>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" class="form-check-input" id="not_adopted" name="statusEdit" value="0">
+                                    <label for="not_adopted" class="form-check-label">Not Adopted</label><br>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <label for="descriptionEdit" class="form-label">Description</label>
+                                <textarea class="form-control" style="resize: none;" maxlength="330" name="descriptionEdit" placeholder="Leave a description here" id="descriptionEdit" col="10" rows="3"></textarea>
+                                <span class="text-danger fst-italic d-none">Please enter valid description</span>
+                            </div>
+                            
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="submit" class="btn btn-primary" id="update-btn">Update</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
         <div class="container mb-3">
             <form class="row g-3" action="{{ route('profile.update') }}" enctype="multipart/form-data" method="POST">
                 @csrf
@@ -102,6 +199,14 @@
             <h1 class="fw-bold fs-3">Current Pets</h1>
         </div>
         <div class="container d-flex justify-content-between flex-wrap">
+            @if($pets->isEmpty())
+            <div class="mb-3 text-center w-100">
+                <h3>You have not added any pets for adoption</h3>
+                <a href="/add-pet">
+                    <button class="btn btn-primary">Add a Pet</button>
+                </a>
+            </div>
+            @endif
             @foreach($pets as $pet)
                 <div class="card mb-3 mt-3">
                     <div class="row no-gutters">
@@ -110,16 +215,28 @@
                         </div>
                         <div class="col-md-8">
                             <div class="card-body">
-                                <i class="fa-solid fa-pen-to-square" id="edit-icon"></i>
-                                <div class="d-flex justify-content-between me-5">
+                                {{-- Edit Icon --}}
+                                <i class="fa-solid fa-pen-to-square edit" id="edit-icon"></i>
+                                {{-- Delete icon --}}
+                                <form action="{{ route('profile.pet-delete') }}" method="POST" id=del-icon>
+                                    @csrf
+                                    @method('delete')
+                                    <input type="hidden" name="pet_id" value="{{$pet->id}}">
+                                    <button type="submit" class="border-0 bg-transparent">
+                                        <i class="fa-solid fa-trash text-danger"></i>
+                                    </button>
+                                </form>
+
+                                <div class="d-flex justify-content-between">
                                     <h5 class="card-title fw-bold d-inline">{{$pet->pet_name}}</h5>
+                                    <input type="hidden" value="{{$pet->id}}">
                                     @if($pet->is_adopted==1)
-                                        <small class="d-inline-flex mb-3 px-2 py-1 fw-semibold text-success bg-success bg-opacity-10 border border-success border-opacity-10 rounded-2">Adopted</small>
+                                        <small class="d-inline-flex mb-3 px-2 py-1 fw-semibold text-success bg-success bg-opacity-10 border border-success border-opacity-10 rounded-2" style="margin-right: 58px">Adopted</small>
                                     @elseif($pet->is_adopted==0)
-                                        <small class="d-inline-flex mb-3 px-2 py-1 fw-semibold text-danger bg-danger bg-opacity-10 border border-danger border-opacity-10 rounded-2">Not Adopted</small>
+                                        <small class="d-inline-flex mb-3 px-2 py-1 fw-semibold text-danger bg-danger bg-opacity-10 border border-danger border-opacity-10 rounded-2"style="margin-right: 58px">Not Adopted</small>
                                     @endif
                                 </div>
-                                <p class="card-text text-justify" style="height: 185px">{{\Illuminate\Support\Str::limit($pet->description, 250)}}</p>
+                                <p class="card-text text-justify" style="height: 185px">{{\Illuminate\Support\Str::limit($pet->description, 330)}}</p>
                                 <div class="d-flex justify-content-between">
                                     <small class=" text-muted">{{$pet->gender}}</small>
                                     <small class=" text-muted">{{$pet->color}}</small>
@@ -131,8 +248,8 @@
                                 </div>
 
                                 <div class="d-flex justify-content-between">
-                                    <small class="text-muted">{{$user->city}}</small>
-                                    <small class="text-muted">
+                                    <small class="text-muted me-2">{{$user->city}}</small>
+                                    <small class="text-muted text-end">
                                         @foreach($pet->characteristics as $key=>$c)
                                             @if($key!=(count($pet->characteristics)-1))
                                                 {{$c->characteristic}},

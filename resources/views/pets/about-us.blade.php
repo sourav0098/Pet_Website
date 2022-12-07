@@ -60,7 +60,7 @@
                         </div>
                         <div class="col-lg-7 col-md-6 col-sm-6 col-6 pt-3">
                             <h5 class="fw-bold d-inline-block">{{$person->fname}} {{$person->lname}}</h5>
-                            <span><a href={{$person->linkedinUrl}}><i class="fab fa-linkedin"></i></a></span>
+                            <span><a href={{$person->linkedin}}><i class="fab fa-linkedin"></i></a></span>
                             <small class="role d-block">{{$person->role}}</small>
                             <p class="dev-description">{{$person->description}}</p>
                             <a class="nav-link d-inline pe-2 text-muted" id="emailIcon" href="mailto:{{$person->email}}"><i class="fa-solid fa-envelope"></i></a><small class="text-muted">{{$person->email}}</small><br>

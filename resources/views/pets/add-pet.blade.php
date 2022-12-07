@@ -97,7 +97,7 @@
                     
                     <div class="col-md-12">
                         <label for="description" class="form-label">Description</label>
-                        <textarea class="form-control" placeholder="Leave a description here" name="description" id="description" col="10" rows="4">{{Request::old('description')}}</textarea>
+                        <textarea class="form-control" placeholder="Leave a description here" name="description" id="description" maxlength="330" col="10" rows="4">{{Request::old('description')}}</textarea>
                         <span class="text-danger fst-italic d-none">Please enter valid description</span>
                     </div>
                     <div class="col-12">
