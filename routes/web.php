@@ -66,10 +66,6 @@ Route::get('/profile', function () {
 return view('pets.profile');
 });
 
-Route::get('/pets', function () {
-return view('pets.pets');
-});
-
 Route::get('/favourites', function () {
 return view('pets.favourites');
 });

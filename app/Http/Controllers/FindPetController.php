@@ -3,17 +3,15 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\RequestManager;
+// use Illuminate\Http\Request;
 use Request;
 
 class FindPetController extends Controller
 {
     public function findDogs()
     {
-
         // $currentURL = Request::url();
-
         // $apiQueryParameters = substr($currentURL, strpos($currentURL, "?"));
-
         $type = Request::get('type');
         $gender = Request::get('gender');
         $age = Request::get('age');
@@ -41,9 +39,7 @@ class FindPetController extends Controller
 
         $baseUrl = str_replace(" ", "%20", $baseUrl);
         error_log($baseUrl);
-
         $pets = RequestManager::getRequest($baseUrl);
-
         $breeds = RequestManager::getRequest("types/" . $type . "/breeds");
         // dd($breeds, $type);
 

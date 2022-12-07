@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\DB;
 use App\Models\Pet;
 use App\Models\Characteristic;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\File;
 
 class PetsController extends Controller
 {
@@ -71,7 +72,14 @@ class PetsController extends Controller
 
     public function destroy(Request $request){
         Characteristic::where('pet_id',$request->get('pet_id'))->delete();
-        Pet::find($request->get('pet_id'))->delete();
+        $pet=Pet::find($request->get('pet_id'));
+        
+        // Delete pet image from file system
+        $destination='uploads/'.$pet->pet_image;
+        if(File::exists($destination)){
+            File::delete($destination);
+        }   
+        $pet->delete();
         return redirect()->route('pets.edit')->with('status', 'pet-deleted');
     }
 }
