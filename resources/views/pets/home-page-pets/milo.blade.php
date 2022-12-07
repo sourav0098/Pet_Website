@@ -21,24 +21,25 @@
 <div class="container mt-5 mb-5 d-flex">
   <div class="card rounded" style="width: 100%">
     <div class=" d-flex justify-content-center">
-        <img src="{{ $pet['photos'][0]['full'] }}" class="rounded" width="" height="400" />
+        <img src="../images/featured_2.jpg" class="rounded" width="" height="400" />
         <div class="area2 px-3">
-          <h4 class=" name mt-3 text-center">{{ $pet['name'] }}</h4>
+          <h4 class=" name mt-3 text-center">Milo</h4>
           <div class="hr"></div>
           <div class="d-flex">
-            <p style="margin-right: 1.5rem;"><span class="back">Age: </span> {{ $pet['age'] }}</p>
-            <p style="margin-right: 1.5rem;"><span class="back">Gender: </span> {{ $pet['gender'] }}</p>
-            <p style="margin-right: 1.5rem;"><span class="back">Size: </span> {{ $pet['size'] }}</p>
-            <p style="margin-right: 1.5rem;"><span class="back">Status: </span> {{ $pet['status'] }}</p>
+            <p style="margin-right: 1.5rem;"><span class="back">Age: </span> Young</p>
+            <p style="margin-right: 1.5rem;"><span class="back">Gender: </span> Female</p>
+            <p style="margin-right: 1.5rem;"><span class="back">Size: </span> Small</p>
+            <p style="margin-right: 1.5rem;"><span class="back">Status: </span> adoptable</p>
           </div>
           <div class="hr"></div>
           <div class="d-flex">
-            <p style="margin-right: 1.5rem;"><span class="back">City: </span> {{ $pet['contact']['address']['city'] }}</p>
-            <p style="margin-right: 1.5rem;"><span class="back">State: </span> {{ $pet['contact']['address']['state'] }}</p>
-            <p style="margin-right: 1.5rem;"><span class="back">Country: </span> {{ $pet['contact']['address']['country'] }}</p>
+            <p style="margin-right: 1.5rem;"><span class="back">City: </span> Etobicoke</p>
+            <p style="margin-right: 1.5rem;"><span class="back">State: </span> ON</p>
+            <p style="margin-right: 1.5rem;"><span class="back">Country: </span> Canada</p>
           </div>
           <div class="hr"></div>
-          <p class="information mt-3 text-justify">{{ $pet['description'] }}</p>
+          <p class="information mt-3 text-justify">Please contact JoEllen (sagdinfo@aol.com) for more information about this pet. Please apply online at
+          http://texasgreatdane.org/adoption-application/ ** This cat is in...</p>
           <div class="d-flex justify-content-center mt-5">
             <div class="back"> </br> Return home? <a href="/" style="color:#6504b4">Home</a></div>
           </div>

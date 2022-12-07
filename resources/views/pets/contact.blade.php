@@ -34,18 +34,19 @@
       <div class="right-side">
         <div class="topic-text">Send us a message</div>
         <p>If you have any questions or inquiries, you can contact us by sending us a message. It will be our pleasure to help you.</p>
-      <form action="#">
+      <form action="{{ route('send-email', 'admin') }}" method="POST">
+        @csrf
         <div class="input-box">
-          <input type="text" placeholder="Enter your name">
+          <input type="text" placeholder="Enter your name" name="name" required>
         </div>
         <div class="input-box">
-          <input type="text" placeholder="Enter your email">
+          <input type="text" placeholder="Enter your email" name="email" required>
         </div>
         <div class="input-box message-box">
-        <textarea placeholder="Enter your message"></textarea>
+        <textarea placeholder="Enter your message" name="message" required></textarea>
         </div>
         <div class="button" style="background-color: rgba(0, 0, 0, 0.2)">
-          <input type="button" value="Send Now" >
+          <input type="button" value="Send Now" onclick="this.form.submit();">
         </div>
         <div class="back"> <br> Return home? <a class="nav-link fw-bold d-inline" href="/">Home</a></div>
       </form>

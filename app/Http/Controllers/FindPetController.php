@@ -45,10 +45,22 @@ class FindPetController extends Controller
         $pets = RequestManager::getRequest($baseUrl);
 
         $breeds = RequestManager::getRequest("types/" . $type . "/breeds");
+        // dd($breeds, $type);
 
         //$pets = $this->cleanPetsArr($pets);
 
-        return view('pets.filter-pets', ['pets' => $pets['animals'], 'breeds' => $breeds['breeds']]);
+        return view('pets.filter-pets', ['pets' => $pets['animals'], 'breeds' => isset($breeds) ? $breeds['breeds'] : '']);
 
+    }
+
+    public function petProfile($id, $type) {
+        $baseUrl = "animals/".$id;
+        $pet = RequestManager::getRequest($baseUrl)['animal'];
+        if ($type == 'profile') {
+            return view('pets.pet-profile', compact('pet'));
+        } else {
+            return view('pets.contact-owner', compact('pet'));
+        }
+        
     }
 }

@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 use App\Models\User;
+use App\Mail\ContactMail;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class UsersController extends Controller
 {
@@ -42,5 +44,20 @@ class UsersController extends Controller
         $user=User::find($request->get('id'));
         $user->delete();
         return redirect()->route('users.edit')->with('status', 'user-profile-deleted');
+    }
+
+    public function sendEmail(Request $request, $type) {
+        if ($type == 'admin') {
+            $mail = 'Rutvik.joshi@live.com';
+        } else {
+            $mail = $request->receiver_email;
+        }
+        $details = [
+            'name' => $request->name,
+            'email' => $request->email,
+            'message' => $request->message,
+        ];
+        Mail::to($mail)->send(new ContactMail($details));
+        return redirect()->back()->with('status', 'email-sent');
     }
 }

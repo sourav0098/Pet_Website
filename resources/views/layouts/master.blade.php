@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- CSRF Token -->
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <link rel="shortcut icon" href="./images/favicon-32x32.ico" type="image/x-icon">
     <link rel="stylesheet" href="{{asset('/css/index.css')}}">
     <link rel="stylesheet" href="{{asset('/css/nav.css')}}">
@@ -16,7 +18,7 @@
     <header class="bg-white">
         <div class="d-flex align-items-center justify-content-between">
             <div class="logo d-flex align-items-center">
-                <a href="./" class="nav-link d-flex align-items-center">
+                <a href="/" class="nav-link d-flex align-items-center">
                     <img src="./images/logo.png" class="img-fluid" alt="">
                     <h1 class="fs-3">Little Paws</h1>
                 </a>
@@ -58,19 +60,19 @@
                             Find a Pet
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="filter-pets?type=dog">Dog</a></li>
-                            <li><a class="dropdown-item" href="filter-pets?type=cat">Cat</a></li>
-                            <li><a class="dropdown-item" href="filter-pets?type=barnyard">Other Animals</a></li>
+                            <li><a class="dropdown-item" href="{{ url('filter-pets?type=dog') }}">Dog</a></li>
+                            <li><a class="dropdown-item" href="{{ url('filter-pets?type=cat') }}">Cat</a></li>
+                            <li><a class="dropdown-item" href="{{ url('filter-pets?type=barnyard') }}">Other Animals</a></li>
                         </ul>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="how-it-works">How it works</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="about-us">About Us</a>
+                        <a class="nav-link active" aria-current="page" href="{{ route('about-us') }}">About Us</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="contact">Contact Us</a>
+                        <a class="nav-link active" aria-current="page" href="{{ route('contact') }}">Contact Us</a>
                     </li>
                 </ul>
             </div>
@@ -97,10 +99,10 @@
                             <a href="how-it-works" class="nav-link"><i class="fas fa-paw pe-3"></i>FAQ</a>
                         </li>
                         <li class="mb-2">
-                            <a href="about-us" class="nav-link"><i class="fas fa-paw pe-3"></i>About Us</a>
+                            <a href="{{ route('about-us') }}" class="nav-link"><i class="fas fa-paw pe-3"></i>About Us</a>
                         </li>
                         <li class="mb-2">
-                            <a href="./contact" class="nav-link"><i class="fas fa-paw pe-3"></i>Contact Us</a>
+                            <a href="{{ route('contact') }}" class="nav-link"><i class="fas fa-paw pe-3"></i>Contact Us</a>
                         </li>
                         <li class="mb-2">
                             <a href="#!" class="nav-link"><i class="fas fa-paw pe-3"></i>Terms of Service</a>
@@ -116,13 +118,13 @@
 
                     <ul class="list-unstyled footer-list">
                         <li class="mb-2">
-                            <a href="./filter-pets" class="nav-link"><i class="fas fa-paw pe-3"></i>Dog Adoption</a>
+                            <a href="{{ url('filter-pets?type=dog') }}" class="nav-link"><i class="fas fa-paw pe-3"></i>Dog Adoption</a>
                         </li>
                         <li class="mb-2">
-                            <a href="./filter-pets" class="nav-link"><i class="fas fa-paw pe-3"></i>Cat Adoption</a>
+                            <a href="{{ url('filter-pets?type=cat') }}" class="nav-link"><i class="fas fa-paw pe-3"></i>Cat Adoption</a>
                         </li>
                         <li class="mb-2">
-                            <a href="./filter-pets" class="nav-link"><i class="fas fa-paw pe-3"></i>Other Pet Adoption</a>
+                            <a href="{{ url('filter-pets?type=barnyard') }}" class="nav-link"><i class="fas fa-paw pe-3"></i>Other Pet Adoption</a>
                         </li>
 
                     </ul>
