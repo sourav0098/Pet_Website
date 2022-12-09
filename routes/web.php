@@ -11,6 +11,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SettingsController;
 use App\Http\Controllers\UsersController;
 use App\Http\Controllers\PetsController;
+use App\Http\Controllers\ContactController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -30,6 +31,12 @@ Route::get("/filter-pets", [FindPetController::class, "findDogs"]);
 Route::get("/pet-profile/{id}/{type}", [FindPetController::class, "petProfile"])->name('pet-profile');
 Route::get("/conditions", [AcceptTermsController::class, "see_conditions"]);
 Route::get("/about-us", [AboutController::class, "index"])->name('about-us');
+Route::get("/contact", [ContactController::class, "edit"]);
+
+Route::get('/how-it-works', function () {
+    return view('pets.how-it-works');
+});
+
 
 // User Login Authentication
 Route::middleware('auth')->group(function () {
@@ -51,7 +58,7 @@ Route::middleware('auth')->group(function () {
 // Admin Login Authentication
 Route::middleware(['auth', 'auth_admin'])->group(function () {
     Route::get('/dashboard', [DashboardController::class, "edit"])->name('dashboard.edit');
-
+    
     Route::get('/users', [UsersController::class, "edit"])->name('users.edit');
     Route::patch('/users', [UsersController::class, "update"])->name('users.update');
     Route::delete('/users', [UsersController::class, "destroy"])->name('users.destroy');
@@ -61,31 +68,16 @@ Route::middleware(['auth', 'auth_admin'])->group(function () {
     Route::delete('/pets', [PetsController::class, "destroy"])->name('pets.destroy');
 });
 
-/*
-Route::get('/profile', function () {
-return view('pets.profile');
-});
+// Route::get('/favourites', function () {
+//     return view('pets.favourites');
+// });
 
-Route::get('/favourites', function () {
-return view('pets.favourites');
-});
-
-
-Route::get('/how-it-works', function () {
-    return view('pets.how-it-works');
-});
-
-*/
 
 Route::get('/duke', function () { return view('pets.home-page-pets.duke'); })->name('duke');
 Route::get('/milo', function () { return view('pets.home-page-pets.milo'); })->name('milo');
 Route::get('/rex', function () { return view('pets.home-page-pets.rex'); })->name('rex');
 Route::get('/dollar', function () { return view('pets.home-page-pets.dollar'); })->name('dollar');
 Route::get('/leo', function () { return view('pets.home-page-pets.leo'); })->name('leo');
-
-Route::get('/contact', function () {
-return view('pets.contact');
-})->name('contact');
 
 Route::get('/pet-profile', function () {
     return view('pets.pet-profile');

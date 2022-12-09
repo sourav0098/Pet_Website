@@ -9,9 +9,15 @@ $(document).ready(function () {
 // No of users according to province graph
 let provinces=[]
 let count=[]
+console.log(province_chart)
 province_chart.forEach((element)=>{
-  provinces.push(element.province)
-  count.push(element.count)
+  if(element.province==null){
+    provinces.push("Not Defined")
+    count.push(element.count)
+  }else{
+    provinces.push(element.province)
+    count.push(element.count)
+  }
 })
 
 const usersData = {
@@ -167,7 +173,7 @@ const petsDataByDate = {
   labels: date,
   datasets: [
     {
-      label: "Adopted Pet",
+      label: "Pets Added",
       data: pets_added_count,
       fill: false,
       borderColor: "rgb(75, 192, 192)",
@@ -183,7 +189,7 @@ const config4 = {
     plugins: {
       title: {
         display: true,
-        text: "Number of pets adopted according to date",
+        text: "Number of pets added according to date",
         font: {
           size: 16,
         },

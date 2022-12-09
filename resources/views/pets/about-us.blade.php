@@ -5,7 +5,9 @@
     <link rel="stylesheet" href="{{asset('/css/about_us.css')}}">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    {{-- <link rel="stylesheet" href="./css/home.css"> --}}
+    <link rel="stylesheet" href="./css/home.css">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
 @endsection
 @section('content')
 <div class="about-us-container">
@@ -60,7 +62,7 @@
                         </div>
                         <div class="col-lg-7 col-md-6 col-sm-6 col-6 pt-3">
                             <h5 class="fw-bold d-inline-block">{{$person->fname}} {{$person->lname}}</h5>
-                            <span><a href={{$person->linkedin}}><i class="fab fa-linkedin"></i></a></span>
+                            <span><a href={{$person->linkedin}}  target="_blank"><i class="fab fa-linkedin"></i></a></span>
                             <small class="role d-block">{{$person->role}}</small>
                             <p class="dev-description">{{$person->description}}</p>
                             <a class="nav-link d-inline pe-2 text-muted" id="emailIcon" href="mailto:{{$person->email}}"><i class="fa-solid fa-envelope"></i></a><small class="text-muted">{{$person->email}}</small><br>

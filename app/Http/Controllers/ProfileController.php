@@ -102,7 +102,9 @@ class ProfileController extends Controller
         foreach ($request->characteristic as $c) {
             $data[] = [
                 'pet_id' => $request->get('idEdit'),
-                'characteristic' => $c
+                'characteristic' => $c,
+                'created_at'=>$pet->created_at,
+                'updated_at'=>$pet->updated_at,
             ];
         }
         DB::table('characteristics')->insert($data);
@@ -126,7 +128,6 @@ class ProfileController extends Controller
         $user->delete();
         $request->session()->invalidate();
         $request->session()->regenerateToken();
-
         return Redirect::to('/');
     }
 

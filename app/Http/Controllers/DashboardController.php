@@ -13,8 +13,8 @@ class DashboardController extends Controller
     {
 
         $province_chart = DB::table("users")
-            ->select(DB::raw('province,count(province) as count'))
-            ->whereNotNull("province")
+            ->select(DB::raw('province,count(id) as count'))
+            ->where('is_admin',0)
             ->groupBy("province")
             ->get();
 
