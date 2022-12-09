@@ -1,4 +1,4 @@
-## **Project Phase 5**
+## **Project Phase 6**
 
 ## Prerequisites
 -   VS Code
@@ -36,24 +36,23 @@ npm run dev
 Open a new terminal  
 php artisan serve
 
-## Tasks
+## Features
 
 -   [x] Register and Login Page
--   [x] User Profile
--   [x] Admin Dashboard(Users, Pets)
--   [x] Database (Migrations and Seeders)
--   [x] Add a new pet
+-   [x] User(Profile, Add a new pet, Settings)
+-   [x] Admin(Dashboard, Users, Pets) + User Features
 -   [x] Find Pets based on different filters
--   [x] Change Password
--   [x] Delete Account
+-   [x] FAQ
+-   [x] About Us
+-   [x] Contact Us
 
 ## Resources
 -   Datbase: MySQL
 -   Server: XAMPP
 -   IDE: VS Code
--   Bootstrap, Laravel Breeze, DataTables, Git and GitHub
+-   Bootstrap, Laravel Breeze, DataTables, Swiperjs, Chartjs, Unsplash, Git and GitHub
 
-### Color
+### Color Scheme
 black: hsl(276, 7%, 30%);  
 secondary: hsl(273, 96%, 36%);  
 hoverColor: hsl(273, 70%, 45%);  
@@ -67,4 +66,4 @@ Font Family: Roboto
 Juan Gutierrez [<img src="https://i.stack.imgur.com/gVE0j.png" alt="Linkedin">](https://www.linkedin.com/in/-juan-gutierrez/)  
 Jordan Chan [<img src="https://i.stack.imgur.com/gVE0j.png" alt="Linkedin">](https://www.linkedin.com/in/jordan-chan49/)   
 Rutvik Joshi [<img src="https://i.stack.imgur.com/gVE0j.png" alt="Linkedin">](https://www.linkedin.com/)  
-Sourav Choudhary [<img src="https://i.stack.imgur.com/gVE0j.png" alt="Linkedin">](https://www.linkedin.com/in/sourav009/) 
+Sourav Choudhary [<img src="https://i.stack.imgur.com/gVE0j.png" alt="Linkedin">](https://www.linkedin.com/in/sourav009/)
