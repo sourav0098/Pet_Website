@@ -46,7 +46,7 @@
                 </a>
             </div>
             <div class="card">
-                <a class="nav-link" href=""><img src="./images/paw.png" alt="other animals">
+                <a class="nav-link" href="filter-pets?type=barnyard"><img src="./images/paw.png" alt="other animals">
                     <p class="text-center">Other Animals</p>
                 </a>
             </div>

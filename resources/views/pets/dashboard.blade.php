@@ -37,6 +37,12 @@
 @endsection
 
 @section('js')
+    <script>
+        let province_chart=@json($province_chart);
+        let pets_chart=@json($pets_chart);
+        let is_adopted=@json($is_adopted);
+        let pets_added_date=@json($pets_added_date);
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
     <script src="{{asset('/js/dashboard.js')}}"></script>

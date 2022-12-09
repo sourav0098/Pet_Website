@@ -5,24 +5,20 @@ $(document).ready(function () {
   });
 });
 
-// No of users according to city graph
-const city = [
-  "Toronto",
-  "Etobicoke",
-  "Brampton",
-  "Mississauga",
-  "North York",
-  "Scarborough",
-  "Woodbridge",
-  "Oakville",
-  "Markham",
-];
+
+// No of users according to province graph
+let provinces=[]
+let count=[]
+province_chart.forEach((element)=>{
+  provinces.push(element.province)
+  count.push(element.count)
+})
 
 const usersData = {
-  labels: city,
+  labels:provinces ,
   datasets: [
     {
-      label: "Number of users registered by city",
+      label: "Number of users registered by province",
       backgroundColor: [
         "rgba(255, 99, 132, 0.2)",
         "rgba(255, 159, 64, 0.2)",
@@ -46,7 +42,7 @@ const usersData = {
         "rgb(201, 203, 207)",
       ],
       borderWidth: 1,
-      data: [127, 87, 75, 112, 80, 67, 45, 59, 88],
+      data: count,
     },
   ],
 };
@@ -61,7 +57,7 @@ const config1 = {
       },
       title: {
         display: true,
-        text: "Number of users according to city",
+        text: "Number of users according to province",
         font: {
           size: 16,
         },
@@ -73,12 +69,19 @@ const config1 = {
 const barChart = new Chart(document.getElementById("chart1"), config1);
 
 // No. of pets according to animal type
+let pets=[]
+let pet_count=[]
+pets_chart.forEach((element)=>{
+  pets.push(element.animal_type)
+  pet_count.push(element.count)
+})
+
 const petData = {
-  labels: ["Dog", "Cat", "Rabbit", "Fish", "Other"],
+  labels: pets,
   datasets: [
     {
       label: "",
-      data: [180, 150, 21, 75, 83],
+      data: pet_count,
       backgroundColor: [
         "rgba(255, 99, 132, 0.8)",
         "rgba(255, 159, 64, 0.8)",
@@ -110,12 +113,24 @@ const config2 = {
 const doughnutChart = new Chart(document.getElementById("chart2"), config2);
 
 // Adopted/Not Adopted
+let adoptedPet=0
+let nonAdoptedPet=0
+
+for(i=0;i<is_adopted.length;i++){
+    if(is_adopted[i]==1){
+      adoptedPet=adoptedPet+1;
+    }
+    else if(is_adopted[i]==0){
+      nonAdoptedPet=nonAdoptedPet+1;
+    }
+}
+
 const adoptedData = {
   labels: ["Adopted", "Not Adopted"],
   datasets: [
     {
       label: "",
-      data: [43, 150],
+      data: [adoptedPet, nonAdoptedPet],
       backgroundColor: ["rgba(255, 99, 132, 0.8)", "rgba(255, 159, 64, 0.8)"],
       hoverOffset: 4,
     },
@@ -140,13 +155,20 @@ const config3 = {
 
 const pieChart = new Chart(document.getElementById("chart3"), config3);
 
-// Pets Adopted according to date
+// Pets added according to date
+let pets_added_count=[]
+let date=[]
+pets_added_date.forEach((element)=>{
+  pets_added_count.push(element.count)
+  date.push(element.date)
+})
+
 const petsDataByDate = {
-  labels: ["Oct 15", "Oct 16", "Oct 17", "Oct 18", "Oct 19", "Oct 20"],
+  labels: date,
   datasets: [
     {
       label: "Adopted Pet",
-      data: [8, 11, 7, 9, 7,13],
+      data: pets_added_count,
       fill: false,
       borderColor: "rgb(75, 192, 192)",
       tension: 0.1,
