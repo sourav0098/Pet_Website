@@ -48,7 +48,7 @@
                         <input type="checkbox" class="form-check-input" id="remember">
                         <label for="remember" class="form-check-label">Keep me logged in</label>
                     </div>
-                    <div><a href="#">Forgot password?</a></div>
+                    <div><a href="forgot-password">Forgot password?</a></div>
                 </div>
 
                 <div class="d-grid mb-4">
