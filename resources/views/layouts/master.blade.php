@@ -69,10 +69,10 @@
                         <a class="nav-link active" aria-current="page" href="how-it-works">How it works</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="{{ route('about-us') }}">About Us</a>
+                        <a class="nav-link active" aria-current="page" href="about-us">About Us</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="{{ route('contact') }}">Contact Us</a>
+                        <a class="nav-link active" aria-current="page" href="contact">Contact Us</a>
                     </li>
                 </ul>
             </div>
@@ -99,10 +99,10 @@
                             <a href="how-it-works" class="nav-link"><i class="fas fa-paw pe-3"></i>FAQ</a>
                         </li>
                         <li class="mb-2">
-                            <a href="{{ route('about-us') }}" class="nav-link"><i class="fas fa-paw pe-3"></i>About Us</a>
+                            <a href="about-us" class="nav-link"><i class="fas fa-paw pe-3"></i>About Us</a>
                         </li>
                         <li class="mb-2">
-                            <a href="{{ route('contact') }}" class="nav-link"><i class="fas fa-paw pe-3"></i>Contact Us</a>
+                            <a href="contact" class="nav-link"><i class="fas fa-paw pe-3"></i>Contact Us</a>
                         </li>
                         <li class="mb-2">
                             <a href="#!" class="nav-link"><i class="fas fa-paw pe-3"></i>Terms of Service</a>
@@ -157,7 +157,7 @@
                             </li>
                             <li>
                                 <a class="text-white px-2" target="_blank" href="https://www.linkedin.com/login">
-                                    <i class="fa-brands fs-4 fa-linkedin"></i>
+                                    <i class="fa-brands fs-4 fa-linkedin text-white"></i>
                                 </a>
                             </li>
                         </ul>

@@ -82,10 +82,8 @@ function changedFilterCriteria() {
 }
 
 function findFilterInUrl(field) {
-    console.log("t1");
     const initIndex = url.indexOf(field);
     if (initIndex == -1) return "";
-    console.log("t2");
     let endIndex = url.indexOf("&", initIndex + 1);
 
     endIndex = endIndex == -1 ? url.length - 1 : endIndex - 1;
@@ -95,9 +93,6 @@ function findFilterInUrl(field) {
     let actualValueOfFilter = urlFieldPart.substring(
         urlFieldPart.indexOf("=") + 1
     );
-    console.log("url: ", url);
-    console.log("part: ", actualValueOfFilter);
-
     return actualValueOfFilter.replace("%20", " ");
 }
 

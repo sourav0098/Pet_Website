@@ -37,10 +37,20 @@
       <form action="{{ route('send-email', 'admin') }}" method="POST">
         @csrf
         <div class="input-box">
+          @if(Auth::check())
+          <input type="text" placeholder="Enter your name" name="name" value="{{$user->fname}} {{$user->lname}}" required>
+          @endif
+          @if(!Auth::check())
           <input type="text" placeholder="Enter your name" name="name" required>
+          @endif
         </div>
         <div class="input-box">
-          <input type="text" placeholder="Enter your email" name="email" required>
+          @if(Auth::check())
+          <input type="text" placeholder="Enter your email" name="email" value="{{$user->email}}" required>
+          @endif
+          @if(!Auth::check())
+          <input type="text" placeholder="Enter your email" name="email" value="" required>
+          @endif
         </div>
         <div class="input-box message-box">
         <textarea placeholder="Enter your message" name="message" required></textarea>
