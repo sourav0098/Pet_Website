@@ -4,6 +4,7 @@
 @section('head')
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://kit.fontawesome.com/yourcode.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="{{asset('/css/home.css')}}">
     <link rel="stylesheet" href="{{asset('/css/Filter_pet.css')}}">
 @endsection
@@ -83,7 +84,7 @@
           <option value="Palm+Springs,+California">Palm Springs, California</option>
           <option value="Sedona,+Arizona">Sedona, Arizona</option>
         </select>
-        <label for="floatingSelectGrid">City</label>
+        <label for="floatingSelectGrid">Near City</label>
       </div>
     </div>
   </div>
