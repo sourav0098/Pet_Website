@@ -21,9 +21,10 @@
 <div class="container mt-5 mb-5 d-flex">
   <div class="card rounded" style="width: 100%">
     <div class=" d-flex justify-content-center">
-        <img src="{{ $pet['photos'][0]['full'] }}" class="rounded" width="" height="400" />
+        <img src="{{ $pet['photos'][0]['large'] }}" class="rounded" width="" height="400" />
         <div class="area2 px-3">
           <h4 class=" name mt-3 text-center">{{ $pet['name'] }}</h4>
+          <h5 class="mt-3"><b>Breed:</b> {{ $pet['breeds']['primary'] }}</h5>
           <div class="hr"></div>
           <div class="d-flex">
             <p style="margin-right: 1.5rem;"><span class="back">Age: </span> {{ $pet['age'] }}</p>
@@ -33,11 +34,21 @@
           </div>
           <div class="hr"></div>
           <div class="d-flex">
+            {{-- <p style="margin-right: 1.5rem;"><span class="back">Colors </span></p> --}}
+            <p style="margin-right: 1.5rem;"><span class="back">Primary Color: </span>{{ $pet['colors']['primary'] }}</p>
+            <p style="margin-right: 1.5rem;"><span class="back">Secondary Color: </span>{{ $pet['colors']['secondary'] }}</p>
+            <p style="margin-right: 1.5rem;"><span class="back">Tertiary Color: </span> {{ isset($pet['colors']['tertiary']) ? $pet['colors']['tertiary'] : 'N/A' }}</p>
+          </div>
+          <div class="hr"></div>
+          <div class="d-flex">
             <p style="margin-right: 1.5rem;"><span class="back">City: </span> {{ $pet['contact']['address']['city'] }}</p>
             <p style="margin-right: 1.5rem;"><span class="back">State: </span> {{ $pet['contact']['address']['state'] }}</p>
             <p style="margin-right: 1.5rem;"><span class="back">Country: </span> {{ $pet['contact']['address']['country'] }}</p>
           </div>
           <div class="hr"></div>
+          <div class="d-flex">
+            <p style="margin-right: 1.5rem;"><span class="back">Address: </span> {{ isset($pet['contact']['address']['address1']) ? $pet['contact']['address']['address1'] : 'N/A' }}</p>
+          </div>
           <p class="information mt-3 text-justify">{{ $pet['description'] }}</p>
           <div class="d-flex justify-content-center mt-5">
             <div class="back"> </br> Return home? <a href="/" style="color:#6504b4">Home</a></div>

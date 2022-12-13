@@ -13,6 +13,7 @@
         <div class="right-side">
         <div class="topic-text" style="color: #6504b4; font-size:23px;"><strong> Interested in adopting this pet? Send owner a quick message. </strong></div>
         <p>If you have any questions or inquiries, you can contact the owner by sending a message.</p>
+        <p><b>Owner Email: </b> {{ $pet['contact']['email'] }}</p>
         <form action="{{ route('send-email', 'owner') }}" method="POST">
             @csrf
             <input type="hidden" name="receiver_email" value="{{ $pet['contact']['email'] }}">

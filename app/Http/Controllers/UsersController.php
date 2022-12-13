@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 use App\Models\User;
 use App\Mail\ContactMail;
+use App\Models\Message;
+
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 
@@ -57,6 +59,7 @@ class UsersController extends Controller
             'email' => $request->email,
             'message' => $request->message,
         ];
+        Message::insert($details);
         Mail::to($mail)->send(new ContactMail($details));
         return redirect()->back()->with('status', 'email-sent');
     }

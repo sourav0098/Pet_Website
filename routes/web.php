@@ -79,6 +79,10 @@ Route::get('/rex', function () { return view('pets.home-page-pets.rex'); })->nam
 Route::get('/dollar', function () { return view('pets.home-page-pets.dollar'); })->name('dollar');
 Route::get('/leo', function () { return view('pets.home-page-pets.leo'); })->name('leo');
 
+Route::get('/contact', function () {
+    return view('pets.contact');
+    })->name('contact');
+    
 Route::get('/pet-profile', function () {
     return view('pets.pet-profile');
 });
