@@ -69,7 +69,9 @@ Route::middleware(['auth', 'auth_admin'])->group(function () {
     Route::delete('/pets', [PetsController::class, "destroy"])->name('pets.destroy');
 });
 
-
+// Route::get('/favourites', function () {
+//     return view('pets.favourites');
+// });
 
 Route::get('/duke', function () { return view('pets.home-page-pets.duke'); })->name('duke');
 Route::get('/milo', function () { return view('pets.home-page-pets.milo'); })->name('milo');

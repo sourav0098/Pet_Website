@@ -12,12 +12,14 @@ use Illuminate\Support\Facades\File;
 class PetsController extends Controller
 {
     public function edit(Request $request){
+        // Arrays for dropdown, radio buttons
         $age=['Baby','Young','Adult','Senior'];
         $gender=['Male','Female'];
         $characteristics=['Cute','Loyal','Friendly','Playful','Intelligent','Happy','Affectionate','Courageous'];
         $animal_types=['Dog','Cat','Rabbit','Fish','Bird','Other'];
         $coat_lengths=['Hairless','Short','Medium','Long'];
 
+        // Getting data from characteristics table for specific pet
         $pets=Pet::with('characteristics')->get();
         return view('pets.pets',[
             'ages'=>$age,
@@ -44,6 +46,7 @@ class PetsController extends Controller
             'descriptionEdit' => 'required|string'
         ]);
         
+        // Find pet by id
         $pet=Pet::find($request->get('idEdit'));
         $pet->pet_name=$request->get('petnameEdit');
         $pet->age=$request->get('ageEdit');
