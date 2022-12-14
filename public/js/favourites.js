@@ -5,7 +5,6 @@ $(document).ready(function () {
   });
 
   const favourite=document.getElementsByClassName("favourite-icon");
-  console.log(favourite)
   Array.from(favourite).forEach(card => {
     card.addEventListener('click',(e)=>{
       e.preventDefault()

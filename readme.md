@@ -79,20 +79,17 @@ php artisan serve
 -   IDE: VS Code
 -   Bootstrap, Laravel Breeze, DataTables, Swiperjs, Chartjs, Unsplash, Git and GitHub
 
-### Color Scheme
-
+## Color Scheme
 black: hsl(276, 7%, 30%);  
 secondary: hsl(273, 96%, 36%);  
 hoverColor: hsl(273, 70%, 45%);  
 footer: hsl(260, 100%, 73%);  
 border: hsl(0, 0%, 82%);
 
-### Font
-
+## Font
 Font Family: Roboto
 
-### Contributors
-
+## Contributors
 Juan Gutierrez [<img src="https://i.stack.imgur.com/gVE0j.png" alt="Linkedin">](https://www.linkedin.com/in/-juan-gutierrez/)  
 Jordan Chan [<img src="https://i.stack.imgur.com/gVE0j.png" alt="Linkedin">](https://www.linkedin.com/in/jordan-chan49/)  
 Rutvik Joshi [<img src="https://i.stack.imgur.com/gVE0j.png" alt="Linkedin">](https://www.linkedin.com/)  
