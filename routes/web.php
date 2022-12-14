@@ -67,10 +67,10 @@ Route::middleware(['auth', 'auth_admin'])->group(function () {
     Route::patch('/pets', [PetsController::class, "update"])->name('pets.update');
     Route::delete('/pets', [PetsController::class, "destroy"])->name('pets.destroy');
 });
-
-// Route::get('/favourites', function () {
-//     return view('pets.favourites');
-// });
+    
+    Route::get('/favourites', function () {
+    return view('pets.favourites');
+    });
 
 
 Route::get('/duke', function () { return view('pets.home-page-pets.duke'); })->name('duke');
