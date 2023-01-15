@@ -10,9 +10,9 @@ use Illuminate\Support\Facades\Mail;
 
 class UsersController extends Controller
 {
-    public function edit(){
+    public function edit(Request $request){
         $users=User::all();
-        return view('pets.users',['users'=>$users]);
+        return view('pets.users',['user'=>$request->user(),'users'=>$users]);
     }
     public function update(Request $request){
         // Validation

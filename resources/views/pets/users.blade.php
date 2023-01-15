@@ -133,20 +133,20 @@
                 </thead>
                 <tbody>
                     <?php $i=0?>
-                    @foreach($users as $user)
-                        @if($user->is_admin!=1)
+                    @foreach($users as $u)
+                        @if($u->is_admin!=1)
                             <tr>
                                 <?php $i++?>
                                 <th scope="row">{{$i}}</th>
                                 <td class="d-none">{{$user->id}}</td>
-                                <td>{{$user->fname}}</td>
-                                <td>{{$user->lname}}</td>
-                                <td>{{$user->email}}</td>
-                                <td>{{$user->phone}}</td>
-                                <td>{{$user->street}}</td>
-                                <td>{{$user->city}}</td>
-                                <td>{{$user->province}}</td>
-                                <td>{{$user->postal_code}}</td>
+                                <td>{{$u->fname}}</td>
+                                <td>{{$u->lname}}</td>
+                                <td>{{$u->email}}</td>
+                                <td>{{$u->phone}}</td>
+                                <td>{{$u->street}}</td>
+                                <td>{{$u->city}}</td>
+                                <td>{{$u->province}}</td>
+                                <td>{{$u->postal_code}}</td>
                                 <td class="d-flex">
                                     <button type="button" class="btn btn-primary edit me-2" title="Edit">Edit</button>
                                     <form action="{{route('users.destroy')}}" method="POST">
